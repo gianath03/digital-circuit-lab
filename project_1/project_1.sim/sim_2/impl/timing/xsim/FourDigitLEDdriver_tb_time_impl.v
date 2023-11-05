@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sat Nov  4 01:26:35 2023
-// Host        : athanasi-DESKTOP running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+// Date        : Sun Nov  5 20:47:15 2023
+// Host        : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
-//               C:/Users/athanasi/Documents/ErgastiriPsifiakwnSistimatwn/project_1/project_1.sim/sim_2/impl/timing/xsim/FourDigitLEDdriver_tb_time_impl.v
+//               /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/timing/xsim/FourDigitLEDdriver_tb_time_impl.v
 // Design      : FourDigitLEDdriver
 // Purpose     : This verilog netlist is a timing simulation representation of the design and should not be modified or
 //               synthesized. Please ensure that this netlist is used with the corresponding SDF file.
@@ -13,7 +13,7 @@
 `timescale 1 ps / 1 ps
 `define XIL_TIMING
 
-(* ECO_CHECKSUM = "7644bae4" *) 
+(* ECO_CHECKSUM = "b03857b2" *) 
 (* NotValidForBitStream *)
 module FourDigitLEDdriver
    (reset,
@@ -66,9 +66,12 @@ module FourDigitLEDdriver
   wire c_OBUF;
   wire \char[0]_i_1_n_0 ;
   wire \char[1]_i_1_n_0 ;
+  wire \char[2]_i_1_n_0 ;
   wire \char[3]_i_1_n_0 ;
+  wire \char[3]_i_2_n_0 ;
   wire \char_reg_n_0_[0] ;
   wire \char_reg_n_0_[1] ;
+  wire \char_reg_n_0_[2] ;
   wire \char_reg_n_0_[3] ;
   wire clk;
   wire clk_IBUF;
@@ -112,12 +115,11 @@ initial begin
  $sdf_annotate("FourDigitLEDdriver_tb_time_impl.sdf",,,,"tool_control");
 end
   LEDdecoder LEDdecoder_inst
-       (.a_OBUF(a_OBUF),
+       (.Q({\char_reg_n_0_[3] ,\char_reg_n_0_[2] ,\char_reg_n_0_[1] ,\char_reg_n_0_[0] }),
+        .a_OBUF(a_OBUF),
+        .b_OBUF(b_OBUF),
         .c_OBUF(c_OBUF),
         .d_OBUF(d_OBUF),
-        .e(\char_reg_n_0_[1] ),
-        .e_0(\char_reg_n_0_[3] ),
-        .e_1(\char_reg_n_0_[0] ),
         .e_OBUF(e_OBUF),
         .f_OBUF(f_OBUF),
         .g_OBUF(g_OBUF));
@@ -208,7 +210,7 @@ end
   OBUF an0_OBUF_inst
        (.I(an0_OBUF),
         .O(an0));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hEF)) 
     an0_i_1
@@ -227,7 +229,7 @@ end
   OBUF an1_OBUF_inst
        (.I(an1_OBUF),
         .O(an1));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hDF)) 
     an1_i_1
@@ -246,7 +248,7 @@ end
   OBUF an2_OBUF_inst
        (.I(an2_OBUF),
         .O(an2));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hBF)) 
     an2_i_1
@@ -271,7 +273,7 @@ end
        (.I0(counter_reg__1[1]),
         .I1(counter_reg__0),
         .O(an3_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     an3_i_2
@@ -290,47 +292,46 @@ end
   OBUF b_OBUF_inst
        (.I(b_OBUF),
         .O(b));
-  LUT3 #(
-    .INIT(8'h7F)) 
-    b_OBUF_inst_i_1
-       (.I0(\char_reg_n_0_[0] ),
-        .I1(\char_reg_n_0_[1] ),
-        .I2(\char_reg_n_0_[3] ),
-        .O(b_OBUF));
   OBUF c_OBUF_inst
        (.I(c_OBUF),
         .O(c));
-  LUT3 #(
-    .INIT(8'hF4)) 
+  LUT2 #(
+    .INIT(4'h7)) 
     \char[0]_i_1 
-       (.I0(counter_reg__1[1]),
-        .I1(counter_reg__0),
-        .I2(\char_reg_n_0_[0] ),
+       (.I0(counter_reg__1[3]),
+        .I1(counter_reg__1[2]),
         .O(\char[0]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hFF4F0040)) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT2 #(
+    .INIT(4'h1)) 
     \char[1]_i_1 
        (.I0(counter_reg__1[2]),
         .I1(counter_reg__1[3]),
-        .I2(counter_reg__0),
-        .I3(counter_reg__1[1]),
-        .I4(\char_reg_n_0_[1] ),
         .O(\char[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT5 #(
-    .INIT(32'hFF1F0010)) 
-    \char[3]_i_1 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \char[2]_i_1 
        (.I0(counter_reg__1[2]),
         .I1(counter_reg__1[3]),
-        .I2(counter_reg__0),
-        .I3(counter_reg__1[1]),
-        .I4(\char_reg_n_0_[3] ),
+        .O(\char[2]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h2)) 
+    \char[3]_i_1 
+       (.I0(counter_reg__0),
+        .I1(counter_reg__1[1]),
         .O(\char[3]_i_1_n_0 ));
+  LUT2 #(
+    .INIT(4'h4)) 
+    \char[3]_i_2 
+       (.I0(counter_reg__1[2]),
+        .I1(counter_reg__1[3]),
+        .O(\char[3]_i_2_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \char_reg[0] 
        (.C(clk_ssd_BUFG),
-        .CE(1'b1),
+        .CE(\char[3]_i_1_n_0 ),
         .CLR(reset_IBUF),
         .D(\char[0]_i_1_n_0 ),
         .Q(\char_reg_n_0_[0] ));
@@ -338,16 +339,24 @@ end
     .INIT(1'b0)) 
     \char_reg[1] 
        (.C(clk_ssd_BUFG),
-        .CE(1'b1),
+        .CE(\char[3]_i_1_n_0 ),
         .CLR(reset_IBUF),
         .D(\char[1]_i_1_n_0 ),
         .Q(\char_reg_n_0_[1] ));
+  FDCE #(
+    .INIT(1'b0)) 
+    \char_reg[2] 
+       (.C(clk_ssd_BUFG),
+        .CE(\char[3]_i_1_n_0 ),
+        .CLR(reset_IBUF),
+        .D(\char[2]_i_1_n_0 ),
+        .Q(\char_reg_n_0_[2] ));
   FDPE #(
     .INIT(1'b1)) 
     \char_reg[3] 
        (.C(clk_ssd_BUFG),
-        .CE(1'b1),
-        .D(\char[3]_i_1_n_0 ),
+        .CE(\char[3]_i_1_n_0 ),
+        .D(\char[3]_i_2_n_0 ),
         .PRE(reset_IBUF),
         .Q(\char_reg_n_0_[3] ));
   IBUF clk_IBUF_inst
@@ -358,19 +367,20 @@ end
   BUFG clk_ssd_BUFG_inst
        (.I(clk_ssd),
         .O(clk_ssd_BUFG));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \counter[0]_i_1 
        (.I0(counter_reg__0),
         .O(\counter[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT2 #(
     .INIT(4'h9)) 
     \counter[1]_i_1 
        (.I0(counter_reg__1[1]),
         .I1(counter_reg__0),
         .O(p_0_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hA9)) 
     \counter[2]_i_1 
@@ -440,75 +450,87 @@ end
 endmodule
 
 module LEDdecoder
-   (e_OBUF,
-    d_OBUF,
-    a_OBUF,
-    c_OBUF,
+   (g_OBUF,
     f_OBUF,
-    g_OBUF,
-    e,
-    e_0,
-    e_1);
+    e_OBUF,
+    d_OBUF,
+    c_OBUF,
+    b_OBUF,
+    a_OBUF,
+    Q);
+  output g_OBUF;
+  output f_OBUF;
   output e_OBUF;
   output d_OBUF;
-  output a_OBUF;
   output c_OBUF;
-  output f_OBUF;
-  output g_OBUF;
-  input e;
-  input e_0;
-  input e_1;
+  output b_OBUF;
+  output a_OBUF;
+  input [3:0]Q;
 
+  wire [3:0]Q;
   wire a_OBUF;
+  wire b_OBUF;
   wire c_OBUF;
   wire d_OBUF;
-  wire e;
-  wire e_0;
-  wire e_1;
   wire e_OBUF;
   wire f_OBUF;
   wire g_OBUF;
 
-  LUT3 #(
-    .INIT(8'h6F)) 
+  LUT4 #(
+    .INIT(16'hD6FB)) 
     a_OBUF_inst_i_1
-       (.I0(e_0),
-        .I1(e),
-        .I2(e_1),
+       (.I0(Q[3]),
+        .I1(Q[2]),
+        .I2(Q[1]),
+        .I3(Q[0]),
         .O(a_OBUF));
-  LUT3 #(
-    .INIT(8'hFB)) 
+  LUT4 #(
+    .INIT(16'h497F)) 
+    b_OBUF_inst_i_1
+       (.I0(Q[3]),
+        .I1(Q[0]),
+        .I2(Q[1]),
+        .I3(Q[2]),
+        .O(b_OBUF));
+  LUT4 #(
+    .INIT(16'h7F67)) 
     c_OBUF_inst_i_1
-       (.I0(e_0),
-        .I1(e),
-        .I2(e_1),
+       (.I0(Q[3]),
+        .I1(Q[2]),
+        .I2(Q[1]),
+        .I3(Q[0]),
         .O(c_OBUF));
-  LUT3 #(
-    .INIT(8'hE7)) 
+  LUT4 #(
+    .INIT(16'h3EDB)) 
     d_OBUF_inst_i_1
-       (.I0(e_0),
-        .I1(e),
-        .I2(e_1),
+       (.I0(Q[3]),
+        .I1(Q[2]),
+        .I2(Q[1]),
+        .I3(Q[0]),
         .O(d_OBUF));
-  LUT3 #(
-    .INIT(8'h8F)) 
+  LUT4 #(
+    .INIT(16'hA8EF)) 
     e_OBUF_inst_i_1
-       (.I0(e),
-        .I1(e_0),
-        .I2(e_1),
+       (.I0(Q[3]),
+        .I1(Q[1]),
+        .I2(Q[2]),
+        .I3(Q[0]),
         .O(e_OBUF));
-  LUT3 #(
-    .INIT(8'hAB)) 
+  LUT4 #(
+    .INIT(16'hAE6F)) 
     f_OBUF_inst_i_1
-       (.I0(e_0),
-        .I1(e_1),
-        .I2(e),
+       (.I0(Q[3]),
+        .I1(Q[2]),
+        .I2(Q[0]),
+        .I3(Q[1]),
         .O(f_OBUF));
-  LUT2 #(
-    .INIT(4'hE)) 
+  LUT4 #(
+    .INIT(16'hBFDA)) 
     g_OBUF_inst_i_1
-       (.I0(e_0),
-        .I1(e),
+       (.I0(Q[3]),
+        .I1(Q[0]),
+        .I2(Q[2]),
+        .I3(Q[1]),
         .O(g_OBUF));
 endmodule
 `ifndef GLBL

@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Nov  4 01:24:54 2023
-| Host         : athanasi-DESKTOP running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Sun Nov  5 20:46:39 2023
+| Host         : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
 | Command      : report_timing_summary -max_paths 10 -file FourDigitLEDdriver_timing_summary_routed.rpt -pb FourDigitLEDdriver_timing_summary_routed.pb -rpx FourDigitLEDdriver_timing_summary_routed.rpx -warn_on_violation
 | Design       : FourDigitLEDdriver
 | Device       : 7a100t-csg324
@@ -126,7 +126,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-    197.899        0.000                      0                   15        0.186        0.000                      0                   15        3.000        0.000                       0                    16  
+    197.808        0.000                      0                   20        0.213        0.000                      0                   20        3.000        0.000                       0                    17  
 
 
 All user specified timing constraints are met.
@@ -152,7 +152,7 @@ sys_clk    {0.000 5.000}        10.000          100.000
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 sys_clk                                                                                                                                                         3.000        0.000                       0                     1  
-  clk_ssd         197.899        0.000                      0                   15        0.186        0.000                      0                   15       13.360        0.000                       0                    13  
+  clk_ssd         197.808        0.000                      0                   20        0.213        0.000                      0                   20       13.360        0.000                       0                    14  
   clkfb                                                                                                                                                         8.751        0.000                       0                     2  
 
 
@@ -211,27 +211,267 @@ High Pulse Width  Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000 
 From Clock:  clk_ssd
   To Clock:  clk_ssd
 
-Setup :            0  Failing Endpoints,  Worst Slack      197.899ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.186ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack      197.808ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.213ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack       13.360ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             197.899ns  (required time - arrival time)
-  Source:                 char_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            char_reg[0]/D
+Slack (MET) :             197.808ns  (required time - arrival time)
+  Source:                 counter_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            char_reg[0]/CE
                             (rising edge-triggered cell FDCE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Path Group:             clk_ssd
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        1.992ns  (logic 0.580ns (29.117%)  route 1.412ns (70.883%))
-  Logic Levels:           1  (LUT3=1)
+  Data Path Delay:        1.823ns  (logic 0.580ns (31.809%)  route 1.243ns (68.191%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
+    Source Clock Delay      (SCD):    6.344ns
+    Clock Pessimism Removal (CPR):    0.327ns
+  Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.233     2.715    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           1.719     4.522    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          1.725     6.344    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.456     6.800 r  counter_reg[0]/Q
+                         net (fo=10, routed)          0.864     7.664    counter_reg__0[0]
+    SLICE_X1Y92          LUT2 (Prop_lut2_I0_O)        0.124     7.788 r  char[3]_i_1/O
+                         net (fo=4, routed)           0.379     8.167    char[3]_i_1_n_0
+    SLICE_X0Y92          FDCE                                         r  char_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_ssd rise edge)  200.000   200.000 r  
+    E3                                                0.000   200.000 r  clk (IN)
+                         net (fo=0)                   0.000   200.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411   201.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.162   202.573    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           1.639   204.295    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          1.604   205.991    clk_ssd_BUFG
+    SLICE_X0Y92          FDCE                                         r  char_reg[0]/C
+                         clock pessimism              0.327   206.318    
+                         clock uncertainty           -0.138   206.180    
+    SLICE_X0Y92          FDCE (Setup_fdce_C_CE)      -0.205   205.975    char_reg[0]
+  -------------------------------------------------------------------
+                         required time                        205.975    
+                         arrival time                          -8.167    
+  -------------------------------------------------------------------
+                         slack                                197.808    
+
+Slack (MET) :             197.808ns  (required time - arrival time)
+  Source:                 counter_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            char_reg[1]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Path Group:             clk_ssd
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
+  Data Path Delay:        1.823ns  (logic 0.580ns (31.809%)  route 1.243ns (68.191%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
+    Source Clock Delay      (SCD):    6.344ns
+    Clock Pessimism Removal (CPR):    0.327ns
+  Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.233     2.715    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           1.719     4.522    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          1.725     6.344    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.456     6.800 r  counter_reg[0]/Q
+                         net (fo=10, routed)          0.864     7.664    counter_reg__0[0]
+    SLICE_X1Y92          LUT2 (Prop_lut2_I0_O)        0.124     7.788 r  char[3]_i_1/O
+                         net (fo=4, routed)           0.379     8.167    char[3]_i_1_n_0
+    SLICE_X0Y92          FDCE                                         r  char_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_ssd rise edge)  200.000   200.000 r  
+    E3                                                0.000   200.000 r  clk (IN)
+                         net (fo=0)                   0.000   200.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411   201.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.162   202.573    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           1.639   204.295    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          1.604   205.991    clk_ssd_BUFG
+    SLICE_X0Y92          FDCE                                         r  char_reg[1]/C
+                         clock pessimism              0.327   206.318    
+                         clock uncertainty           -0.138   206.180    
+    SLICE_X0Y92          FDCE (Setup_fdce_C_CE)      -0.205   205.975    char_reg[1]
+  -------------------------------------------------------------------
+                         required time                        205.975    
+                         arrival time                          -8.167    
+  -------------------------------------------------------------------
+                         slack                                197.808    
+
+Slack (MET) :             197.808ns  (required time - arrival time)
+  Source:                 counter_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            char_reg[2]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Path Group:             clk_ssd
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
+  Data Path Delay:        1.823ns  (logic 0.580ns (31.809%)  route 1.243ns (68.191%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
+    Source Clock Delay      (SCD):    6.344ns
+    Clock Pessimism Removal (CPR):    0.327ns
+  Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.233     2.715    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           1.719     4.522    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          1.725     6.344    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.456     6.800 r  counter_reg[0]/Q
+                         net (fo=10, routed)          0.864     7.664    counter_reg__0[0]
+    SLICE_X1Y92          LUT2 (Prop_lut2_I0_O)        0.124     7.788 r  char[3]_i_1/O
+                         net (fo=4, routed)           0.379     8.167    char[3]_i_1_n_0
+    SLICE_X0Y92          FDCE                                         r  char_reg[2]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_ssd rise edge)  200.000   200.000 r  
+    E3                                                0.000   200.000 r  clk (IN)
+                         net (fo=0)                   0.000   200.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411   201.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.162   202.573    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           1.639   204.295    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          1.604   205.991    clk_ssd_BUFG
+    SLICE_X0Y92          FDCE                                         r  char_reg[2]/C
+                         clock pessimism              0.327   206.318    
+                         clock uncertainty           -0.138   206.180    
+    SLICE_X0Y92          FDCE (Setup_fdce_C_CE)      -0.205   205.975    char_reg[2]
+  -------------------------------------------------------------------
+                         required time                        205.975    
+                         arrival time                          -8.167    
+  -------------------------------------------------------------------
+                         slack                                197.808    
+
+Slack (MET) :             197.808ns  (required time - arrival time)
+  Source:                 counter_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            char_reg[3]/CE
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Path Group:             clk_ssd
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
+  Data Path Delay:        1.823ns  (logic 0.580ns (31.809%)  route 1.243ns (68.191%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
+    Source Clock Delay      (SCD):    6.344ns
+    Clock Pessimism Removal (CPR):    0.327ns
+  Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.233     2.715    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           1.719     4.522    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          1.725     6.344    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.456     6.800 r  counter_reg[0]/Q
+                         net (fo=10, routed)          0.864     7.664    counter_reg__0[0]
+    SLICE_X1Y92          LUT2 (Prop_lut2_I0_O)        0.124     7.788 r  char[3]_i_1/O
+                         net (fo=4, routed)           0.379     8.167    char[3]_i_1_n_0
+    SLICE_X0Y92          FDPE                                         r  char_reg[3]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_ssd rise edge)  200.000   200.000 r  
+    E3                                                0.000   200.000 r  clk (IN)
+                         net (fo=0)                   0.000   200.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         1.411   201.411 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.162   202.573    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           1.639   204.295    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          1.604   205.991    clk_ssd_BUFG
+    SLICE_X0Y92          FDPE                                         r  char_reg[3]/C
+                         clock pessimism              0.327   206.318    
+                         clock uncertainty           -0.138   206.180    
+    SLICE_X0Y92          FDPE (Setup_fdpe_C_CE)      -0.205   205.975    char_reg[3]
+  -------------------------------------------------------------------
+                         required time                        205.975    
+                         arrival time                          -8.167    
+  -------------------------------------------------------------------
+                         slack                                197.808    
+
+Slack (MET) :             198.060ns  (required time - arrival time)
+  Source:                 counter_reg[3]/C
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            counter_reg[3]/D
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Path Group:             clk_ssd
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
+  Data Path Delay:        1.877ns  (logic 0.746ns (39.749%)  route 1.131ns (60.251%))
+  Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.990ns = ( 205.990 - 200.000 ) 
-    Source Clock Delay      (SCD):    6.342ns
+    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
+    Source Clock Delay      (SCD):    6.343ns
     Clock Pessimism Removal (CPR):    0.352ns
   Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -249,14 +489,14 @@ Slack (MET) :             197.899ns  (required time - arrival time)
                                                       0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.719     4.522    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.723     6.342    clk_ssd_BUFG
-    SLICE_X0Y90          FDCE                                         r  char_reg[0]/C
+                         net (fo=12, routed)          1.724     6.343    clk_ssd_BUFG
+    SLICE_X1Y92          FDPE                                         r  counter_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y90          FDCE (Prop_fdce_C_Q)         0.456     6.798 r  char_reg[0]/Q
-                         net (fo=7, routed)           1.412     8.210    char_reg_n_0_[0]
-    SLICE_X0Y90          LUT3 (Prop_lut3_I2_O)        0.124     8.334 r  char[0]_i_1/O
-                         net (fo=1, routed)           0.000     8.334    char[0]_i_1_n_0
-    SLICE_X0Y90          FDCE                                         r  char_reg[0]/D
+    SLICE_X1Y92          FDPE (Prop_fdpe_C_Q)         0.419     6.762 r  counter_reg[3]/Q
+                         net (fo=9, routed)           1.131     7.892    counter_reg__1[3]
+    SLICE_X1Y92          LUT4 (Prop_lut4_I0_O)        0.327     8.219 r  counter[3]_i_1/O
+                         net (fo=1, routed)           0.000     8.219    p_0_in[2]
+    SLICE_X1Y92          FDPE                                         r  counter_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)  200.000   200.000 r  
@@ -268,18 +508,18 @@ Slack (MET) :             197.899ns  (required time - arrival time)
                                                       0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.639   204.295    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.603   205.990    clk_ssd_BUFG
-    SLICE_X0Y90          FDCE                                         r  char_reg[0]/C
-                         clock pessimism              0.352   206.342    
-                         clock uncertainty           -0.138   206.204    
-    SLICE_X0Y90          FDCE (Setup_fdce_C_D)        0.029   206.233    char_reg[0]
+                         net (fo=12, routed)          1.604   205.991    clk_ssd_BUFG
+    SLICE_X1Y92          FDPE                                         r  counter_reg[3]/C
+                         clock pessimism              0.352   206.343    
+                         clock uncertainty           -0.138   206.205    
+    SLICE_X1Y92          FDPE (Setup_fdpe_C_D)        0.075   206.280    counter_reg[3]
   -------------------------------------------------------------------
-                         required time                        206.233    
-                         arrival time                          -8.334    
+                         required time                        206.280    
+                         arrival time                          -8.219    
   -------------------------------------------------------------------
-                         slack                                197.899    
+                         slack                                198.060    
 
-Slack (MET) :             198.018ns  (required time - arrival time)
+Slack (MET) :             198.133ns  (required time - arrival time)
   Source:                 counter_reg[0]/C
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Destination:            an0_reg/CE
@@ -287,12 +527,12 @@ Slack (MET) :             198.018ns  (required time - arrival time)
   Path Group:             clk_ssd
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        1.614ns  (logic 0.580ns (35.932%)  route 1.034ns (64.068%))
+  Data Path Delay:        1.503ns  (logic 0.580ns (38.600%)  route 0.923ns (61.400%))
   Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
-    Source Clock Delay      (SCD):    6.343ns
-    Clock Pessimism Removal (CPR):    0.327ns
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.992ns = ( 205.992 - 200.000 ) 
+    Source Clock Delay      (SCD):    6.344ns
+    Clock Pessimism Removal (CPR):    0.330ns
   Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.266ns
@@ -309,14 +549,14 @@ Slack (MET) :             198.018ns  (required time - arrival time)
                                                       0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.719     4.522    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.724     6.343    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/C
+                         net (fo=12, routed)          1.725     6.344    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.456     6.799 f  counter_reg[0]/Q
-                         net (fo=12, routed)          0.703     7.502    counter_reg__0[0]
-    SLICE_X1Y91          LUT2 (Prop_lut2_I1_O)        0.124     7.626 r  an3_i_1/O
-                         net (fo=4, routed)           0.331     7.957    an3_i_1_n_0
-    SLICE_X0Y92          FDPE                                         r  an0_reg/CE
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.456     6.800 f  counter_reg[0]/Q
+                         net (fo=10, routed)          0.544     7.343    counter_reg__0[0]
+    SLICE_X1Y94          LUT2 (Prop_lut2_I1_O)        0.124     7.467 r  an3_i_1/O
+                         net (fo=4, routed)           0.379     7.846    an3_i_1_n_0
+    SLICE_X0Y94          FDPE                                         r  an0_reg/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)  200.000   200.000 r  
@@ -328,18 +568,18 @@ Slack (MET) :             198.018ns  (required time - arrival time)
                                                       0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.639   204.295    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.604   205.991    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an0_reg/C
-                         clock pessimism              0.327   206.318    
-                         clock uncertainty           -0.138   206.180    
-    SLICE_X0Y92          FDPE (Setup_fdpe_C_CE)      -0.205   205.975    an0_reg
+                         net (fo=12, routed)          1.605   205.992    clk_ssd_BUFG
+    SLICE_X0Y94          FDPE                                         r  an0_reg/C
+                         clock pessimism              0.330   206.322    
+                         clock uncertainty           -0.138   206.184    
+    SLICE_X0Y94          FDPE (Setup_fdpe_C_CE)      -0.205   205.979    an0_reg
   -------------------------------------------------------------------
-                         required time                        205.975    
-                         arrival time                          -7.957    
+                         required time                        205.979    
+                         arrival time                          -7.846    
   -------------------------------------------------------------------
-                         slack                                198.018    
+                         slack                                198.133    
 
-Slack (MET) :             198.018ns  (required time - arrival time)
+Slack (MET) :             198.133ns  (required time - arrival time)
   Source:                 counter_reg[0]/C
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Destination:            an1_reg/CE
@@ -347,12 +587,12 @@ Slack (MET) :             198.018ns  (required time - arrival time)
   Path Group:             clk_ssd
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        1.614ns  (logic 0.580ns (35.932%)  route 1.034ns (64.068%))
+  Data Path Delay:        1.503ns  (logic 0.580ns (38.600%)  route 0.923ns (61.400%))
   Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
-    Source Clock Delay      (SCD):    6.343ns
-    Clock Pessimism Removal (CPR):    0.327ns
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.992ns = ( 205.992 - 200.000 ) 
+    Source Clock Delay      (SCD):    6.344ns
+    Clock Pessimism Removal (CPR):    0.330ns
   Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.266ns
@@ -369,14 +609,14 @@ Slack (MET) :             198.018ns  (required time - arrival time)
                                                       0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.719     4.522    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.724     6.343    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/C
+                         net (fo=12, routed)          1.725     6.344    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.456     6.799 f  counter_reg[0]/Q
-                         net (fo=12, routed)          0.703     7.502    counter_reg__0[0]
-    SLICE_X1Y91          LUT2 (Prop_lut2_I1_O)        0.124     7.626 r  an3_i_1/O
-                         net (fo=4, routed)           0.331     7.957    an3_i_1_n_0
-    SLICE_X0Y92          FDPE                                         r  an1_reg/CE
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.456     6.800 f  counter_reg[0]/Q
+                         net (fo=10, routed)          0.544     7.343    counter_reg__0[0]
+    SLICE_X1Y94          LUT2 (Prop_lut2_I1_O)        0.124     7.467 r  an3_i_1/O
+                         net (fo=4, routed)           0.379     7.846    an3_i_1_n_0
+    SLICE_X0Y94          FDPE                                         r  an1_reg/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)  200.000   200.000 r  
@@ -388,18 +628,18 @@ Slack (MET) :             198.018ns  (required time - arrival time)
                                                       0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.639   204.295    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.604   205.991    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an1_reg/C
-                         clock pessimism              0.327   206.318    
-                         clock uncertainty           -0.138   206.180    
-    SLICE_X0Y92          FDPE (Setup_fdpe_C_CE)      -0.205   205.975    an1_reg
+                         net (fo=12, routed)          1.605   205.992    clk_ssd_BUFG
+    SLICE_X0Y94          FDPE                                         r  an1_reg/C
+                         clock pessimism              0.330   206.322    
+                         clock uncertainty           -0.138   206.184    
+    SLICE_X0Y94          FDPE (Setup_fdpe_C_CE)      -0.205   205.979    an1_reg
   -------------------------------------------------------------------
-                         required time                        205.975    
-                         arrival time                          -7.957    
+                         required time                        205.979    
+                         arrival time                          -7.846    
   -------------------------------------------------------------------
-                         slack                                198.018    
+                         slack                                198.133    
 
-Slack (MET) :             198.018ns  (required time - arrival time)
+Slack (MET) :             198.133ns  (required time - arrival time)
   Source:                 counter_reg[0]/C
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Destination:            an2_reg/CE
@@ -407,12 +647,12 @@ Slack (MET) :             198.018ns  (required time - arrival time)
   Path Group:             clk_ssd
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        1.614ns  (logic 0.580ns (35.932%)  route 1.034ns (64.068%))
+  Data Path Delay:        1.503ns  (logic 0.580ns (38.600%)  route 0.923ns (61.400%))
   Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
-    Source Clock Delay      (SCD):    6.343ns
-    Clock Pessimism Removal (CPR):    0.327ns
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.992ns = ( 205.992 - 200.000 ) 
+    Source Clock Delay      (SCD):    6.344ns
+    Clock Pessimism Removal (CPR):    0.330ns
   Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.266ns
@@ -429,14 +669,14 @@ Slack (MET) :             198.018ns  (required time - arrival time)
                                                       0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.719     4.522    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.724     6.343    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/C
+                         net (fo=12, routed)          1.725     6.344    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.456     6.799 f  counter_reg[0]/Q
-                         net (fo=12, routed)          0.703     7.502    counter_reg__0[0]
-    SLICE_X1Y91          LUT2 (Prop_lut2_I1_O)        0.124     7.626 r  an3_i_1/O
-                         net (fo=4, routed)           0.331     7.957    an3_i_1_n_0
-    SLICE_X0Y92          FDPE                                         r  an2_reg/CE
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.456     6.800 f  counter_reg[0]/Q
+                         net (fo=10, routed)          0.544     7.343    counter_reg__0[0]
+    SLICE_X1Y94          LUT2 (Prop_lut2_I1_O)        0.124     7.467 r  an3_i_1/O
+                         net (fo=4, routed)           0.379     7.846    an3_i_1_n_0
+    SLICE_X0Y94          FDPE                                         r  an2_reg/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)  200.000   200.000 r  
@@ -448,18 +688,18 @@ Slack (MET) :             198.018ns  (required time - arrival time)
                                                       0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.639   204.295    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.604   205.991    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an2_reg/C
-                         clock pessimism              0.327   206.318    
-                         clock uncertainty           -0.138   206.180    
-    SLICE_X0Y92          FDPE (Setup_fdpe_C_CE)      -0.205   205.975    an2_reg
+                         net (fo=12, routed)          1.605   205.992    clk_ssd_BUFG
+    SLICE_X0Y94          FDPE                                         r  an2_reg/C
+                         clock pessimism              0.330   206.322    
+                         clock uncertainty           -0.138   206.184    
+    SLICE_X0Y94          FDPE (Setup_fdpe_C_CE)      -0.205   205.979    an2_reg
   -------------------------------------------------------------------
-                         required time                        205.975    
-                         arrival time                          -7.957    
+                         required time                        205.979    
+                         arrival time                          -7.846    
   -------------------------------------------------------------------
-                         slack                                198.018    
+                         slack                                198.133    
 
-Slack (MET) :             198.018ns  (required time - arrival time)
+Slack (MET) :             198.133ns  (required time - arrival time)
   Source:                 counter_reg[0]/C
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Destination:            an3_reg/CE
@@ -467,12 +707,12 @@ Slack (MET) :             198.018ns  (required time - arrival time)
   Path Group:             clk_ssd
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        1.614ns  (logic 0.580ns (35.932%)  route 1.034ns (64.068%))
+  Data Path Delay:        1.503ns  (logic 0.580ns (38.600%)  route 0.923ns (61.400%))
   Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
-    Source Clock Delay      (SCD):    6.343ns
-    Clock Pessimism Removal (CPR):    0.327ns
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.992ns = ( 205.992 - 200.000 ) 
+    Source Clock Delay      (SCD):    6.344ns
+    Clock Pessimism Removal (CPR):    0.330ns
   Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.266ns
@@ -489,14 +729,14 @@ Slack (MET) :             198.018ns  (required time - arrival time)
                                                       0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.719     4.522    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.724     6.343    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/C
+                         net (fo=12, routed)          1.725     6.344    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.456     6.799 f  counter_reg[0]/Q
-                         net (fo=12, routed)          0.703     7.502    counter_reg__0[0]
-    SLICE_X1Y91          LUT2 (Prop_lut2_I1_O)        0.124     7.626 r  an3_i_1/O
-                         net (fo=4, routed)           0.331     7.957    an3_i_1_n_0
-    SLICE_X0Y92          FDPE                                         r  an3_reg/CE
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.456     6.800 f  counter_reg[0]/Q
+                         net (fo=10, routed)          0.544     7.343    counter_reg__0[0]
+    SLICE_X1Y94          LUT2 (Prop_lut2_I1_O)        0.124     7.467 r  an3_i_1/O
+                         net (fo=4, routed)           0.379     7.846    an3_i_1_n_0
+    SLICE_X0Y94          FDPE                                         r  an3_reg/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)  200.000   200.000 r  
@@ -508,31 +748,31 @@ Slack (MET) :             198.018ns  (required time - arrival time)
                                                       0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.639   204.295    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.604   205.991    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an3_reg/C
-                         clock pessimism              0.327   206.318    
-                         clock uncertainty           -0.138   206.180    
-    SLICE_X0Y92          FDPE (Setup_fdpe_C_CE)      -0.205   205.975    an3_reg
+                         net (fo=12, routed)          1.605   205.992    clk_ssd_BUFG
+    SLICE_X0Y94          FDPE                                         r  an3_reg/C
+                         clock pessimism              0.330   206.322    
+                         clock uncertainty           -0.138   206.184    
+    SLICE_X0Y94          FDPE (Setup_fdpe_C_CE)      -0.205   205.979    an3_reg
   -------------------------------------------------------------------
-                         required time                        205.975    
-                         arrival time                          -7.957    
+                         required time                        205.979    
+                         arrival time                          -7.846    
   -------------------------------------------------------------------
-                         slack                                198.018    
+                         slack                                198.133    
 
-Slack (MET) :             198.270ns  (required time - arrival time)
-  Source:                 char_reg[1]/C
-                            (rising edge-triggered cell FDCE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+Slack (MET) :             198.246ns  (required time - arrival time)
+  Source:                 counter_reg[3]/C
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Destination:            char_reg[1]/D
                             (rising edge-triggered cell FDCE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Path Group:             clk_ssd
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        1.624ns  (logic 0.580ns (35.706%)  route 1.044ns (64.294%))
-  Logic Levels:           1  (LUT5=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+  Data Path Delay:        1.626ns  (logic 0.718ns (44.167%)  route 0.908ns (55.833%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
     Source Clock Delay      (SCD):    6.343ns
-    Clock Pessimism Removal (CPR):    0.352ns
+    Clock Pessimism Removal (CPR):    0.330ns
   Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.266ns
@@ -549,74 +789,14 @@ Slack (MET) :             198.270ns  (required time - arrival time)
                                                       0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.719     4.522    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.724     6.343    clk_ssd_BUFG
-    SLICE_X0Y91          FDCE                                         r  char_reg[1]/C
+                         net (fo=12, routed)          1.724     6.343    clk_ssd_BUFG
+    SLICE_X1Y92          FDPE                                         r  counter_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y91          FDCE (Prop_fdce_C_Q)         0.456     6.799 r  char_reg[1]/Q
-                         net (fo=8, routed)           1.044     7.843    char_reg_n_0_[1]
-    SLICE_X0Y91          LUT5 (Prop_lut5_I4_O)        0.124     7.967 r  char[1]_i_1/O
-                         net (fo=1, routed)           0.000     7.967    char[1]_i_1_n_0
-    SLICE_X0Y91          FDCE                                         r  char_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_ssd rise edge)  200.000   200.000 r  
-    E3                                                0.000   200.000 r  clk (IN)
-                         net (fo=0)                   0.000   200.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411   201.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.162   202.573    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           1.639   204.295    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.604   205.991    clk_ssd_BUFG
-    SLICE_X0Y91          FDCE                                         r  char_reg[1]/C
-                         clock pessimism              0.352   206.343    
-                         clock uncertainty           -0.138   206.205    
-    SLICE_X0Y91          FDCE (Setup_fdce_C_D)        0.032   206.237    char_reg[1]
-  -------------------------------------------------------------------
-                         required time                        206.237    
-                         arrival time                          -7.967    
-  -------------------------------------------------------------------
-                         slack                                198.270    
-
-Slack (MET) :             198.279ns  (required time - arrival time)
-  Source:                 counter_reg[2]/C
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            an0_reg/D
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Path Group:             clk_ssd
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        1.587ns  (logic 0.715ns (45.059%)  route 0.872ns (54.941%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
-    Source Clock Delay      (SCD):    6.343ns
-    Clock Pessimism Removal (CPR):    0.327ns
-  Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.266ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.233     2.715    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           1.719     4.522    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.724     6.343    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.419     6.762 r  counter_reg[2]/Q
-                         net (fo=8, routed)           0.872     7.634    counter_reg__1[2]
-    SLICE_X0Y92          LUT3 (Prop_lut3_I0_O)        0.296     7.930 r  an0_i_1/O
-                         net (fo=1, routed)           0.000     7.930    an0_i_1_n_0
-    SLICE_X0Y92          FDPE                                         r  an0_reg/D
+    SLICE_X1Y92          FDPE (Prop_fdpe_C_Q)         0.419     6.762 f  counter_reg[3]/Q
+                         net (fo=9, routed)           0.908     7.669    counter_reg__1[3]
+    SLICE_X0Y92          LUT2 (Prop_lut2_I1_O)        0.299     7.968 r  char[1]_i_1/O
+                         net (fo=1, routed)           0.000     7.968    char[1]_i_1_n_0
+    SLICE_X0Y92          FDCE                                         r  char_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)  200.000   200.000 r  
@@ -628,196 +808,16 @@ Slack (MET) :             198.279ns  (required time - arrival time)
                                                       0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           1.639   204.295    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.604   205.991    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an0_reg/C
-                         clock pessimism              0.327   206.318    
-                         clock uncertainty           -0.138   206.180    
-    SLICE_X0Y92          FDPE (Setup_fdpe_C_D)        0.029   206.209    an0_reg
+                         net (fo=12, routed)          1.604   205.991    clk_ssd_BUFG
+    SLICE_X0Y92          FDCE                                         r  char_reg[1]/C
+                         clock pessimism              0.330   206.321    
+                         clock uncertainty           -0.138   206.183    
+    SLICE_X0Y92          FDCE (Setup_fdce_C_D)        0.031   206.214    char_reg[1]
   -------------------------------------------------------------------
-                         required time                        206.209    
-                         arrival time                          -7.930    
+                         required time                        206.214    
+                         arrival time                          -7.968    
   -------------------------------------------------------------------
-                         slack                                198.279    
-
-Slack (MET) :             198.289ns  (required time - arrival time)
-  Source:                 counter_reg[2]/C
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            an2_reg/D
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Path Group:             clk_ssd
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        1.580ns  (logic 0.715ns (45.266%)  route 0.865ns (54.735%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
-    Source Clock Delay      (SCD):    6.343ns
-    Clock Pessimism Removal (CPR):    0.327ns
-  Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.266ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.233     2.715    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           1.719     4.522    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.724     6.343    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.419     6.762 r  counter_reg[2]/Q
-                         net (fo=8, routed)           0.865     7.626    counter_reg__1[2]
-    SLICE_X0Y92          LUT3 (Prop_lut3_I0_O)        0.296     7.922 r  an2_i_1/O
-                         net (fo=1, routed)           0.000     7.922    an2_i_1_n_0
-    SLICE_X0Y92          FDPE                                         r  an2_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_ssd rise edge)  200.000   200.000 r  
-    E3                                                0.000   200.000 r  clk (IN)
-                         net (fo=0)                   0.000   200.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411   201.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.162   202.573    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           1.639   204.295    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.604   205.991    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an2_reg/C
-                         clock pessimism              0.327   206.318    
-                         clock uncertainty           -0.138   206.180    
-    SLICE_X0Y92          FDPE (Setup_fdpe_C_D)        0.031   206.211    an2_reg
-  -------------------------------------------------------------------
-                         required time                        206.211    
-                         arrival time                          -7.922    
-  -------------------------------------------------------------------
-                         slack                                198.289    
-
-Slack (MET) :             198.297ns  (required time - arrival time)
-  Source:                 counter_reg[2]/C
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            an1_reg/D
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Path Group:             clk_ssd
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        1.615ns  (logic 0.743ns (46.012%)  route 0.872ns (53.988%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
-    Source Clock Delay      (SCD):    6.343ns
-    Clock Pessimism Removal (CPR):    0.327ns
-  Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.266ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.233     2.715    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           1.719     4.522    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.724     6.343    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.419     6.762 f  counter_reg[2]/Q
-                         net (fo=8, routed)           0.872     7.634    counter_reg__1[2]
-    SLICE_X0Y92          LUT3 (Prop_lut3_I0_O)        0.324     7.958 r  an1_i_1/O
-                         net (fo=1, routed)           0.000     7.958    an1_i_1_n_0
-    SLICE_X0Y92          FDPE                                         r  an1_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_ssd rise edge)  200.000   200.000 r  
-    E3                                                0.000   200.000 r  clk (IN)
-                         net (fo=0)                   0.000   200.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411   201.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.162   202.573    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           1.639   204.295    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.604   205.991    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an1_reg/C
-                         clock pessimism              0.327   206.318    
-                         clock uncertainty           -0.138   206.180    
-    SLICE_X0Y92          FDPE (Setup_fdpe_C_D)        0.075   206.255    an1_reg
-  -------------------------------------------------------------------
-                         required time                        206.255    
-                         arrival time                          -7.958    
-  -------------------------------------------------------------------
-                         slack                                198.297    
-
-Slack (MET) :             198.305ns  (required time - arrival time)
-  Source:                 counter_reg[2]/C
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            an3_reg/D
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Path Group:             clk_ssd
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            200.000ns  (clk_ssd rise@200.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        1.608ns  (logic 0.743ns (46.219%)  route 0.865ns (53.781%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.991ns = ( 205.991 - 200.000 ) 
-    Source Clock Delay      (SCD):    6.343ns
-    Clock Pessimism Removal (CPR):    0.327ns
-  Clock Uncertainty:      0.138ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.266ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.233     2.715    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.088     2.803 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           1.719     4.522    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     4.618 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.724     6.343    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.419     6.762 f  counter_reg[2]/Q
-                         net (fo=8, routed)           0.865     7.626    counter_reg__1[2]
-    SLICE_X0Y92          LUT3 (Prop_lut3_I0_O)        0.324     7.950 r  an3_i_2/O
-                         net (fo=1, routed)           0.000     7.950    an3_i_2_n_0
-    SLICE_X0Y92          FDPE                                         r  an3_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_ssd rise edge)  200.000   200.000 r  
-    E3                                                0.000   200.000 r  clk (IN)
-                         net (fo=0)                   0.000   200.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         1.411   201.411 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           1.162   202.573    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.083   202.656 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           1.639   204.295    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091   204.386 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          1.604   205.991    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an3_reg/C
-                         clock pessimism              0.327   206.318    
-                         clock uncertainty           -0.138   206.180    
-    SLICE_X0Y92          FDPE (Setup_fdpe_C_D)        0.075   206.255    an3_reg
-  -------------------------------------------------------------------
-                         required time                        206.255    
-                         arrival time                          -7.950    
-  -------------------------------------------------------------------
-                         slack                                198.305    
+                         slack                                198.246    
 
 
 
@@ -825,16 +825,16 @@ Slack (MET) :             198.305ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.186ns  (arrival time - required time)
-  Source:                 counter_reg[1]/C
+Slack (MET) :             0.213ns  (arrival time - required time)
+  Source:                 counter_reg[2]/C
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            char_reg[1]/D
+  Destination:            char_reg[2]/D
                             (rising edge-triggered cell FDCE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Path Group:             clk_ssd
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        0.291ns  (logic 0.186ns (63.978%)  route 0.105ns (36.022%))
-  Logic Levels:           1  (LUT5=1)
+  Data Path Delay:        0.333ns  (logic 0.190ns (56.993%)  route 0.143ns (43.007%))
+  Logic Levels:           1  (LUT2=1)
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    2.419ns
     Source Clock Delay      (SCD):    1.867ns
@@ -851,14 +851,14 @@ Slack (MET) :             0.186ns  (arrival time - required time)
                                                       0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.499     1.239    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.603     1.867    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[1]/C
+                         net (fo=12, routed)          0.603     1.867    clk_ssd_BUFG
+    SLICE_X1Y92          FDPE                                         r  counter_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.141     2.008 r  counter_reg[1]/Q
-                         net (fo=7, routed)           0.105     2.113    counter_reg__1[1]
-    SLICE_X0Y91          LUT5 (Prop_lut5_I3_O)        0.045     2.158 r  char[1]_i_1/O
-                         net (fo=1, routed)           0.000     2.158    char[1]_i_1_n_0
-    SLICE_X0Y91          FDCE                                         r  char_reg[1]/D
+    SLICE_X1Y92          FDPE (Prop_fdpe_C_Q)         0.141     2.008 r  counter_reg[2]/Q
+                         net (fo=10, routed)          0.143     2.152    counter_reg__1[2]
+    SLICE_X0Y92          LUT2 (Prop_lut2_I0_O)        0.049     2.201 r  char[2]_i_1/O
+                         net (fo=1, routed)           0.000     2.201    char[2]_i_1_n_0
+    SLICE_X0Y92          FDCE                                         r  char_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)    0.000     0.000 r  
@@ -870,30 +870,85 @@ Slack (MET) :             0.186ns  (arrival time - required time)
                                                       0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.544     1.514    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.876     2.419    clk_ssd_BUFG
-    SLICE_X0Y91          FDCE                                         r  char_reg[1]/C
+                         net (fo=12, routed)          0.876     2.419    clk_ssd_BUFG
+    SLICE_X0Y92          FDCE                                         r  char_reg[2]/C
                          clock pessimism             -0.538     1.880    
-    SLICE_X0Y91          FDCE (Hold_fdce_C_D)         0.092     1.972    char_reg[1]
+    SLICE_X0Y92          FDCE (Hold_fdce_C_D)         0.107     1.987    char_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.987    
+                         arrival time                           2.201    
+  -------------------------------------------------------------------
+                         slack                                  0.213    
+
+Slack (MET) :             0.224ns  (arrival time - required time)
+  Source:                 counter_reg[2]/C
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            char_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Path Group:             clk_ssd
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
+  Data Path Delay:        0.329ns  (logic 0.186ns (56.470%)  route 0.143ns (43.530%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.419ns
+    Source Clock Delay      (SCD):    1.867ns
+    Clock Pessimism Removal (CPR):    0.538ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.440     0.690    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           0.499     1.239    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          0.603     1.867    clk_ssd_BUFG
+    SLICE_X1Y92          FDPE                                         r  counter_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y92          FDPE (Prop_fdpe_C_Q)         0.141     2.008 f  counter_reg[2]/Q
+                         net (fo=10, routed)          0.143     2.152    counter_reg__1[2]
+    SLICE_X0Y92          LUT2 (Prop_lut2_I0_O)        0.045     2.197 r  char[1]_i_1/O
+                         net (fo=1, routed)           0.000     2.197    char[1]_i_1_n_0
+    SLICE_X0Y92          FDCE                                         r  char_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.480     0.918    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           0.544     1.514    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          0.876     2.419    clk_ssd_BUFG
+    SLICE_X0Y92          FDCE                                         r  char_reg[1]/C
+                         clock pessimism             -0.538     1.880    
+    SLICE_X0Y92          FDCE (Hold_fdce_C_D)         0.092     1.972    char_reg[1]
   -------------------------------------------------------------------
                          required time                         -1.972    
-                         arrival time                           2.158    
+                         arrival time                           2.197    
   -------------------------------------------------------------------
-                         slack                                  0.186    
+                         slack                                  0.224    
 
-Slack (MET) :             0.280ns  (arrival time - required time)
+Slack (MET) :             0.278ns  (arrival time - required time)
   Source:                 counter_reg[0]/C
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            an1_reg/D
+  Destination:            counter_reg[1]/D
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Path Group:             clk_ssd
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        0.403ns  (logic 0.189ns (46.890%)  route 0.214ns (53.110%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.419ns
-    Source Clock Delay      (SCD):    1.867ns
-    Clock Pessimism Removal (CPR):    0.535ns
+  Data Path Delay:        0.385ns  (logic 0.183ns (47.580%)  route 0.202ns (52.420%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.420ns
+    Source Clock Delay      (SCD):    1.868ns
+    Clock Pessimism Removal (CPR):    0.551ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -906,69 +961,14 @@ Slack (MET) :             0.280ns  (arrival time - required time)
                                                       0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.499     1.239    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.603     1.867    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/C
+                         net (fo=12, routed)          0.604     1.868    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.141     2.008 f  counter_reg[0]/Q
-                         net (fo=12, routed)          0.214     2.222    counter_reg__0[0]
-    SLICE_X0Y92          LUT3 (Prop_lut3_I2_O)        0.048     2.270 r  an1_i_1/O
-                         net (fo=1, routed)           0.000     2.270    an1_i_1_n_0
-    SLICE_X0Y92          FDPE                                         r  an1_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.480     0.918    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           0.544     1.514    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.876     2.419    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an1_reg/C
-                         clock pessimism             -0.535     1.883    
-    SLICE_X0Y92          FDPE (Hold_fdpe_C_D)         0.107     1.990    an1_reg
-  -------------------------------------------------------------------
-                         required time                         -1.990    
-                         arrival time                           2.270    
-  -------------------------------------------------------------------
-                         slack                                  0.280    
-
-Slack (MET) :             0.282ns  (arrival time - required time)
-  Source:                 counter_reg[0]/C
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            an3_reg/D
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Path Group:             clk_ssd
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        0.405ns  (logic 0.190ns (46.905%)  route 0.215ns (53.095%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.419ns
-    Source Clock Delay      (SCD):    1.867ns
-    Clock Pessimism Removal (CPR):    0.535ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.440     0.690    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           0.499     1.239    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.603     1.867    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.141     2.008 f  counter_reg[0]/Q
-                         net (fo=12, routed)          0.215     2.223    counter_reg__0[0]
-    SLICE_X0Y92          LUT3 (Prop_lut3_I2_O)        0.049     2.272 r  an3_i_2/O
-                         net (fo=1, routed)           0.000     2.272    an3_i_2_n_0
-    SLICE_X0Y92          FDPE                                         r  an3_reg/D
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.141     2.009 r  counter_reg[0]/Q
+                         net (fo=10, routed)          0.202     2.211    counter_reg__0[0]
+    SLICE_X1Y94          LUT2 (Prop_lut2_I1_O)        0.042     2.253 r  counter[1]_i_1/O
+                         net (fo=1, routed)           0.000     2.253    p_0_in[0]
+    SLICE_X1Y94          FDPE                                         r  counter_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)    0.000     0.000 r  
@@ -980,135 +980,25 @@ Slack (MET) :             0.282ns  (arrival time - required time)
                                                       0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.544     1.514    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.876     2.419    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an3_reg/C
-                         clock pessimism             -0.535     1.883    
-    SLICE_X0Y92          FDPE (Hold_fdpe_C_D)         0.107     1.990    an3_reg
-  -------------------------------------------------------------------
-                         required time                         -1.990    
-                         arrival time                           2.272    
-  -------------------------------------------------------------------
-                         slack                                  0.282    
-
-Slack (MET) :             0.293ns  (arrival time - required time)
-  Source:                 counter_reg[0]/C
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            an0_reg/D
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Path Group:             clk_ssd
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        0.400ns  (logic 0.186ns (46.492%)  route 0.214ns (53.508%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.419ns
-    Source Clock Delay      (SCD):    1.867ns
-    Clock Pessimism Removal (CPR):    0.535ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.440     0.690    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           0.499     1.239    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.603     1.867    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.141     2.008 f  counter_reg[0]/Q
-                         net (fo=12, routed)          0.214     2.222    counter_reg__0[0]
-    SLICE_X0Y92          LUT3 (Prop_lut3_I2_O)        0.045     2.267 r  an0_i_1/O
-                         net (fo=1, routed)           0.000     2.267    an0_i_1_n_0
-    SLICE_X0Y92          FDPE                                         r  an0_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.480     0.918    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           0.544     1.514    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.876     2.419    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an0_reg/C
-                         clock pessimism             -0.535     1.883    
-    SLICE_X0Y92          FDPE (Hold_fdpe_C_D)         0.091     1.974    an0_reg
-  -------------------------------------------------------------------
-                         required time                         -1.974    
-                         arrival time                           2.267    
-  -------------------------------------------------------------------
-                         slack                                  0.293    
-
-Slack (MET) :             0.293ns  (arrival time - required time)
-  Source:                 counter_reg[0]/C
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            an2_reg/D
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Path Group:             clk_ssd
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        0.401ns  (logic 0.186ns (46.376%)  route 0.215ns (53.624%))
-  Logic Levels:           1  (LUT3=1)
-  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.419ns
-    Source Clock Delay      (SCD):    1.867ns
-    Clock Pessimism Removal (CPR):    0.535ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.440     0.690    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           0.499     1.239    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.603     1.867    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.141     2.008 f  counter_reg[0]/Q
-                         net (fo=12, routed)          0.215     2.223    counter_reg__0[0]
-    SLICE_X0Y92          LUT3 (Prop_lut3_I2_O)        0.045     2.268 r  an2_i_1/O
-                         net (fo=1, routed)           0.000     2.268    an2_i_1_n_0
-    SLICE_X0Y92          FDPE                                         r  an2_reg/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.480     0.918    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           0.544     1.514    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.876     2.419    clk_ssd_BUFG
-    SLICE_X0Y92          FDPE                                         r  an2_reg/C
-                         clock pessimism             -0.535     1.883    
-    SLICE_X0Y92          FDPE (Hold_fdpe_C_D)         0.092     1.975    an2_reg
+                         net (fo=12, routed)          0.877     2.420    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[1]/C
+                         clock pessimism             -0.551     1.868    
+    SLICE_X1Y94          FDPE (Hold_fdpe_C_D)         0.107     1.975    counter_reg[1]
   -------------------------------------------------------------------
                          required time                         -1.975    
-                         arrival time                           2.268    
+                         arrival time                           2.253    
   -------------------------------------------------------------------
-                         slack                                  0.293    
+                         slack                                  0.278    
 
-Slack (MET) :             0.299ns  (arrival time - required time)
-  Source:                 counter_reg[3]/C
+Slack (MET) :             0.278ns  (arrival time - required time)
+  Source:                 counter_reg[2]/C
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Destination:            counter_reg[3]/D
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Path Group:             clk_ssd
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        0.406ns  (logic 0.230ns (56.681%)  route 0.176ns (43.319%))
+  Data Path Delay:        0.385ns  (logic 0.183ns (47.580%)  route 0.202ns (52.420%))
   Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    2.419ns
@@ -1126,14 +1016,14 @@ Slack (MET) :             0.299ns  (arrival time - required time)
                                                       0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.499     1.239    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.603     1.867    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[3]/C
+                         net (fo=12, routed)          0.603     1.867    clk_ssd_BUFG
+    SLICE_X1Y92          FDPE                                         r  counter_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.128     1.995 r  counter_reg[3]/Q
-                         net (fo=7, routed)           0.176     2.171    counter_reg__1[3]
-    SLICE_X1Y91          LUT4 (Prop_lut4_I0_O)        0.102     2.273 r  counter[3]_i_1/O
-                         net (fo=1, routed)           0.000     2.273    p_0_in[2]
-    SLICE_X1Y91          FDPE                                         r  counter_reg[3]/D
+    SLICE_X1Y92          FDPE (Prop_fdpe_C_Q)         0.141     2.008 r  counter_reg[2]/Q
+                         net (fo=10, routed)          0.202     2.210    counter_reg__1[2]
+    SLICE_X1Y92          LUT4 (Prop_lut4_I3_O)        0.042     2.252 r  counter[3]_i_1/O
+                         net (fo=1, routed)           0.000     2.252    p_0_in[2]
+    SLICE_X1Y92          FDPE                                         r  counter_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)    0.000     0.000 r  
@@ -1145,29 +1035,29 @@ Slack (MET) :             0.299ns  (arrival time - required time)
                                                       0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.544     1.514    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.876     2.419    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[3]/C
+                         net (fo=12, routed)          0.876     2.419    clk_ssd_BUFG
+    SLICE_X1Y92          FDPE                                         r  counter_reg[3]/C
                          clock pessimism             -0.551     1.867    
-    SLICE_X1Y91          FDPE (Hold_fdpe_C_D)         0.107     1.974    counter_reg[3]
+    SLICE_X1Y92          FDPE (Hold_fdpe_C_D)         0.107     1.974    counter_reg[3]
   -------------------------------------------------------------------
                          required time                         -1.974    
-                         arrival time                           2.273    
+                         arrival time                           2.252    
   -------------------------------------------------------------------
-                         slack                                  0.299    
+                         slack                                  0.278    
 
-Slack (MET) :             0.312ns  (arrival time - required time)
-  Source:                 counter_reg[3]/C
+Slack (MET) :             0.297ns  (arrival time - required time)
+  Source:                 counter_reg[0]/C
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            char_reg[3]/D
+  Destination:            counter_reg[0]/D
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Path Group:             clk_ssd
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        0.403ns  (logic 0.227ns (56.358%)  route 0.176ns (43.642%))
-  Logic Levels:           1  (LUT5=1)
+  Data Path Delay:        0.388ns  (logic 0.186ns (47.986%)  route 0.202ns (52.014%))
+  Logic Levels:           1  (LUT1=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.419ns
-    Source Clock Delay      (SCD):    1.867ns
+    Destination Clock Delay (DCD):    2.420ns
+    Source Clock Delay      (SCD):    1.868ns
     Clock Pessimism Removal (CPR):    0.551ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1181,14 +1071,14 @@ Slack (MET) :             0.312ns  (arrival time - required time)
                                                       0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.499     1.239    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.603     1.867    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[3]/C
+                         net (fo=12, routed)          0.604     1.868    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.128     1.995 f  counter_reg[3]/Q
-                         net (fo=7, routed)           0.176     2.171    counter_reg__1[3]
-    SLICE_X1Y91          LUT5 (Prop_lut5_I1_O)        0.099     2.270 r  char[3]_i_1/O
-                         net (fo=1, routed)           0.000     2.270    char[3]_i_1_n_0
-    SLICE_X1Y91          FDPE                                         r  char_reg[3]/D
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.141     2.009 f  counter_reg[0]/Q
+                         net (fo=10, routed)          0.202     2.211    counter_reg__0[0]
+    SLICE_X1Y94          LUT1 (Prop_lut1_I0_O)        0.045     2.256 r  counter[0]_i_1/O
+                         net (fo=1, routed)           0.000     2.256    counter[0]_i_1_n_0
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)    0.000     0.000 r  
@@ -1200,25 +1090,25 @@ Slack (MET) :             0.312ns  (arrival time - required time)
                                                       0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.544     1.514    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.876     2.419    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  char_reg[3]/C
-                         clock pessimism             -0.551     1.867    
-    SLICE_X1Y91          FDPE (Hold_fdpe_C_D)         0.091     1.958    char_reg[3]
+                         net (fo=12, routed)          0.877     2.420    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
+                         clock pessimism             -0.551     1.868    
+    SLICE_X1Y94          FDPE (Hold_fdpe_C_D)         0.091     1.959    counter_reg[0]
   -------------------------------------------------------------------
-                         required time                         -1.958    
-                         arrival time                           2.270    
+                         required time                         -1.959    
+                         arrival time                           2.256    
   -------------------------------------------------------------------
-                         slack                                  0.312    
+                         slack                                  0.297    
 
-Slack (MET) :             0.341ns  (arrival time - required time)
-  Source:                 counter_reg[1]/C
+Slack (MET) :             0.297ns  (arrival time - required time)
+  Source:                 counter_reg[2]/C
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Destination:            counter_reg[2]/D
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Path Group:             clk_ssd
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        0.448ns  (logic 0.184ns (41.040%)  route 0.264ns (58.960%))
+  Data Path Delay:        0.388ns  (logic 0.186ns (47.986%)  route 0.202ns (52.014%))
   Logic Levels:           1  (LUT3=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    2.419ns
@@ -1236,69 +1126,14 @@ Slack (MET) :             0.341ns  (arrival time - required time)
                                                       0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.499     1.239    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.603     1.867    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[1]/C
+                         net (fo=12, routed)          0.603     1.867    clk_ssd_BUFG
+    SLICE_X1Y92          FDPE                                         r  counter_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.141     2.008 r  counter_reg[1]/Q
-                         net (fo=7, routed)           0.264     2.273    counter_reg__1[1]
-    SLICE_X1Y91          LUT3 (Prop_lut3_I2_O)        0.043     2.316 r  counter[2]_i_1/O
-                         net (fo=1, routed)           0.000     2.316    p_0_in[1]
-    SLICE_X1Y91          FDPE                                         r  counter_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.480     0.918    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           0.544     1.514    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.876     2.419    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[2]/C
-                         clock pessimism             -0.551     1.867    
-    SLICE_X1Y91          FDPE (Hold_fdpe_C_D)         0.107     1.974    counter_reg[2]
-  -------------------------------------------------------------------
-                         required time                         -1.974    
-                         arrival time                           2.316    
-  -------------------------------------------------------------------
-                         slack                                  0.341    
-
-Slack (MET) :             0.358ns  (arrival time - required time)
-  Source:                 counter_reg[1]/C
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            counter_reg[1]/D
-                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Path Group:             clk_ssd
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        0.450ns  (logic 0.186ns (41.302%)  route 0.264ns (58.698%))
-  Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.419ns
-    Source Clock Delay      (SCD):    1.867ns
-    Clock Pessimism Removal (CPR):    0.551ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_ssd rise edge)    0.000     0.000 r  
-    E3                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    clk
-    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
-                         net (fo=1, routed)           0.440     0.690    clk_IBUF
-    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
-                                                      0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
-                         net (fo=1, routed)           0.499     1.239    clk_ssd
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.603     1.867    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.141     2.008 r  counter_reg[1]/Q
-                         net (fo=7, routed)           0.264     2.273    counter_reg__1[1]
-    SLICE_X1Y91          LUT2 (Prop_lut2_I0_O)        0.045     2.318 r  counter[1]_i_1/O
-                         net (fo=1, routed)           0.000     2.318    p_0_in[0]
-    SLICE_X1Y91          FDPE                                         r  counter_reg[1]/D
+    SLICE_X1Y92          FDPE (Prop_fdpe_C_Q)         0.141     2.008 r  counter_reg[2]/Q
+                         net (fo=10, routed)          0.202     2.210    counter_reg__1[2]
+    SLICE_X1Y92          LUT3 (Prop_lut3_I0_O)        0.045     2.255 r  counter[2]_i_1/O
+                         net (fo=1, routed)           0.000     2.255    p_0_in[1]
+    SLICE_X1Y92          FDPE                                         r  counter_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)    0.000     0.000 r  
@@ -1310,30 +1145,30 @@ Slack (MET) :             0.358ns  (arrival time - required time)
                                                       0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.544     1.514    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.876     2.419    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[1]/C
+                         net (fo=12, routed)          0.876     2.419    clk_ssd_BUFG
+    SLICE_X1Y92          FDPE                                         r  counter_reg[2]/C
                          clock pessimism             -0.551     1.867    
-    SLICE_X1Y91          FDPE (Hold_fdpe_C_D)         0.092     1.959    counter_reg[1]
+    SLICE_X1Y92          FDPE (Hold_fdpe_C_D)         0.091     1.958    counter_reg[2]
   -------------------------------------------------------------------
-                         required time                         -1.959    
-                         arrival time                           2.318    
+                         required time                         -1.958    
+                         arrival time                           2.255    
   -------------------------------------------------------------------
-                         slack                                  0.358    
+                         slack                                  0.297    
 
-Slack (MET) :             0.359ns  (arrival time - required time)
+Slack (MET) :             0.334ns  (arrival time - required time)
   Source:                 counter_reg[0]/C
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
-  Destination:            counter_reg[0]/D
+  Destination:            an2_reg/D
                             (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
   Path Group:             clk_ssd
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
-  Data Path Delay:        0.451ns  (logic 0.186ns (41.210%)  route 0.265ns (58.790%))
-  Logic Levels:           1  (LUT1=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.419ns
-    Source Clock Delay      (SCD):    1.867ns
-    Clock Pessimism Removal (CPR):    0.551ns
+  Data Path Delay:        0.454ns  (logic 0.185ns (40.784%)  route 0.269ns (59.216%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.420ns
+    Source Clock Delay      (SCD):    1.868ns
+    Clock Pessimism Removal (CPR):    0.538ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1346,14 +1181,14 @@ Slack (MET) :             0.359ns  (arrival time - required time)
                                                       0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.499     1.239    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.603     1.867    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/C
+                         net (fo=12, routed)          0.604     1.868    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X1Y91          FDPE (Prop_fdpe_C_Q)         0.141     2.008 f  counter_reg[0]/Q
-                         net (fo=12, routed)          0.265     2.274    counter_reg__0[0]
-    SLICE_X1Y91          LUT1 (Prop_lut1_I0_O)        0.045     2.319 r  counter[0]_i_1/O
-                         net (fo=1, routed)           0.000     2.319    counter[0]_i_1_n_0
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/D
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.141     2.009 f  counter_reg[0]/Q
+                         net (fo=10, routed)          0.269     2.278    counter_reg__0[0]
+    SLICE_X0Y94          LUT3 (Prop_lut3_I2_O)        0.044     2.322 r  an2_i_1/O
+                         net (fo=1, routed)           0.000     2.322    an2_i_1_n_0
+    SLICE_X0Y94          FDPE                                         r  an2_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_ssd rise edge)    0.000     0.000 r  
@@ -1365,15 +1200,180 @@ Slack (MET) :             0.359ns  (arrival time - required time)
                                                       0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
                          net (fo=1, routed)           0.544     1.514    clk_ssd
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
-                         net (fo=11, routed)          0.876     2.419    clk_ssd_BUFG
-    SLICE_X1Y91          FDPE                                         r  counter_reg[0]/C
-                         clock pessimism             -0.551     1.867    
-    SLICE_X1Y91          FDPE (Hold_fdpe_C_D)         0.092     1.959    counter_reg[0]
+                         net (fo=12, routed)          0.877     2.420    clk_ssd_BUFG
+    SLICE_X0Y94          FDPE                                         r  an2_reg/C
+                         clock pessimism             -0.538     1.881    
+    SLICE_X0Y94          FDPE (Hold_fdpe_C_D)         0.107     1.988    an2_reg
   -------------------------------------------------------------------
-                         required time                         -1.959    
-                         arrival time                           2.319    
+                         required time                         -1.988    
+                         arrival time                           2.322    
   -------------------------------------------------------------------
-                         slack                                  0.359    
+                         slack                                  0.334    
+
+Slack (MET) :             0.336ns  (arrival time - required time)
+  Source:                 counter_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            an3_reg/D
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Path Group:             clk_ssd
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
+  Data Path Delay:        0.456ns  (logic 0.185ns (40.543%)  route 0.271ns (59.457%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.420ns
+    Source Clock Delay      (SCD):    1.868ns
+    Clock Pessimism Removal (CPR):    0.538ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.440     0.690    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           0.499     1.239    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          0.604     1.868    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.141     2.009 f  counter_reg[0]/Q
+                         net (fo=10, routed)          0.271     2.281    counter_reg__0[0]
+    SLICE_X0Y94          LUT3 (Prop_lut3_I2_O)        0.044     2.325 r  an3_i_2/O
+                         net (fo=1, routed)           0.000     2.325    an3_i_2_n_0
+    SLICE_X0Y94          FDPE                                         r  an3_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.480     0.918    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           0.544     1.514    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          0.877     2.420    clk_ssd_BUFG
+    SLICE_X0Y94          FDPE                                         r  an3_reg/C
+                         clock pessimism             -0.538     1.881    
+    SLICE_X0Y94          FDPE (Hold_fdpe_C_D)         0.107     1.988    an3_reg
+  -------------------------------------------------------------------
+                         required time                         -1.988    
+                         arrival time                           2.325    
+  -------------------------------------------------------------------
+                         slack                                  0.336    
+
+Slack (MET) :             0.350ns  (arrival time - required time)
+  Source:                 counter_reg[0]/C
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            an1_reg/D
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Path Group:             clk_ssd
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
+  Data Path Delay:        0.455ns  (logic 0.186ns (40.914%)  route 0.269ns (59.086%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.420ns
+    Source Clock Delay      (SCD):    1.868ns
+    Clock Pessimism Removal (CPR):    0.538ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.440     0.690    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           0.499     1.239    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          0.604     1.868    clk_ssd_BUFG
+    SLICE_X1Y94          FDPE                                         r  counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y94          FDPE (Prop_fdpe_C_Q)         0.141     2.009 f  counter_reg[0]/Q
+                         net (fo=10, routed)          0.269     2.278    counter_reg__0[0]
+    SLICE_X0Y94          LUT3 (Prop_lut3_I2_O)        0.045     2.323 r  an1_i_1/O
+                         net (fo=1, routed)           0.000     2.323    an1_i_1_n_0
+    SLICE_X0Y94          FDPE                                         r  an1_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.480     0.918    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           0.544     1.514    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          0.877     2.420    clk_ssd_BUFG
+    SLICE_X0Y94          FDPE                                         r  an1_reg/C
+                         clock pessimism             -0.538     1.881    
+    SLICE_X0Y94          FDPE (Hold_fdpe_C_D)         0.092     1.973    an1_reg
+  -------------------------------------------------------------------
+                         required time                         -1.973    
+                         arrival time                           2.323    
+  -------------------------------------------------------------------
+                         slack                                  0.350    
+
+Slack (MET) :             0.350ns  (arrival time - required time)
+  Source:                 counter_reg[2]/C
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            char_reg[3]/D
+                            (rising edge-triggered cell FDPE clocked by clk_ssd  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Path Group:             clk_ssd
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_ssd rise@0.000ns - clk_ssd rise@0.000ns)
+  Data Path Delay:        0.455ns  (logic 0.186ns (40.914%)  route 0.269ns (59.086%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.419ns
+    Source Clock Delay      (SCD):    1.867ns
+    Clock Pessimism Removal (CPR):    0.538ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.440     0.690    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.050     0.740 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           0.499     1.239    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.265 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          0.603     1.867    clk_ssd_BUFG
+    SLICE_X1Y92          FDPE                                         r  counter_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y92          FDPE (Prop_fdpe_C_Q)         0.141     2.008 f  counter_reg[2]/Q
+                         net (fo=10, routed)          0.269     2.277    counter_reg__1[2]
+    SLICE_X0Y92          LUT2 (Prop_lut2_I0_O)        0.045     2.322 r  char[3]_i_2/O
+                         net (fo=1, routed)           0.000     2.322    char[3]_i_2_n_0
+    SLICE_X0Y92          FDPE                                         r  char_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_ssd rise edge)    0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.480     0.918    clk_IBUF
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                      0.053     0.971 r  MMCME2_BASE_inst/CLKOUT1
+                         net (fo=1, routed)           0.544     1.514    clk_ssd
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.543 r  clk_ssd_BUFG_inst/O
+                         net (fo=12, routed)          0.876     2.419    clk_ssd_BUFG
+    SLICE_X0Y92          FDPE                                         r  char_reg[3]/C
+                         clock pessimism             -0.538     1.880    
+    SLICE_X0Y92          FDPE (Hold_fdpe_C_D)         0.092     1.972    char_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.972    
+                         arrival time                           2.322    
+  -------------------------------------------------------------------
+                         slack                                  0.350    
 
 
 
@@ -1389,35 +1389,35 @@ Sources:            { MMCME2_BASE_inst/CLKOUT1 }
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
 Min Period        n/a     BUFG/I              n/a            2.155         200.000     197.845    BUFGCTRL_X0Y16   clk_ssd_BUFG_inst/I
 Min Period        n/a     MMCME2_ADV/CLKOUT1  n/a            1.249         200.000     198.751    MMCME2_ADV_X1Y2  MMCME2_BASE_inst/CLKOUT1
-Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X0Y92      an0_reg/C
-Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X0Y92      an1_reg/C
-Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X0Y92      an2_reg/C
-Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X0Y92      an3_reg/C
-Min Period        n/a     FDCE/C              n/a            1.000         200.000     199.000    SLICE_X0Y90      char_reg[0]/C
-Min Period        n/a     FDCE/C              n/a            1.000         200.000     199.000    SLICE_X0Y91      char_reg[1]/C
-Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X1Y91      char_reg[3]/C
-Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X1Y91      counter_reg[0]/C
+Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X0Y94      an0_reg/C
+Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X0Y94      an1_reg/C
+Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X0Y94      an2_reg/C
+Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X0Y94      an3_reg/C
+Min Period        n/a     FDCE/C              n/a            1.000         200.000     199.000    SLICE_X0Y92      char_reg[0]/C
+Min Period        n/a     FDCE/C              n/a            1.000         200.000     199.000    SLICE_X0Y92      char_reg[1]/C
+Min Period        n/a     FDCE/C              n/a            1.000         200.000     199.000    SLICE_X0Y92      char_reg[2]/C
+Min Period        n/a     FDPE/C              n/a            1.000         200.000     199.000    SLICE_X0Y92      char_reg[3]/C
 Max Period        n/a     MMCME2_ADV/CLKOUT1  n/a            213.360       200.000     13.360     MMCME2_ADV_X1Y2  MMCME2_BASE_inst/CLKOUT1
-Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      an0_reg/C
-Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      an1_reg/C
-Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      an2_reg/C
-Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      an3_reg/C
-Low Pulse Width   Slow    FDCE/C              n/a            0.500         100.000     99.500     SLICE_X0Y91      char_reg[1]/C
-Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y91      char_reg[3]/C
-Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y91      counter_reg[0]/C
-Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y91      counter_reg[1]/C
-Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y91      counter_reg[2]/C
-Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y91      counter_reg[3]/C
-High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      an0_reg/C
-High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      an1_reg/C
-High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      an2_reg/C
-High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      an3_reg/C
-High Pulse Width  Fast    FDCE/C              n/a            0.500         100.000     99.500     SLICE_X0Y90      char_reg[0]/C
-High Pulse Width  Fast    FDCE/C              n/a            0.500         100.000     99.500     SLICE_X0Y91      char_reg[1]/C
-High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y91      char_reg[3]/C
-High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y91      counter_reg[0]/C
-High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y91      counter_reg[1]/C
-High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y91      counter_reg[2]/C
+Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an0_reg/C
+Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an1_reg/C
+Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an2_reg/C
+Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an3_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      char_reg[0]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      char_reg[1]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      char_reg[2]/C
+Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y92      char_reg[3]/C
+Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y94      counter_reg[0]/C
+Low Pulse Width   Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y94      counter_reg[1]/C
+High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an0_reg/C
+High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an1_reg/C
+High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an2_reg/C
+High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an3_reg/C
+High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y94      counter_reg[0]/C
+High Pulse Width  Fast    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X1Y94      counter_reg[1]/C
+High Pulse Width  Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an0_reg/C
+High Pulse Width  Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an1_reg/C
+High Pulse Width  Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an2_reg/C
+High Pulse Width  Slow    FDPE/C              n/a            0.500         100.000     99.500     SLICE_X0Y94      an3_reg/C
 
 
 
