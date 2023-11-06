@@ -8,9 +8,15 @@ module FourDigitLEDdriver_tb;
     a, b, c, d, e, f, g, dp);
 
     initial begin
-        clk = 0; reset = 1;
-        #100 reset = 0;
-        #2147483647 $finish;
+        clk = 0; reset = 0;
+        #100 reset = 1;
+        #100 reset = 0; #300 reset = 1;
+        #500 reset = 0; #300 reset = 1;
+        #100 reset = 0; #900 reset = 1;
+        #10000 reset = 0; #300 reset = 1;
+        #205 reset = 0; #203 reset = 1;
+        #201 reset = 0; #209 reset = 1;
+        #10000 reset = 0;
     end
 
     always #5 clk = ~clk;

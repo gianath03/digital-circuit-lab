@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6295 
+INFO: Helper process launched with PID 30271 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1344.562 ; gain = 33.023 ; free physical = 13434 ; free virtual = 54916
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1354.082 ; gain = 0.000 ; free physical = 8087 ; free virtual = 51313
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'FourDigitLEDdriver' [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:3]
 INFO: [Synth 8-6157] synthesizing module 'MMCME2_BASE' [/tools/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26837]
@@ -53,13 +53,15 @@ INFO: [Synth 8-6155] done synthesizing module 'MMCME2_BASE' (1#1) [/tools/Xilinx
 INFO: [Synth 8-6157] synthesizing module 'LEDdecoder' [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part1.v:3]
 INFO: [Synth 8-226] default block is never used [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part1.v:8]
 INFO: [Synth 8-6155] done synthesizing module 'LEDdecoder' (2#1) [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part1.v:3]
-INFO: [Synth 8-226] default block is never used [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:95]
+INFO: [Synth 8-6157] synthesizing module 'clean_button_module' [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:119]
+INFO: [Synth 8-6155] done synthesizing module 'clean_button_module' (3#1) [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:119]
+INFO: [Synth 8-226] default block is never used [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:97]
 WARNING: [Synth 8-3848] Net PWRDWN in module/entity FourDigitLEDdriver does not have driver. [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:72]
 WARNING: [Synth 8-3848] Net RST in module/entity FourDigitLEDdriver does not have driver. [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:73]
-INFO: [Synth 8-6155] done synthesizing module 'FourDigitLEDdriver' (3#1) [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'FourDigitLEDdriver' (4#1) [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:3]
 WARNING: [Synth 8-3917] design FourDigitLEDdriver has port dp driven by constant 0
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1390.312 ; gain = 78.773 ; free physical = 13215 ; free virtual = 54768
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1390.605 ; gain = 36.523 ; free physical = 8069 ; free virtual = 51294
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -72,10 +74,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1390.312 ; gain = 78.773 ; free physical = 13203 ; free virtual = 54767
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1390.605 ; gain = 36.523 ; free physical = 8069 ; free virtual = 51294
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1390.312 ; gain = 78.773 ; free physical = 13203 ; free virtual = 54767
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1390.605 ; gain = 36.523 ; free physical = 8069 ; free virtual = 51294
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -89,34 +91,34 @@ Finished Parsing XDC File [/home/athanasi/Documents/GitHub/digital-circuit-lab/p
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/FourDigitLEDdriver_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/FourDigitLEDdriver_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1715.195 ; gain = 0.000 ; free physical = 12877 ; free virtual = 54465
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1715.973 ; gain = 0.000 ; free physical = 7760 ; free virtual = 50976
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1715.195 ; gain = 0.000 ; free physical = 12877 ; free virtual = 54465
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1715.973 ; gain = 0.000 ; free physical = 7763 ; free virtual = 50979
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1715.195 ; gain = 0.000 ; free physical = 12877 ; free virtual = 54465
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1715.195 ; gain = 0.000 ; free physical = 12877 ; free virtual = 54465
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1715.973 ; gain = 0.000 ; free physical = 7763 ; free virtual = 50979
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1715.973 ; gain = 0.000 ; free physical = 7763 ; free virtual = 50979
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12968 ; free virtual = 54557
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7895 ; free virtual = 51112
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12968 ; free virtual = 54557
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7895 ; free virtual = 51112
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12969 ; free virtual = 54559
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7896 ; free virtual = 51113
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12968 ; free virtual = 54558
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7892 ; free virtual = 51109
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -130,9 +132,11 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      4 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
 +---Muxes : 
 	   8 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 5     
@@ -155,6 +159,13 @@ Detailed RTL Component Info :
 	   8 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 5     
 	   8 Input      1 Bit        Muxes := 6     
+Module clean_button_module 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -173,7 +184,7 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3917] design FourDigitLEDdriver has port dp driven by constant 0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12948 ; free virtual = 54540
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7875 ; free virtual = 51093
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -185,13 +196,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12815 ; free virtual = 54408
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7756 ; free virtual = 50974
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12805 ; free virtual = 54398
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7752 ; free virtual = 50970
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -203,7 +214,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12804 ; free virtual = 54397
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7752 ; free virtual = 50969
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -227,7 +238,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12959 ; free virtual = 54520
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7752 ; free virtual = 50969
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -240,7 +251,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12959 ; free virtual = 54520
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7752 ; free virtual = 50969
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -252,25 +263,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12959 ; free virtual = 54520
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7752 ; free virtual = 50969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12959 ; free virtual = 54520
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7752 ; free virtual = 50969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12959 ; free virtual = 54520
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7752 ; free virtual = 50969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12959 ; free virtual = 54520
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7752 ; free virtual = 50969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -287,46 +298,48 @@ Report Cell Usage:
 |      |Cell        |Count |
 +------+------------+------+
 |1     |LUT1        |     1|
-|2     |LUT2        |     7|
-|3     |LUT3        |     5|
+|2     |LUT2        |     9|
+|3     |LUT3        |     6|
 |4     |LUT4        |     8|
 |5     |MMCME2_BASE |     1|
-|6     |FDCE        |     3|
-|7     |FDPE        |     9|
-|8     |IBUF        |     2|
-|9     |OBUF        |    12|
+|6     |FDCE        |     6|
+|7     |FDPE        |     6|
+|8     |FDRE        |     4|
+|9     |IBUF        |     2|
+|10    |OBUF        |    12|
 +------+------------+------+
 
 Report Instance Areas: 
-+------+------------------+-----------+------+
-|      |Instance          |Module     |Cells |
-+------+------------------+-----------+------+
-|1     |top               |           |    48|
-|2     |  LEDdecoder_inst |LEDdecoder |     7|
-+------+------------------+-----------+------+
++------+------------------+--------------------+------+
+|      |Instance          |Module              |Cells |
++------+------------------+--------------------+------+
+|1     |top               |                    |    55|
+|2     |  LEDdecoder_inst |LEDdecoder          |     7|
+|3     |  clean_reset     |clean_button_module |     7|
++------+------------------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 12959 ; free virtual = 54520
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7752 ; free virtual = 50969
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1715.195 ; gain = 78.773 ; free physical = 13013 ; free virtual = 54574
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1715.195 ; gain = 403.656 ; free physical = 13013 ; free virtual = 54574
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1715.973 ; gain = 36.523 ; free physical = 7813 ; free virtual = 51031
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1715.973 ; gain = 361.891 ; free physical = 7813 ; free virtual = 51031
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1745.227 ; gain = 0.000 ; free physical = 12966 ; free virtual = 54527
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1744.004 ; gain = 0.000 ; free physical = 7754 ; free virtual = 50971
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-23 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+25 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1745.227 ; gain = 433.688 ; free physical = 12984 ; free virtual = 54545
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1745.227 ; gain = 0.000 ; free physical = 12984 ; free virtual = 54545
+synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1744.004 ; gain = 389.922 ; free physical = 7767 ; free virtual = 50985
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1744.004 ; gain = 0.000 ; free physical = 7767 ; free virtual = 50985
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.runs/synth_2/FourDigitLEDdriver.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file FourDigitLEDdriver_utilization_synth.rpt -pb FourDigitLEDdriver_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Nov  5 20:46:01 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  6 15:06:46 2023...

@@ -80,7 +80,7 @@ module FourDigitLEDdriverText(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, 
 
     LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
 
-    always @(posedge clk_ssd, posedge reset) begin
+    always @(posedge clk_ssd or posedge reset) begin
         if (reset) begin
             counter = 4'b1111;
             an3 = 1'b1;
@@ -101,7 +101,7 @@ module FourDigitLEDdriverText(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, 
                     3'b010: char = 4'h9;
                     3'b001: {an3,an2,an1,an0} = 4'b1110;
                     3'b000: char = 4'h1;
-                    default: {an3,an2,an1,an0} = 4'bx;
+                    default: {an3,an2,an1,an0} = 4'b1111;
                 endcase
             end
             else begin

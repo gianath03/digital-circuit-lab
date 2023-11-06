@@ -5,7 +5,7 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
     output an3, an2, an1, an0;
     output a, b, c, d, e, f, g, dp;
 
-    wire clkfb, clk_ssd;
+    wire clkfb, clk_ssd, reset_clean;
     reg [3:0] counter;
     reg an3, an2, an1, an0;
     reg [3:0] char;
@@ -79,9 +79,11 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
 
     LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
 
-    always @(posedge clk_ssd, posedge reset) begin
-        if (reset) begin
-            counter = 4'b1111;
+    clean_button_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
+
+    always @(posedge clk_ssd or posedge reset_clean) begin
+        if (reset_clean) begin
+            counter = 4'b0001;
             an3 = 1'b1;
             an2 = 1'b1;
             an1 = 1'b1;
@@ -101,7 +103,7 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
                     3'b010: char = 4'h1;
                     3'b001: {an3,an2,an1,an0} = 4'b1110;
                     3'b000: char = 4'h3;
-                    default: {an3,an2,an1,an0} = 4'bx;
+                    default: {an3,an2,an1,an0} = 4'b1111;
                 endcase
             end
             else begin
@@ -113,3 +115,32 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
     assign dp = 1'b0;
     
 endmodule
+
+module clean_button_module(input button, input clk, output button_clean);
+    reg temp, button_sync;
+    reg [1:0] counter;
+
+    //Sync
+    always @(posedge clk) begin
+        temp = button;
+    end
+
+    always @(posedge clk) begin
+        button_sync = temp;
+    end
+    //End Sync
+
+    //Anti-Bounce
+    always @(posedge clk) begin
+        if (button_sync) begin
+            counter = counter - 2'b1;
+        end
+        else begin
+            counter = 2'b11;
+        end
+    end
+
+    assign button_clean = counter ? 1'b0 : 1'b1;
+    //End Anti-Bounce
+endmodule
+
