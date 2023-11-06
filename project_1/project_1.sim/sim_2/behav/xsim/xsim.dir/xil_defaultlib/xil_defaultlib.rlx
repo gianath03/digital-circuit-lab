@@ -1,8 +1,8 @@
 0.6
 2018.3
-Dec  6 2018
-23:39:36
-/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/behav/xsim/glbl.v,1699209591,verilog,,,,glbl,,,,,,,,
-/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_2/new/FourDigitLEDdriver_tb.v,1699274773,verilog,,,,FourDigitLEDdriver_tb,,,,,,,,
-/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part1.v,1699209591,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v,,LEDdecoder,,,,,,,,
-/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v,1699276054,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_2/new/FourDigitLEDdriver_tb.v,,FourDigitLEDdriver;clean_button_module,,,,,,,,
+Dec  7 2018
+00:33:28
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_2/new/FourDigitLEDdriver_tb.v,1699301013,verilog,,,,FourDigitLEDdriver_tb,,,,,,,,
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part1.v,1699047174,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v,,LEDdecoder,,,,,,,,
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v,1699301013,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_2/new/FourDigitLEDdriver_tb.v,,FourDigitLEDdriver;clean_button_module,,,,,,,,

@@ -17,6 +17,10 @@ module FourDigitLEDdriver_tb;
         #205 reset = 0; #203 reset = 1;
         #201 reset = 0; #209 reset = 1;
         #10000 reset = 0;
+        #10000 reset = 1;
+        #205 reset = 0; #203 reset = 1;
+        #201 reset = 0; #209 reset = 1;
+        #100 reset = 0;
     end
 
     always #5 clk = ~clk;

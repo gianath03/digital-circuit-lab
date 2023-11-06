@@ -1,7 +1,7 @@
 (DELAYFILE 
 (SDFVERSION "3.0" )
 (DESIGN "FourDigitLEDdriver")
-(DATE "Mon Nov  6 15:10:41 2023")
+(DATE "Mon Nov  6 22:30:24 2023")
 (VENDOR "XILINX")
 (PROGRAM "Vivado")
 (VERSION "2018.3")
@@ -110,10 +110,10 @@
       (SETUPHOLD (negedge PSEN) (posedge PSCLK) (979.0:1040.0:1040.0) (0.0:0.0:0.0))
       (SETUPHOLD (posedge PSINCDEC) (posedge PSCLK) (979.0:1040.0:1040.0) (0.0:0.0:0.0))
       (SETUPHOLD (negedge PSINCDEC) (posedge PSCLK) (979.0:1040.0:1040.0) (0.0:0.0:0.0))
-      (SETUPHOLD (posedge DADDR[6:0]) (posedge DCLK) (1527.0:1622.0:1622.0) (150.0:150.0:150.0))
-      (SETUPHOLD (negedge DADDR[6:0]) (posedge DCLK) (1527.0:1622.0:1622.0) (150.0:150.0:150.0))
       (SETUPHOLD (posedge DI[15:0]) (posedge DCLK) (1527.0:1622.0:1622.0) (150.0:150.0:150.0))
       (SETUPHOLD (negedge DI[15:0]) (posedge DCLK) (1527.0:1622.0:1622.0) (150.0:150.0:150.0))
+      (SETUPHOLD (posedge DADDR[6:0]) (posedge DCLK) (1527.0:1622.0:1622.0) (150.0:150.0:150.0))
+      (SETUPHOLD (negedge DADDR[6:0]) (posedge DCLK) (1527.0:1622.0:1622.0) (150.0:150.0:150.0))
     )
 )
 (CELL 

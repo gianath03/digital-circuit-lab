@@ -1,15 +1,17 @@
 `timescale 1ns / 1ps
 
-module FourDigitLEDdriverText(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, dp);
-    input clk, reset;
+module FourDigitLEDdriverText(reset, btnr, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, dp);
+    input clk, reset, btnr;
     output an3, an2, an1, an0;
     output a, b, c, d, e, f, g, dp;
 
-    wire clkfb, clk_ssd;
+    wire clkfb, clk_ssd, reset_clean, btnr_clean;
     reg [3:0] counter;
     reg an3, an2, an1, an0;
+    reg [3:0] addr;
+    wire [3:0] char;
+    reg [1:0] relative_addr;
     reg [3:0] message [0:15];
-    reg [3:0] char;
 
    // MMCME2_BASE: Base Mixed Mode Clock Manager
    //              Artix-7
@@ -76,13 +78,26 @@ module FourDigitLEDdriverText(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, 
       .CLKFBIN(clkfb)      // 1-bit input: Feedback clock
    );
 
-   // End of MMCME2_BASE_inst instantiation
+    // End of MMCME2_BASE_inst instantiation
+    always @(posedge clk_ssd or posedge reset_clean) begin
+        if (reset_clean) begin
+            addr = 4'b0;
+        end
+        else begin
+            addr = addr + btnr_clean;
+        end
+    end
+
+    assign char = message[addr+relative_addr];
 
     LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
 
-    always @(posedge clk_ssd or posedge reset) begin
-        if (reset) begin
-            counter = 4'b1111;
+    clean_button_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
+    clean_button_module clean_bnt(.button(btnr), .clk(clk_ssd), .button_clean(btnr_clean));
+
+    always @(posedge clk_ssd or posedge reset_clean) begin
+        if (reset_clean) begin
+            counter = 4'b0001;
             an3 = 1'b1;
             an2 = 1'b1;
             an1 = 1'b1;
@@ -94,23 +109,52 @@ module FourDigitLEDdriverText(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, 
             if (counter[0] == 1'b0) begin
                 case (counter[3:1])
                     3'b111: {an3,an2,an1,an0} = 4'b0111;
-                    3'b110: char = 4'h3;
+                    3'b110: relative_addr = 2'h1;
                     3'b101: {an3,an2,an1,an0} = 4'b1011;
-                    3'b100: char = 4'h4;
+                    3'b100: relative_addr = 2'h2;
                     3'b011: {an3,an2,an1,an0} = 4'b1101;
-                    3'b010: char = 4'h9;
+                    3'b010: relative_addr = 2'h3;
                     3'b001: {an3,an2,an1,an0} = 4'b1110;
-                    3'b000: char = 4'h1;
+                    3'b000: relative_addr = 2'h0;
                     default: {an3,an2,an1,an0} = 4'b1111;
                 endcase
             end
             else begin
                 {an3,an2,an1,an0} = 4'b1111;
             end
-
         end
     end
 
     assign dp = 1'b0;
     
 endmodule
+
+/*
+module clean_button_module(input button, input clk, output button_clean);
+    reg temp, button_sync;
+    reg [1:0] counter;
+
+    //Sync
+    always @(posedge clk) begin
+        temp = button;
+    end
+
+    always @(posedge clk) begin
+        button_sync = temp;
+    end
+    //End Sync
+
+    //Anti-Bounce
+    always @(posedge clk) begin
+        if (button_sync) begin
+            counter = counter - 2'b1;
+        end
+        else begin
+            counter = 2'b11;
+        end
+    end
+
+    assign button_clean = counter ? 1'b0 : 1'b1;
+    //End Anti-Bounce
+endmodule
+*/

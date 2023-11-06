@@ -17,6 +17,8 @@ Compiling module unisims_ver.FDPE_default
 Compiling module unisims_ver.x_lut2_mux4
 Compiling module unisims_ver.LUT2
 Compiling module unisims_ver.FDCE_default
+Compiling module unisims_ver.FDRE_default
+Compiling module xil_defaultlib.clean_button_module
 Compiling module unisims_ver.IBUF
 Compiling module unisims_ver.BUFG
 Compiling module unisims_ver.x_lut1_mux2
