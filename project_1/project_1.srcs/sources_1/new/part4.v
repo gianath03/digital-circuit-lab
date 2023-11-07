@@ -1,14 +1,15 @@
 `timescale 1ns / 1ps
 
-module FourDigitLEDdriverTextButton(reset, btnr, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, dp);
-    input clk, reset, btnr;
+module FourDigitLEDdriverTextTimer(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, dp);
+    input clk, reset;
     output an3, an2, an1, an0;
     output a, b, c, d, e, f, g, dp;
 
-    wire clkfb, clk_ssd, reset_clean, btnr_clean;
+    wire clkfb, clk_ssd, reset_clean, scroll;
     wire dp = 1'b0;
     reg [3:0] counter;
     reg an3, an2, an1, an0;
+    reg [3:0] scroll_counter;
     reg [3:0] addr;
     wire [3:0] char;
     reg [1:0] relative_addr;
@@ -104,16 +105,26 @@ module FourDigitLEDdriverTextButton(reset, btnr, clk, an3, an2, an1, an0, a, b, 
             addr = 4'b0;
         end
         else begin
-            addr = addr + btnr_clean;
+            addr = addr + scroll;
         end
     end
+
+    always @(posedge clk_ssd or reset_clean) begin
+        if (reset_clean) begin
+            scroll_counter = 4'd8;
+        end
+        else begin
+            scroll_counter = scroll_counter - 4'b1;
+        end
+    end
+
+    assign scroll = ~scroll_counter;
 
     assign char = message[addr+relative_addr];
 
     LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
 
     clean_button_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
-    clean_button_module clean_bnt(.button(btnr), .clk(clk_ssd), .button_clean(btnr_clean));
 
     always @(posedge clk_ssd or posedge reset_clean) begin
         if (reset_clean) begin
