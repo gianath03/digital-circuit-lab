@@ -17,7 +17,22 @@ INFO: [VRFC 10-2458] undeclared symbol LOCKED, assumed default net type wire [C:
 INFO: [VRFC 10-2458] undeclared symbol PWRDWN, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:72]
 INFO: [VRFC 10-2458] undeclared symbol RST, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v:73]
 INFO: [VRFC 10-311] analyzing module clean_button_module
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FourDigitLEDdriverText
+INFO: [VRFC 10-2458] undeclared symbol CLKOUT0, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:76]
+INFO: [VRFC 10-2458] undeclared symbol CLKOUT0B, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:77]
+INFO: [VRFC 10-2458] undeclared symbol CLKOUT1B, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:79]
+INFO: [VRFC 10-2458] undeclared symbol CLKOUT2, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:80]
+INFO: [VRFC 10-2458] undeclared symbol CLKOUT2B, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:81]
+INFO: [VRFC 10-2458] undeclared symbol CLKOUT3, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:82]
+INFO: [VRFC 10-2458] undeclared symbol CLKOUT3B, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:83]
+INFO: [VRFC 10-2458] undeclared symbol CLKOUT4, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:84]
+INFO: [VRFC 10-2458] undeclared symbol CLKOUT5, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:85]
+INFO: [VRFC 10-2458] undeclared symbol CLKOUT6, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:86]
+INFO: [VRFC 10-2458] undeclared symbol CLKFBOUTB, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:89]
+INFO: [VRFC 10-2458] undeclared symbol LOCKED, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:91]
+INFO: [VRFC 10-2458] undeclared symbol PWRDWN, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:95]
+INFO: [VRFC 10-2458] undeclared symbol RST, assumed default net type wire [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:96]
+WARNING: [VRFC 10-1771] potential always loop found [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v:17]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_2/new/FourDigitLEDdriver_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module FourDigitLEDdriver_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

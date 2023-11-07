@@ -6,12 +6,32 @@ module FourDigitLEDdriverText(reset, btnr, clk, an3, an2, an1, an0, a, b, c, d, 
     output a, b, c, d, e, f, g, dp;
 
     wire clkfb, clk_ssd, reset_clean, btnr_clean;
+    wire dp = 1'b0;
     reg [3:0] counter;
     reg an3, an2, an1, an0;
     reg [3:0] addr;
     wire [3:0] char;
     reg [1:0] relative_addr;
     reg [3:0] message [0:15];
+
+    always begin
+        message[0] = 4'h0;
+        message[1] = 4'h1;
+        message[2] = 4'h2;
+        message[3] = 4'h3;
+        message[4] = 4'h4;
+        message[5] = 4'h5;
+        message[6] = 4'h6;
+        message[7] = 4'h7;
+        message[8] = 4'h8;
+        message[9] = 4'h9;
+        message[10] = 4'ha;
+        message[11] = 4'hb;
+        message[12] = 4'hc;
+        message[13] = 4'hd;
+        message[14] = 4'he;
+        message[15] = 4'hf;
+    end
 
    // MMCME2_BASE: Base Mixed Mode Clock Manager
    //              Artix-7
@@ -124,8 +144,6 @@ module FourDigitLEDdriverText(reset, btnr, clk, an3, an2, an1, an0, a, b, c, d, 
             end
         end
     end
-
-    assign dp = 1'b0;
     
 endmodule
 

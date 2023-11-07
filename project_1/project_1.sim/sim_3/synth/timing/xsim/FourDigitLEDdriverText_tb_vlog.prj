@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"FourDigitLEDdriverText_tb_time_synth.v" \
+"../../../../../project_1.srcs/sources_1/new/part1.v" \
+"../../../../../project_1.srcs/sources_1/new/part2.v" \
+"../../../../../project_1.srcs/sources_1/new/part3.v" \
+"../../../../../project_1.srcs/sim_3/new/part3_tb.v" \
+
+# Do not sort compile order
+nosort

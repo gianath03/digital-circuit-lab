@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="FourDigitLEDdriverText_tb_behav.wdb" id="1">
+      <db_ref path="FourDigitLEDdriverText_tb_func_impl.wdb" id="1">
          <top_modules>
             <top_module name="FourDigitLEDdriverText_tb" />
             <top_module name="glbl" />
@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="43981666666fs"></ZoomStartTime>
-      <ZoomEndTime time="44369666667fs"></ZoomEndTime>
-      <Cursor1Time time="44105000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="3330000001fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="138"></ValueColumnWidth>
+      <ValueColumnWidth column_width="134"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="15" />
+   <WVObjectSize size="10" />
    <wvobject fp_name="/FourDigitLEDdriverText_tb/FourDigitLEDdriverText_inst/clk_ssd" type="logic">
       <obj_property name="ElementShortName">clk_ssd</obj_property>
       <obj_property name="ObjectShortName">clk_ssd</obj_property>
@@ -32,13 +32,9 @@
       <obj_property name="ElementShortName">reset_clean</obj_property>
       <obj_property name="ObjectShortName">reset_clean</obj_property>
    </wvobject>
-   <wvobject fp_name="/FourDigitLEDdriverText_tb/btn" type="logic">
-      <obj_property name="ElementShortName">btn</obj_property>
-      <obj_property name="ObjectShortName">btn</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FourDigitLEDdriverText_tb/FourDigitLEDdriverText_inst/btn_clean" type="logic">
-      <obj_property name="ElementShortName">btn_clean</obj_property>
-      <obj_property name="ObjectShortName">btn_clean</obj_property>
+   <wvobject fp_name="/FourDigitLEDdriverText_tb/btnr" type="logic">
+      <obj_property name="ElementShortName">btnr</obj_property>
+      <obj_property name="ObjectShortName">btnr</obj_property>
    </wvobject>
    <wvobject fp_name="/FourDigitLEDdriverText_tb/an3" type="logic">
       <obj_property name="ElementShortName">an3</obj_property>
@@ -55,10 +51,6 @@
    <wvobject fp_name="/FourDigitLEDdriverText_tb/an0" type="logic">
       <obj_property name="ElementShortName">an0</obj_property>
       <obj_property name="ObjectShortName">an0</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FourDigitLEDdriverText_tb/FourDigitLEDdriverText_inst/char" type="array">
-      <obj_property name="ElementShortName">char[3:0]</obj_property>
-      <obj_property name="ObjectShortName">char[3:0]</obj_property>
    </wvobject>
    <wvobject fp_name="vbus95" type="vbus">
       <obj_property name="label">charDecoded</obj_property>
@@ -96,17 +88,5 @@
    <wvobject fp_name="/FourDigitLEDdriverText_tb/dp" type="logic">
       <obj_property name="ElementShortName">dp</obj_property>
       <obj_property name="ObjectShortName">dp</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FourDigitLEDdriverText_tb/FourDigitLEDdriverText_inst/btn" type="logic">
-      <obj_property name="ElementShortName">btn</obj_property>
-      <obj_property name="ObjectShortName">btn</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FourDigitLEDdriverText_tb/FourDigitLEDdriverText_inst/counter" type="array">
-      <obj_property name="ElementShortName">counter[3:0]</obj_property>
-      <obj_property name="ObjectShortName">counter[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/FourDigitLEDdriverText_tb/FourDigitLEDdriverText_inst/message" type="array">
-      <obj_property name="ElementShortName">message[0:15][3:0]</obj_property>
-      <obj_property name="ObjectShortName">message[0:15][3:0]</obj_property>
    </wvobject>
 </wave_config>

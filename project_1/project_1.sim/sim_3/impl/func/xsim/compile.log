@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_3/impl/func/xsim/FourDigitLEDdriverText_tb_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FourDigitLEDdriverText
+INFO: [VRFC 10-311] analyzing module clean_button_module
+INFO: [VRFC 10-311] analyzing module clean_button_module_0
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_3/new/part3_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FourDigitLEDdriverText_tb
