@@ -118,7 +118,7 @@ endmodule
 
 module clean_button_module(input button, input clk, output button_clean);
     reg temp, button_sync;
-    reg [2:0] counter;
+    reg [21:0] counter;
 
     //Sync
     always @(posedge clk) begin
@@ -133,12 +133,12 @@ module clean_button_module(input button, input clk, output button_clean);
     //Anti-Bounce
     always @(posedge clk) begin
         if (button_sync) begin
-            if (counter) begin
+            //if (counter) begin
                 counter = counter - 3'b1;
-            end
+            //end
         end
         else begin
-            counter = 3'b110;
+            counter = 21'hFFFFFF;
         end
     end
     

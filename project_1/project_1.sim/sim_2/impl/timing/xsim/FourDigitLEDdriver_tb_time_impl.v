@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Tue Nov  7 17:01:34 2023
-// Host        : athanasi-DESKTOP running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+// Date        : Wed Nov  8 11:29:34 2023
+// Host        : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
-//               C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/timing/xsim/FourDigitLEDdriver_tb_time_impl.v
+//               /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/timing/xsim/FourDigitLEDdriver_tb_time_impl.v
 // Design      : FourDigitLEDdriver
 // Purpose     : This verilog netlist is a timing simulation representation of the design and should not be modified or
 //               synthesized. Please ensure that this netlist is used with the corresponding SDF file.

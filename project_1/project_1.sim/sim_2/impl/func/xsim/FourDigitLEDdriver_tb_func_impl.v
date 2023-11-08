@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Mon Nov  6 22:33:24 2023
-// Host        : athanasi-DESKTOP running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+// Date        : Wed Nov  8 14:11:16 2023
+// Host        : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
 // Command     : write_verilog -mode funcsim -nolib -force -file
-//               C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/FourDigitLEDdriver_tb_func_impl.v
+//               /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/FourDigitLEDdriver_tb_func_impl.v
 // Design      : FourDigitLEDdriver
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* ECO_CHECKSUM = "61f1619" *) 
+(* ECO_CHECKSUM = "1b9199d0" *) 
 (* NotValidForBitStream *)
 module FourDigitLEDdriver
    (reset,
@@ -72,7 +72,7 @@ module FourDigitLEDdriver
   wire \char_reg_n_0_[1] ;
   wire \char_reg_n_0_[2] ;
   wire \char_reg_n_0_[3] ;
-  wire clean_reset_n_0;
+  wire clear;
   wire clk;
   wire clk_IBUF;
   wire clk_ssd;
@@ -207,7 +207,7 @@ module FourDigitLEDdriver
   OBUF an0_OBUF_inst
        (.I(an0_OBUF),
         .O(an0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'hEF)) 
     an0_i_1
@@ -221,12 +221,12 @@ module FourDigitLEDdriver
        (.C(clk_ssd_BUFG),
         .CE(an3_i_1_n_0),
         .D(an0_i_1_n_0),
-        .PRE(clean_reset_n_0),
+        .PRE(clear),
         .Q(an0_OBUF));
   OBUF an1_OBUF_inst
        (.I(an1_OBUF),
         .O(an1));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hDF)) 
     an1_i_1
@@ -240,12 +240,12 @@ module FourDigitLEDdriver
        (.C(clk_ssd_BUFG),
         .CE(an3_i_1_n_0),
         .D(an1_i_1_n_0),
-        .PRE(clean_reset_n_0),
+        .PRE(clear),
         .Q(an1_OBUF));
   OBUF an2_OBUF_inst
        (.I(an2_OBUF),
         .O(an2));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'hBF)) 
     an2_i_1
@@ -259,7 +259,7 @@ module FourDigitLEDdriver
        (.C(clk_ssd_BUFG),
         .CE(an3_i_1_n_0),
         .D(an2_i_1_n_0),
-        .PRE(clean_reset_n_0),
+        .PRE(clear),
         .Q(an2_OBUF));
   OBUF an3_OBUF_inst
        (.I(an3_OBUF),
@@ -270,7 +270,7 @@ module FourDigitLEDdriver
        (.I0(counter_reg__1[1]),
         .I1(counter_reg__0),
         .O(an3_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     an3_i_2
@@ -284,7 +284,7 @@ module FourDigitLEDdriver
        (.C(clk_ssd_BUFG),
         .CE(an3_i_1_n_0),
         .D(an3_i_2_n_0),
-        .PRE(clean_reset_n_0),
+        .PRE(clear),
         .Q(an3_OBUF));
   OBUF b_OBUF_inst
        (.I(b_OBUF),
@@ -298,14 +298,14 @@ module FourDigitLEDdriver
        (.I0(counter_reg__1[3]),
         .I1(counter_reg__1[2]),
         .O(\char[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \char[1]_i_1 
        (.I0(counter_reg__1[2]),
         .I1(counter_reg__1[3]),
         .O(\char[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \char[2]_i_1 
@@ -329,7 +329,7 @@ module FourDigitLEDdriver
     \char_reg[0] 
        (.C(clk_ssd_BUFG),
         .CE(\char[3]_i_1_n_0 ),
-        .CLR(clean_reset_n_0),
+        .CLR(clear),
         .D(\char[0]_i_1_n_0 ),
         .Q(\char_reg_n_0_[0] ));
   FDCE #(
@@ -337,7 +337,7 @@ module FourDigitLEDdriver
     \char_reg[1] 
        (.C(clk_ssd_BUFG),
         .CE(\char[3]_i_1_n_0 ),
-        .CLR(clean_reset_n_0),
+        .CLR(clear),
         .D(\char[1]_i_1_n_0 ),
         .Q(\char_reg_n_0_[1] ));
   FDCE #(
@@ -345,7 +345,7 @@ module FourDigitLEDdriver
     \char_reg[2] 
        (.C(clk_ssd_BUFG),
         .CE(\char[3]_i_1_n_0 ),
-        .CLR(clean_reset_n_0),
+        .CLR(clear),
         .D(\char[2]_i_1_n_0 ),
         .Q(\char_reg_n_0_[2] ));
   FDPE #(
@@ -354,10 +354,10 @@ module FourDigitLEDdriver
        (.C(clk_ssd_BUFG),
         .CE(\char[3]_i_1_n_0 ),
         .D(\char[3]_i_2_n_0 ),
-        .PRE(clean_reset_n_0),
+        .PRE(clear),
         .Q(\char_reg_n_0_[3] ));
   clean_button_module clean_reset
-       (.AS(clean_reset_n_0),
+       (.AR(clear),
         .CLK(clk_ssd_BUFG),
         .reset_IBUF(reset_IBUF));
   IBUF clk_IBUF_inst
@@ -379,7 +379,7 @@ module FourDigitLEDdriver
        (.I0(counter_reg__1[1]),
         .I1(counter_reg__0),
         .O(p_0_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hA9)) 
     \counter[2]_i_1 
@@ -387,7 +387,7 @@ module FourDigitLEDdriver
         .I1(counter_reg__0),
         .I2(counter_reg__1[1]),
         .O(p_0_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
     .INIT(16'hAAA9)) 
     \counter[3]_i_1 
@@ -402,14 +402,14 @@ module FourDigitLEDdriver
        (.C(clk_ssd_BUFG),
         .CE(1'b1),
         .D(\counter[0]_i_1_n_0 ),
-        .PRE(clean_reset_n_0),
+        .PRE(clear),
         .Q(counter_reg__0));
   FDCE #(
     .INIT(1'b0)) 
     \counter_reg[1] 
        (.C(clk_ssd_BUFG),
         .CE(1'b1),
-        .CLR(clean_reset_n_0),
+        .CLR(clear),
         .D(p_0_in[0]),
         .Q(counter_reg__1[1]));
   FDCE #(
@@ -417,7 +417,7 @@ module FourDigitLEDdriver
     \counter_reg[2] 
        (.C(clk_ssd_BUFG),
         .CE(1'b1),
-        .CLR(clean_reset_n_0),
+        .CLR(clear),
         .D(p_0_in[1]),
         .Q(counter_reg__1[2]));
   FDCE #(
@@ -425,7 +425,7 @@ module FourDigitLEDdriver
     \counter_reg[3] 
        (.C(clk_ssd_BUFG),
         .CE(1'b1),
-        .CLR(clean_reset_n_0),
+        .CLR(clear),
         .D(p_0_in[2]),
         .Q(counter_reg__1[3]));
   OBUF d_OBUF_inst
@@ -534,19 +534,20 @@ module LEDdecoder
 endmodule
 
 module clean_button_module
-   (AS,
+   (AR,
     reset_IBUF,
     CLK);
-  output [0:0]AS;
+  output [0:0]AR;
   input reset_IBUF;
   input CLK;
 
-  wire [0:0]AS;
+  wire [0:0]AR;
   wire CLK;
   wire button_sync;
-  wire [1:0]counter;
+  wire [2:0]counter;
   wire \counter[0]_i_1_n_0 ;
   wire \counter[1]_i_1_n_0 ;
+  wire \counter[2]_i_1_n_0 ;
   wire reset_IBUF;
   wire temp;
 
@@ -558,25 +559,39 @@ module clean_button_module
         .D(temp),
         .Q(button_sync),
         .R(1'b0));
-  LUT2 #(
-    .INIT(4'h1)) 
+  LUT3 #(
+    .INIT(8'h01)) 
     \char[3]_i_3 
-       (.I0(counter[0]),
-        .I1(counter[1]),
-        .O(AS));
-  LUT2 #(
-    .INIT(4'h7)) 
+       (.I0(counter[1]),
+        .I1(counter[2]),
+        .I2(counter[0]),
+        .O(AR));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT4 #(
+    .INIT(16'h5400)) 
     \counter[0]_i_1 
        (.I0(counter[0]),
-        .I1(button_sync),
+        .I1(counter[2]),
+        .I2(counter[1]),
+        .I3(button_sync),
         .O(\counter[0]_i_1_n_0 ));
-  LUT3 #(
-    .INIT(8'h9F)) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT4 #(
+    .INIT(16'hA4FF)) 
     \counter[1]_i_1 
        (.I0(counter[1]),
-        .I1(counter[0]),
-        .I2(button_sync),
+        .I1(counter[2]),
+        .I2(counter[0]),
+        .I3(button_sync),
         .O(\counter[1]_i_1_n_0 ));
+  LUT4 #(
+    .INIT(16'hC8FF)) 
+    \counter[2]_i_1 
+       (.I0(counter[1]),
+        .I1(counter[2]),
+        .I2(counter[0]),
+        .I3(button_sync),
+        .O(\counter[2]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[0] 
@@ -592,6 +607,14 @@ module clean_button_module
         .CE(1'b1),
         .D(\counter[1]_i_1_n_0 ),
         .Q(counter[1]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \counter_reg[2] 
+       (.C(CLK),
+        .CE(1'b1),
+        .D(\counter[2]_i_1_n_0 ),
+        .Q(counter[2]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 

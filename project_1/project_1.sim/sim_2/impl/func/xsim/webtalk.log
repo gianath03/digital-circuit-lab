@@ -1,13 +1,13 @@
 #-----------------------------------------------------------
 # Webtalk v2018.3 (64-bit)
-# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Nov  6 22:33:22 2023
-# Process ID: 3420
-# Current directory: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/xsim.dir/FourDigitLEDdriver_tb_func_impl/webtalk/xsim_webtalk.tcl -notrace
-# Log file: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/webtalk.log
-# Journal file: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim\webtalk.jou
+# Start of session at: Wed Nov  8 14:11:13 2023
+# Process ID: 26997
+# Current directory: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim
+# Command line: wbtcv -mode batch -source /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/xsim.dir/FourDigitLEDdriver_tb_func_impl/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/webtalk.log
+# Journal file: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/xsim.dir/FourDigitLEDdriver_tb_func_impl/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Mon Nov  6 22:33:23 2023...
+source /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/xsim.dir/FourDigitLEDdriver_tb_func_impl/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Nov  8 14:11:14 2023...

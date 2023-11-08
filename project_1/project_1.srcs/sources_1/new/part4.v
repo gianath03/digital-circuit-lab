@@ -5,11 +5,12 @@ module FourDigitLEDdriverTextTimer(reset, clk, an3, an2, an1, an0, a, b, c, d, e
     output an3, an2, an1, an0;
     output a, b, c, d, e, f, g, dp;
 
-    wire clkfb, clk_ssd, reset_clean, scroll;
+    wire clkfb, clk_ssd, reset_clean;
     wire dp = 1'b0;
     reg [3:0] counter;
     reg an3, an2, an1, an0;
-    reg [3:0] scroll_counter;
+    reg [7:0] scroll_counter;
+    reg scroll;
     reg [3:0] addr;
     wire [3:0] char;
     reg [1:0] relative_addr;
@@ -109,16 +110,20 @@ module FourDigitLEDdriverTextTimer(reset, clk, an3, an2, an1, an0, a, b, c, d, e
         end
     end
 
-    always @(posedge clk_ssd or reset_clean) begin
+    always @(posedge clk_ssd or posedge reset_clean) begin
         if (reset_clean) begin
-            scroll_counter = 4'd8;
+            scroll_counter = 8'hFF;
         end
         else begin
-            scroll_counter = scroll_counter - 4'b1;
+            scroll_counter = scroll_counter - 1'b1;
         end
     end
 
-    assign scroll = ~scroll_counter;
+    always begin
+        if (!scroll_counter) begin
+            scroll = 1'b1;
+        end
+    end
 
     assign char = message[addr+relative_addr];
 

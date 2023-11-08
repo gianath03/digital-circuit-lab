@@ -1,7 +1,7 @@
 (DELAYFILE 
 (SDFVERSION "3.0" )
 (DESIGN "FourDigitLEDdriver")
-(DATE "Tue Nov  7 17:01:34 2023")
+(DATE "Wed Nov  8 11:29:34 2023")
 (VENDOR "XILINX")
 (PROGRAM "Vivado")
 (VERSION "2018.3")
