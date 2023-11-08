@@ -18,11 +18,15 @@ Compiling module unisims_ver.x_lut2_mux4
 Compiling module unisims_ver.LUT2
 Compiling module unisims_ver.FDCE_default
 Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.CARRY4
+Compiling module unisims_ver.FDSE_default
 Compiling module xil_defaultlib.clean_button_module
 Compiling module unisims_ver.IBUF
 Compiling module unisims_ver.BUFG
-Compiling module unisims_ver.x_lut1_mux2
-Compiling module unisims_ver.LUT1
 Compiling module xil_defaultlib.FourDigitLEDdriver
 Compiling module xil_defaultlib.FourDigitLEDdriver_tb
 Compiling module xil_defaultlib.glbl

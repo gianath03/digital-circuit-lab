@@ -8,10 +8,10 @@ module FourDigitLEDdriverTextButton(reset, btnr, clk, an3, an2, an1, an0, a, b, 
     wire clkfb, clk_ssd, reset_clean, btnr_clean;
     wire dp = 1'b0;
     reg [3:0] counter;
-    reg an3, an2, an1, an0;
+    wire an3, an2, an1, an0;
     wire [3:0] addr;
     wire [3:0] char;
-    reg [1:0] relative_addr;
+    wire [1:0] relative_addr;
     reg [3:0] message [0:15];
 
     always begin
@@ -106,8 +106,9 @@ module FourDigitLEDdriverTextButton(reset, btnr, clk, an3, an2, an1, an0, a, b, 
     LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
     clean_button_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
     clean_button_module clean_bnt(.button(btnr), .clk(clk_ssd), .button_clean(btnr_clean));
+    digit_driver_module digit_driver_module_inst (.clk(clk_ssd), .reset(reset_clean), .relative_addr(relative_addr), .anodes({an3,an2,an1,an0}));
 
-    always @(posedge clk_ssd or posedge reset_clean) begin
+    /*always @(posedge clk_ssd or posedge reset_clean) begin
         if (reset_clean) begin
             counter <= 4'b0001;
             an3 <= 1'b1;
@@ -135,6 +136,6 @@ module FourDigitLEDdriverTextButton(reset, btnr, clk, an3, an2, an1, an0, a, b, 
                 {an3,an2,an1,an0} <= 4'b1111;
             end
         end
-    end
+    end*/
     
 endmodule

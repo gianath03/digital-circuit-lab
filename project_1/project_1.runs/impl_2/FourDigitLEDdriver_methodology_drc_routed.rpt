@@ -1,0 +1,40 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Wed Nov  8 19:26:03 2023
+| Host         : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
+| Command      : report_methodology -file FourDigitLEDdriver_methodology_drc_routed.rpt -pb FourDigitLEDdriver_methodology_drc_routed.pb -rpx FourDigitLEDdriver_methodology_drc_routed.rpx
+| Design       : FourDigitLEDdriver
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 1
++---------+----------+------------------------------+------------+
+| Rule    | Severity | Description                  | Violations |
++---------+----------+------------------------------+------------+
+| LUTAR-1 | Warning  | LUT drives async reset alert | 1          |
++---------+----------+------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell clean_reset/char[3]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) char_reg[0]/CLR, char_reg[1]/CLR, char_reg[2]/CLR, counter_reg[1]/CLR, counter_reg[2]/CLR, counter_reg[3]/CLR, an0_reg/PRE, an1_reg/PRE, an2_reg/PRE, an3_reg/PRE, char_reg[3]/PRE, counter_reg[0]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+
