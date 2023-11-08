@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_4/impl/timing/xsim/FourDigitLEDdriverTextTimer_tb_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FourDigitLEDdriverTextTimer
+INFO: [VRFC 10-311] analyzing module clean_button_module
+INFO: [VRFC 10-311] analyzing module scroll_time_module
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_4/new/part4_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FourDigitLEDdriverTextTimer_tb

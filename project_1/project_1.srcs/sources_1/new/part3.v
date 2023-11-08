@@ -9,7 +9,7 @@ module FourDigitLEDdriverTextButton(reset, btnr, clk, an3, an2, an1, an0, a, b, 
     wire dp = 1'b0;
     reg [3:0] counter;
     reg an3, an2, an1, an0;
-    reg [3:0] addr;
+    wire [3:0] addr;
     wire [3:0] char;
     reg [1:0] relative_addr;
     reg [3:0] message [0:15];
@@ -99,19 +99,10 @@ module FourDigitLEDdriverTextButton(reset, btnr, clk, an3, an2, an1, an0, a, b, 
    );
     // End of MMCME2_BASE_inst instantiation
 
-    //Counter that
-    always @(posedge clk_ssd or posedge reset_clean) begin
-        if (reset_clean) begin
-            addr <= 4'b0;
-        end
-        else begin
-            addr <= addr + btnr_clean;
-        end
-    end
-
     assign char = message[addr+relative_addr];
 
-    //Initialize needed modules
+    //Instantiate modules
+    scroll_bnt_module scroll_bnt_module_inst (.clk(clk_ssd), .reset(reset_clean), .btn(btnr_clean), .addr(addr));
     LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
     clean_button_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
     clean_button_module clean_bnt(.button(btnr), .clk(clk_ssd), .button_clean(btnr_clean));

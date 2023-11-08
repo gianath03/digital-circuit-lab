@@ -2,6 +2,7 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/dig
 INFO: [VRFC 10-311] analyzing module FourDigitLEDdriverTextButton
 INFO: [VRFC 10-311] analyzing module clean_button_module
 INFO: [VRFC 10-311] analyzing module clean_button_module_0
+INFO: [VRFC 10-311] analyzing module scroll_bnt_module
 INFO: [VRFC 10-311] analyzing module glbl
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_3/new/part3_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module FourDigitLEDdriverTextButton_tb

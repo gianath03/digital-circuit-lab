@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Wed Nov  8 16:58:01 2023
+// Date        : Wed Nov  8 17:30:19 2023
 // Host        : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
 //               /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/timing/xsim/FourDigitLEDdriver_tb_time_impl.v
