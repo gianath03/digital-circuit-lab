@@ -29,7 +29,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log FourDigitLEDdriverTextButton.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourDigitLEDdriverTextButton.tcl -notrace" );
+         "-log FourDigitLEDdriver.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourDigitLEDdriver.tcl -notrace" );
 
 
 

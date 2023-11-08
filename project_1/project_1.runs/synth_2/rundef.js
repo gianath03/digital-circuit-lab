@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log FourDigitLEDdriverTextButton.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FourDigitLEDdriverTextButton.tcl" );
+         "-log FourDigitLEDdriver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FourDigitLEDdriver.tcl" );
 
 
 

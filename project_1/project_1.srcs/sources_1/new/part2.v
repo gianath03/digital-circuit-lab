@@ -13,7 +13,6 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
    // MMCME2_BASE: Base Mixed Mode Clock Manager
    //              Artix-7
    // Xilinx HDL Language Template, version 2018.3
-
    MMCME2_BASE #(
       .BANDWIDTH("OPTIMIZED"),   // Jitter programming (OPTIMIZED, HIGH, LOW)
       .CLKFBOUT_MULT_F(6.0),     // Multiply value for all CLKOUT (2.000-64.000).
@@ -83,31 +82,31 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
 
     always @(posedge clk_ssd or posedge reset_clean) begin
         if (reset_clean) begin
-            counter = 4'b0001;
-            an3 = 1'b1;
-            an2 = 1'b1;
-            an1 = 1'b1;
-            an0 = 1'b1;
-            char = 4'h8;
+            counter <= 4'b0001;
+            an3 <= 1'b1;
+            an2 <= 1'b1;
+            an1 <= 1'b1;
+            an0 <= 1'b1;
+            char <= 4'h8;
         end
         else begin
             counter = counter - 4'b1;
 
             if (counter[0] == 1'b0) begin
                 case (counter[3:1])
-                    3'b111: {an3,an2,an1,an0} = 4'b0111;
+                    3'b111: {an3,an2,an1,an0} <= 4'b0111;
                     3'b110: char = 4'h4;
-                    3'b101: {an3,an2,an1,an0} = 4'b1011;
+                    3'b101: {an3,an2,an1,an0} <= 4'b1011;
                     3'b100: char = 4'h9;
-                    3'b011: {an3,an2,an1,an0} = 4'b1101;
+                    3'b011: {an3,an2,an1,an0} <= 4'b1101;
                     3'b010: char = 4'h1;
-                    3'b001: {an3,an2,an1,an0} = 4'b1110;
+                    3'b001: {an3,an2,an1,an0} <= 4'b1110;
                     3'b000: char = 4'h3;
-                    default: {an3,an2,an1,an0} = 4'b1111;
+                    default: {an3,an2,an1,an0} <= 4'b1111;
                 endcase
             end
             else begin
-                {an3,an2,an1,an0} = 4'b1111;
+                {an3,an2,an1,an0} <= 4'b1111;
             end
         end
     end
@@ -115,34 +114,3 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
     assign dp = 1'b0;
     
 endmodule
-
-module clean_button_module(input button, input clk, output button_clean);
-    reg temp, button_sync;
-    reg [21:0] counter;
-
-    //Sync
-    always @(posedge clk) begin
-        temp = button;
-    end
-
-    always @(posedge clk) begin
-        button_sync = temp;
-    end
-    //End Sync
-
-    //Anti-Bounce
-    always @(posedge clk) begin
-        if (button_sync) begin
-            //if (counter) begin
-                counter = counter - 3'b1;
-            //end
-        end
-        else begin
-            counter = 21'hFFFFFF;
-        end
-    end
-    
-    assign button_clean = counter ? 1'b0 : 1'b1;
-    //End Anti-Bounce
-endmodule
-

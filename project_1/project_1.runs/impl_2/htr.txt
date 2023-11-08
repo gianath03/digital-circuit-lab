@@ -6,4 +6,4 @@
 # Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log FourDigitLEDdriverTextButton.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourDigitLEDdriverTextButton.tcl -notrace
+vivado -log FourDigitLEDdriver.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FourDigitLEDdriver.tcl -notrace

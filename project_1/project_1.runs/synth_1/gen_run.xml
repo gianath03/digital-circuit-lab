@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1699048077">
-  <File Type="RDS-UTIL-PB" Name="FourDigitLEDdriver_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="FourDigitLEDdriver.dcp"/>
   <File Type="PA-TCL" Name="FourDigitLEDdriver.tcl"/>
   <File Type="REPORTS-TCL" Name="FourDigitLEDdriver_reports.tcl"/>
   <File Type="RDS-RDS" Name="FourDigitLEDdriver.vds"/>
-  <File Type="RDS-UTIL" Name="FourDigitLEDdriver_utilization_synth.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/part1.v">
