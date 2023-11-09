@@ -1,9 +1,7 @@
 `timescale 1ns / 1ps
 
-module digit_driver_module(input clk, input reset, output [1:0] relative_addr, output [3:0] anodes);
+module digit_driver_module(input clk, input reset, output reg [1:0] relative_addr, output reg [3:0] anodes);
     reg [3:0] counter;
-    reg [3:0] anodes;
-    reg [1:0] relative_addr;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
@@ -23,7 +21,7 @@ module digit_driver_module(input clk, input reset, output [1:0] relative_addr, o
                     3'b010: relative_addr = 2'h3;
                     3'b001: anodes <= 4'b1110;
                     3'b000: relative_addr <= 2'h0;
-                    default: anodes <= 4'b1111;
+                    default: {anodes,relative_addr} <= 6'b111100;
                 endcase
             end
             else begin

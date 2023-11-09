@@ -1,9 +1,8 @@
 `timescale 1ns / 1ps
 
-module scroll_time_module(input clk, input reset, output [3:0] addr);
-    reg [22:0] addr; 
-    reg [7:0] scroll_counter;
-    wire scroll;
+module scroll_time_module(input clk, input reset, output reg [3:0] addr);
+    reg [22:0] scroll_counter;
+    wire scroll = scroll_counter ? 1'b0 : 1'b1;
     
     always @(posedge clk or posedge reset) begin
         if (reset) begin
@@ -23,5 +22,4 @@ module scroll_time_module(input clk, input reset, output [3:0] addr);
         end
     end
 
-    wire scroll = scroll_counter ? 1'b0 : 1'b1;
 endmodule

@@ -6,8 +6,9 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
     output a, b, c, d, e, f, g, dp;
 
     wire clkfb, clk_ssd, reset_clean;
+    wire [1:0] relative_addr;
     reg [3:0] counter;
-    reg an3, an2, an1, an0;
+    wire an3, an2, an1, an0;
     reg [3:0] char;
 
    // MMCME2_BASE: Base Mixed Mode Clock Manager
@@ -73,44 +74,20 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
       // Feedback Clocks: 1-bit (each) input: Clock feedback ports
       .CLKFBIN(clkfb)      // 1-bit input: Feedback clock
    );
-
    // End of MMCME2_BASE_inst instantiation
 
     LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
-
     clean_button_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
-
-    always @(posedge clk_ssd or posedge reset_clean) begin
-        if (reset_clean) begin
-            counter <= 4'b0001;
-            an3 <= 1'b1;
-            an2 <= 1'b1;
-            an1 <= 1'b1;
-            an0 <= 1'b1;
-            char <= 4'h8;
-        end
-        else begin
-            counter = counter - 4'b1;
-
-            if (counter[0] == 1'b0) begin
-                case (counter[3:1])
-                    3'b111: {an3,an2,an1,an0} <= 4'b0111;
-                    3'b110: char = 4'h4;
-                    3'b101: {an3,an2,an1,an0} <= 4'b1011;
-                    3'b100: char = 4'h9;
-                    3'b011: {an3,an2,an1,an0} <= 4'b1101;
-                    3'b010: char = 4'h1;
-                    3'b001: {an3,an2,an1,an0} <= 4'b1110;
-                    3'b000: char = 4'h3;
-                    default: {an3,an2,an1,an0} <= 4'b1111;
-                endcase
-            end
-            else begin
-                {an3,an2,an1,an0} <= 4'b1111;
-            end
-        end
-    end
+    digit_driver_module digit_driver_module_inst (.clk(clk_ssd), .reset(reset_clean), .relative_addr(relative_addr), .anodes({an3,an2,an1,an0}));
 
     assign dp = 1'b0;
     
+    always @(relative_addr) begin
+        case (relative_addr)
+            2'h0: char = 4'h3;
+            2'h1: char = 4'h4;
+            2'h2: char = 4'h9;
+            2'h3: char = 4'h1;
+        endcase
+    end
 endmodule
