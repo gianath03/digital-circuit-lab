@@ -15,9 +15,7 @@ module clean_button_module(input button, input clk, output button_clean);
     //Anti-Bounce
     always @(posedge clk) begin
         if (button_sync) begin
-            //if (counter) begin
-                counter <= counter - 1'b1;
-            //end
+            counter <= counter - 1'b1;
         end
         else begin
             counter <= 22'd2_500_000;
