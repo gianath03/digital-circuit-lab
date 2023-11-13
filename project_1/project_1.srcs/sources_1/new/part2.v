@@ -5,6 +5,7 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
     output an3, an2, an1, an0;
     output a, b, c, d, e, f, g, dp;
 
+    wire dp = 1'b0;
     wire clkfb, clk_ssd, reset_clean;
     wire [1:0] relative_addr;
     reg [3:0] counter;
@@ -76,18 +77,8 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
    );
    // End of MMCME2_BASE_inst instantiation
 
-    LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
+    LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(relative_addr));
     clean_button_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
     digit_driver_module digit_driver_module_inst (.clk(clk_ssd), .reset(reset_clean), .relative_addr(relative_addr), .anodes({an3,an2,an1,an0}));
 
-    assign dp = 1'b0;
-    
-    always @(relative_addr) begin
-        case (relative_addr)
-            2'h0: char = 4'h3;
-            2'h1: char = 4'h4;
-            2'h2: char = 4'h9;
-            2'h3: char = 4'h1;
-        endcase
-    end
 endmodule

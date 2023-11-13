@@ -9,12 +9,12 @@ module FourDigitLEDdriverTextTimer(reset, clk, an3, an2, an1, an0, a, b, c, d, e
     wire [3:0] addr;
     wire dp = 1'b0;
     reg [3:0] counter;
-    reg an3, an2, an1, an0;
+    wire an3, an2, an1, an0;
     wire [3:0] char;
-    reg [1:0] relative_addr;
+    wire [1:0] relative_addr;
     reg [3:0] message [0:15];
 
-    always begin
+    always @(posedge reset) begin
         message[0] = 4'h0;
         message[1] = 4'h1;
         message[2] = 4'h2;
@@ -106,36 +106,6 @@ module FourDigitLEDdriverTextTimer(reset, clk, an3, an2, an1, an0, a, b, c, d, e
     scroll_time_module scroll_time_module_inst (.clk(clk_ssd), .reset(reset_clean), .addr(addr));
     LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
     clean_button_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
-
-    //Counter for the digit driver.
-    always @(posedge clk_ssd or posedge reset_clean) begin
-        if (reset_clean) begin
-            counter = 4'b0001;
-            an3 = 1'b1;
-            an2 = 1'b1;
-            an1 = 1'b1;
-            an0 = 1'b1;
-        end
-        else begin
-            counter = counter - 4'b1;
-
-            if (counter[0] == 1'b0) begin
-                case (counter[3:1])
-                    3'b111: {an3,an2,an1,an0} = 4'b0111;
-                    3'b110: relative_addr = 2'h1;
-                    3'b101: {an3,an2,an1,an0} = 4'b1011;
-                    3'b100: relative_addr = 2'h2;
-                    3'b011: {an3,an2,an1,an0} = 4'b1101;
-                    3'b010: relative_addr = 2'h3;
-                    3'b001: {an3,an2,an1,an0} = 4'b1110;
-                    3'b000: relative_addr = 2'h0;
-                    default: {an3,an2,an1,an0} = 4'b1111;
-                endcase
-            end
-            else begin
-                {an3,an2,an1,an0} = 4'b1111;
-            end
-        end
-    end
+    digit_driver_module digit_driver_module_inst (.clk(clk_ssd), .reset(reset_clean), .relative_addr(relative_addr), .anodes({an3,an2,an1,an0}));
     
 endmodule
