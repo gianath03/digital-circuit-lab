@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Mon Nov 13 13:29:47 2023
+| Date             : Tue Nov 14 14:53:47 2023
 | Host             : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
 | Command          : report_power -file FourDigitLEDdriver_power_routed.rpt -pb FourDigitLEDdriver_power_summary_routed.pb -rpx FourDigitLEDdriver_power_routed.rpx
 | Design           : FourDigitLEDdriver

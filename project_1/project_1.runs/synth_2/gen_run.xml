@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1699874859">
+<GenRun Id="synth_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1699966181">
   <File Type="VDS-TIMING-PB" Name="FourDigitLEDdriver_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="FourDigitLEDdriver_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="FourDigitLEDdriver.dcp"/>
@@ -91,7 +91,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

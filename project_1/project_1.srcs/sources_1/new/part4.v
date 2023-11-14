@@ -92,7 +92,7 @@ module FourDigitLEDdriverTextTimer(reset, clk, an3, an2, an1, an0, a, b, c, d, e
       // Clock Inputs: 1-bit (each) input: Clock input
       .CLKIN1(clk),       // 1-bit input: Clock
       // Control Ports: 1-bit (each) input: MMCM control ports
-      .PWRDWN(PWRDWN),       // 1-bit input: Power-down
+      .PWRDWN(1'b0),       // 1-bit input: Power-down
       .RST(RST),             // 1-bit input: Reset
       // Feedback Clocks: 1-bit (each) input: Clock feedback ports
       .CLKFBIN(clkfb)      // 1-bit input: Feedback clock

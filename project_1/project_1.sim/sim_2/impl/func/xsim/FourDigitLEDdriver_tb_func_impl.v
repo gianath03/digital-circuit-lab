@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Wed Nov  8 19:26:15 2023
+// Date        : Tue Nov 14 14:55:48 2023
 // Host        : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/FourDigitLEDdriver_tb_func_impl.v
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* ECO_CHECKSUM = "541a9fe5" *) 
+(* ECO_CHECKSUM = "3d270222" *) 
 (* NotValidForBitStream *)
 module FourDigitLEDdriver
    (reset,
@@ -45,42 +45,23 @@ module FourDigitLEDdriver
   output dp;
 
   wire a;
-  wire a_OBUF;
   wire an0;
   wire an0_OBUF;
-  wire an0_i_1_n_0;
   wire an1;
   wire an1_OBUF;
-  wire an1_i_1_n_0;
   wire an2;
   wire an2_OBUF;
-  wire an2_i_1_n_0;
   wire an3;
   wire an3_OBUF;
-  wire an3_i_1_n_0;
-  wire an3_i_2_n_0;
   wire b;
-  wire b_OBUF;
-  wire button_clean1;
   wire c;
   wire c_OBUF;
-  wire char;
-  wire \char[0]_i_1_n_0 ;
-  wire \char[1]_i_1_n_0 ;
-  wire \char[2]_i_1_n_0 ;
-  wire \char[3]_i_2_n_0 ;
-  wire \char_reg_n_0_[0] ;
-  wire \char_reg_n_0_[1] ;
-  wire \char_reg_n_0_[2] ;
-  wire \char_reg_n_0_[3] ;
+  wire clear;
   wire clk;
   wire clk_IBUF;
   wire clk_ssd;
   wire clk_ssd_BUFG;
   wire clkfb;
-  wire [0:0]counter;
-  wire \counter[0]_i_1__0_n_0 ;
-  wire [3:1]counter__0;
   wire d;
   wire d_OBUF;
   wire dp;
@@ -90,10 +71,8 @@ module FourDigitLEDdriver
   wire f_OBUF;
   wire g;
   wire g_OBUF;
-  wire [2:0]p_0_in;
   wire reset;
   wire reset_IBUF;
-  wire reset_clean;
   wire NLW_MMCME2_BASE_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_MMCME2_BASE_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_MMCME2_BASE_inst_CLKINSTOPPED_UNCONNECTED;
@@ -112,15 +91,6 @@ module FourDigitLEDdriver
   wire NLW_MMCME2_BASE_inst_PSDONE_UNCONNECTED;
   wire [15:0]NLW_MMCME2_BASE_inst_DO_UNCONNECTED;
 
-  LEDdecoder LEDdecoder_inst
-       (.Q({\char_reg_n_0_[3] ,\char_reg_n_0_[2] ,\char_reg_n_0_[1] ,\char_reg_n_0_[0] }),
-        .a_OBUF(a_OBUF),
-        .b_OBUF(b_OBUF),
-        .c_OBUF(c_OBUF),
-        .d_OBUF(d_OBUF),
-        .e_OBUF(e_OBUF),
-        .f_OBUF(f_OBUF),
-        .g_OBUF(g_OBUF));
   (* BOX_TYPE = "PRIMITIVE" *) 
   (* OPT_MODIFIED = "BUFG_OPT " *) 
   (* XILINX_LEGACY_PRIM = "MMCME2_BASE" *) 
@@ -203,239 +173,53 @@ module FourDigitLEDdriver
         .PWRDWN(1'b0),
         .RST(1'b0));
   OBUF a_OBUF_inst
-       (.I(a_OBUF),
+       (.I(d_OBUF),
         .O(a));
   OBUF an0_OBUF_inst
        (.I(an0_OBUF),
         .O(an0));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT3 #(
-    .INIT(8'hEF)) 
-    an0_i_1
-       (.I0(counter__0[2]),
-        .I1(counter__0[3]),
-        .I2(counter),
-        .O(an0_i_1_n_0));
-  FDPE #(
-    .INIT(1'b1)) 
-    an0_reg
-       (.C(clk_ssd_BUFG),
-        .CE(an3_i_1_n_0),
-        .D(an0_i_1_n_0),
-        .PRE(reset_clean),
-        .Q(an0_OBUF));
   OBUF an1_OBUF_inst
        (.I(an1_OBUF),
         .O(an1));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT3 #(
-    .INIT(8'hDF)) 
-    an1_i_1
-       (.I0(counter__0[2]),
-        .I1(counter__0[3]),
-        .I2(counter),
-        .O(an1_i_1_n_0));
-  FDPE #(
-    .INIT(1'b1)) 
-    an1_reg
-       (.C(clk_ssd_BUFG),
-        .CE(an3_i_1_n_0),
-        .D(an1_i_1_n_0),
-        .PRE(reset_clean),
-        .Q(an1_OBUF));
   OBUF an2_OBUF_inst
        (.I(an2_OBUF),
         .O(an2));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT3 #(
-    .INIT(8'hBF)) 
-    an2_i_1
-       (.I0(counter__0[2]),
-        .I1(counter__0[3]),
-        .I2(counter),
-        .O(an2_i_1_n_0));
-  FDPE #(
-    .INIT(1'b1)) 
-    an2_reg
-       (.C(clk_ssd_BUFG),
-        .CE(an3_i_1_n_0),
-        .D(an2_i_1_n_0),
-        .PRE(reset_clean),
-        .Q(an2_OBUF));
   OBUF an3_OBUF_inst
        (.I(an3_OBUF),
         .O(an3));
-  LUT2 #(
-    .INIT(4'hB)) 
-    an3_i_1
-       (.I0(counter__0[1]),
-        .I1(counter),
-        .O(an3_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT3 #(
-    .INIT(8'h7F)) 
-    an3_i_2
-       (.I0(counter__0[2]),
-        .I1(counter__0[3]),
-        .I2(counter),
-        .O(an3_i_2_n_0));
-  FDPE #(
-    .INIT(1'b1)) 
-    an3_reg
-       (.C(clk_ssd_BUFG),
-        .CE(an3_i_1_n_0),
-        .D(an3_i_2_n_0),
-        .PRE(reset_clean),
-        .Q(an3_OBUF));
   OBUF b_OBUF_inst
-       (.I(b_OBUF),
+       (.I(1'b0),
         .O(b));
   OBUF c_OBUF_inst
        (.I(c_OBUF),
         .O(c));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT4 #(
-    .INIT(16'h57FE)) 
-    \char[0]_i_1 
-       (.I0(counter__0[3]),
-        .I1(counter__0[1]),
-        .I2(counter),
-        .I3(counter__0[2]),
-        .O(\char[0]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'h0056)) 
-    \char[1]_i_1 
-       (.I0(counter__0[2]),
-        .I1(counter),
-        .I2(counter__0[1]),
-        .I3(counter__0[3]),
-        .O(\char[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT4 #(
-    .INIT(16'hA801)) 
-    \char[2]_i_1 
-       (.I0(counter__0[2]),
-        .I1(counter),
-        .I2(counter__0[1]),
-        .I3(counter__0[3]),
-        .O(\char[2]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'h1E00)) 
-    \char[3]_i_2 
-       (.I0(counter__0[1]),
-        .I1(counter),
-        .I2(counter__0[2]),
-        .I3(counter__0[3]),
-        .O(\char[3]_i_2_n_0 ));
-  FDCE #(
-    .INIT(1'b0)) 
-    \char_reg[0] 
-       (.C(clk_ssd_BUFG),
-        .CE(char),
-        .CLR(reset_clean),
-        .D(\char[0]_i_1_n_0 ),
-        .Q(\char_reg_n_0_[0] ));
-  FDCE #(
-    .INIT(1'b0)) 
-    \char_reg[1] 
-       (.C(clk_ssd_BUFG),
-        .CE(char),
-        .CLR(reset_clean),
-        .D(\char[1]_i_1_n_0 ),
-        .Q(\char_reg_n_0_[1] ));
-  FDCE #(
-    .INIT(1'b0)) 
-    \char_reg[2] 
-       (.C(clk_ssd_BUFG),
-        .CE(char),
-        .CLR(reset_clean),
-        .D(\char[2]_i_1_n_0 ),
-        .Q(\char_reg_n_0_[2] ));
-  FDPE #(
-    .INIT(1'b1)) 
-    \char_reg[3] 
-       (.C(clk_ssd_BUFG),
-        .CE(char),
-        .D(\char[3]_i_2_n_0 ),
-        .PRE(reset_clean),
-        .Q(\char_reg_n_0_[3] ));
   clean_button_module clean_reset
-       (.E(char),
-        .\char_reg[0] (an3_i_1_n_0),
-        .clk_ssd_BUFG(clk_ssd_BUFG),
-        .\counter_reg[1]_0 (button_clean1),
-        .reset_IBUF(reset_IBUF),
-        .reset_clean(reset_clean));
+       (.AS(clear),
+        .CLK(clk_ssd_BUFG),
+        .reset_IBUF(reset_IBUF));
   IBUF clk_IBUF_inst
        (.I(clk),
         .O(clk_IBUF));
+  (* LOPT_BUFG_CLOCK *) 
   (* OPT_MODIFIED = "BUFG_OPT " *) 
   BUFG clk_ssd_BUFG_inst
        (.I(clk_ssd),
         .O(clk_ssd_BUFG));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \counter[0]_i_1__0 
-       (.I0(counter),
-        .O(\counter[0]_i_1__0_n_0 ));
-  LUT2 #(
-    .INIT(4'h9)) 
-    \counter[1]_i_1 
-       (.I0(counter__0[1]),
-        .I1(counter),
-        .O(p_0_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT3 #(
-    .INIT(8'hA9)) 
-    \counter[2]_i_1 
-       (.I0(counter__0[2]),
-        .I1(counter),
-        .I2(counter__0[1]),
-        .O(p_0_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT4 #(
-    .INIT(16'hAAA9)) 
-    \counter[3]_i_2 
-       (.I0(counter__0[3]),
-        .I1(counter__0[1]),
-        .I2(counter),
-        .I3(counter__0[2]),
-        .O(p_0_in[2]));
-  FDPE #(
-    .INIT(1'b1)) 
-    \counter_reg[0] 
-       (.C(clk_ssd_BUFG),
-        .CE(button_clean1),
-        .D(\counter[0]_i_1__0_n_0 ),
-        .PRE(reset_clean),
-        .Q(counter));
-  FDCE #(
-    .INIT(1'b0)) 
-    \counter_reg[1] 
-       (.C(clk_ssd_BUFG),
-        .CE(button_clean1),
-        .CLR(reset_clean),
-        .D(p_0_in[0]),
-        .Q(counter__0[1]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \counter_reg[2] 
-       (.C(clk_ssd_BUFG),
-        .CE(button_clean1),
-        .CLR(reset_clean),
-        .D(p_0_in[1]),
-        .Q(counter__0[2]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \counter_reg[3] 
-       (.C(clk_ssd_BUFG),
-        .CE(button_clean1),
-        .CLR(reset_clean),
-        .D(p_0_in[2]),
-        .Q(counter__0[3]));
   OBUF d_OBUF_inst
        (.I(d_OBUF),
         .O(d));
+  digit_driver_module digit_driver_module_inst
+       (.AS(clear),
+        .CLK(clk_ssd_BUFG),
+        .D(g_OBUF),
+        .an0_OBUF(an0_OBUF),
+        .an1_OBUF(an1_OBUF),
+        .an2_OBUF(an2_OBUF),
+        .an3_OBUF(an3_OBUF),
+        .c_OBUF(c_OBUF),
+        .d_OBUF(d_OBUF),
+        .e_OBUF(e_OBUF),
+        .f_OBUF(f_OBUF));
   OBUF dp_OBUF_inst
        (.I(1'b0),
         .O(dp));
@@ -453,115 +237,18 @@ module FourDigitLEDdriver
         .O(reset_IBUF));
 endmodule
 
-module LEDdecoder
-   (g_OBUF,
-    f_OBUF,
-    e_OBUF,
-    d_OBUF,
-    c_OBUF,
-    b_OBUF,
-    a_OBUF,
-    Q);
-  output g_OBUF;
-  output f_OBUF;
-  output e_OBUF;
-  output d_OBUF;
-  output c_OBUF;
-  output b_OBUF;
-  output a_OBUF;
-  input [3:0]Q;
-
-  wire [3:0]Q;
-  wire a_OBUF;
-  wire b_OBUF;
-  wire c_OBUF;
-  wire d_OBUF;
-  wire e_OBUF;
-  wire f_OBUF;
-  wire g_OBUF;
-
-  LUT4 #(
-    .INIT(16'h2094)) 
-    a_OBUF_inst_i_1
-       (.I0(Q[3]),
-        .I1(Q[2]),
-        .I2(Q[0]),
-        .I3(Q[1]),
-        .O(a_OBUF));
-  LUT4 #(
-    .INIT(16'hAC48)) 
-    b_OBUF_inst_i_1
-       (.I0(Q[3]),
-        .I1(Q[2]),
-        .I2(Q[0]),
-        .I3(Q[1]),
-        .O(b_OBUF));
-  LUT4 #(
-    .INIT(16'hA210)) 
-    c_OBUF_inst_i_1
-       (.I0(Q[3]),
-        .I1(Q[0]),
-        .I2(Q[1]),
-        .I3(Q[2]),
-        .O(c_OBUF));
-  LUT4 #(
-    .INIT(16'hC214)) 
-    d_OBUF_inst_i_1
-       (.I0(Q[3]),
-        .I1(Q[2]),
-        .I2(Q[0]),
-        .I3(Q[1]),
-        .O(d_OBUF));
-  LUT4 #(
-    .INIT(16'h5710)) 
-    e_OBUF_inst_i_1
-       (.I0(Q[3]),
-        .I1(Q[1]),
-        .I2(Q[2]),
-        .I3(Q[0]),
-        .O(e_OBUF));
-  LUT4 #(
-    .INIT(16'h5190)) 
-    f_OBUF_inst_i_1
-       (.I0(Q[3]),
-        .I1(Q[2]),
-        .I2(Q[0]),
-        .I3(Q[1]),
-        .O(f_OBUF));
-  LUT4 #(
-    .INIT(16'h4025)) 
-    g_OBUF_inst_i_1
-       (.I0(Q[3]),
-        .I1(Q[0]),
-        .I2(Q[2]),
-        .I3(Q[1]),
-        .O(g_OBUF));
-endmodule
-
 module clean_button_module
-   (reset_clean,
-    E,
-    \counter_reg[1]_0 ,
+   (AS,
     reset_IBUF,
-    clk_ssd_BUFG,
-    \char_reg[0] );
-  output reset_clean;
-  output [0:0]E;
-  output [0:0]\counter_reg[1]_0 ;
+    CLK);
+  output [0:0]AS;
   input reset_IBUF;
-  input clk_ssd_BUFG;
-  input \char_reg[0] ;
+  input CLK;
 
-  wire [0:0]E;
+  wire [0:0]AS;
+  wire CLK;
   wire button_sync;
-  wire \char[3]_i_4_n_0 ;
-  wire \char[3]_i_5_n_0 ;
-  wire \char[3]_i_6_n_0 ;
-  wire \char[3]_i_7_n_0 ;
-  wire \char[3]_i_8_n_0 ;
-  wire \char_reg[0] ;
-  wire clear;
-  wire clk_ssd_BUFG;
+  wire \counter[0]_i_1_n_0 ;
   wire \counter[0]_i_3_n_0 ;
   wire \counter[0]_i_4_n_0 ;
   wire \counter[0]_i_5_n_0 ;
@@ -576,6 +263,10 @@ module clean_button_module
   wire \counter[16]_i_5_n_0 ;
   wire \counter[20]_i_2_n_0 ;
   wire \counter[20]_i_3_n_0 ;
+  wire \counter[3]_i_2_n_0 ;
+  wire \counter[3]_i_3_n_0 ;
+  wire \counter[3]_i_4_n_0 ;
+  wire \counter[3]_i_5_n_0 ;
   wire \counter[4]_i_2_n_0 ;
   wire \counter[4]_i_3_n_0 ;
   wire \counter[4]_i_4_n_0 ;
@@ -600,7 +291,6 @@ module clean_button_module
   wire \counter_reg[16]_i_1_n_5 ;
   wire \counter_reg[16]_i_1_n_6 ;
   wire \counter_reg[16]_i_1_n_7 ;
-  wire [0:0]\counter_reg[1]_0 ;
   wire \counter_reg[20]_i_1_n_6 ;
   wire \counter_reg[20]_i_1_n_7 ;
   wire \counter_reg[4]_i_1_n_0 ;
@@ -614,7 +304,6 @@ module clean_button_module
   wire \counter_reg[8]_i_1_n_6 ;
   wire \counter_reg[8]_i_1_n_7 ;
   wire reset_IBUF;
-  wire reset_clean;
   wire temp;
   wire [2:0]\NLW_counter_reg[0]_i_2_CO_UNCONNECTED ;
   wire [2:0]\NLW_counter_reg[12]_i_1_CO_UNCONNECTED ;
@@ -627,77 +316,16 @@ module clean_button_module
   FDRE #(
     .INIT(1'b0)) 
     button_sync_reg
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(temp),
         .Q(button_sync),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'h00000000FFFFFFFE)) 
-    \char[3]_i_1 
-       (.I0(\char[3]_i_4_n_0 ),
-        .I1(\char[3]_i_5_n_0 ),
-        .I2(\char[3]_i_6_n_0 ),
-        .I3(\char[3]_i_7_n_0 ),
-        .I4(\char[3]_i_8_n_0 ),
-        .I5(\char_reg[0] ),
-        .O(E));
-  LUT5 #(
-    .INIT(32'h00000001)) 
-    \char[3]_i_3 
-       (.I0(\char[3]_i_4_n_0 ),
-        .I1(\char[3]_i_5_n_0 ),
-        .I2(\char[3]_i_6_n_0 ),
-        .I3(\char[3]_i_7_n_0 ),
-        .I4(\char[3]_i_8_n_0 ),
-        .O(reset_clean));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \char[3]_i_4 
-       (.I0(counter_reg[11]),
-        .I1(counter_reg[10]),
-        .I2(counter_reg[13]),
-        .I3(counter_reg[12]),
-        .O(\char[3]_i_4_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \char[3]_i_5 
-       (.I0(counter_reg[7]),
-        .I1(counter_reg[6]),
-        .I2(counter_reg[9]),
-        .I3(counter_reg[8]),
-        .O(\char[3]_i_5_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \char[3]_i_6 
-       (.I0(counter_reg[19]),
-        .I1(counter_reg[18]),
-        .I2(counter_reg[21]),
-        .I3(counter_reg[20]),
-        .O(\char[3]_i_6_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \char[3]_i_7 
-       (.I0(counter_reg[15]),
-        .I1(counter_reg[14]),
-        .I2(counter_reg[17]),
-        .I3(counter_reg[16]),
-        .O(\char[3]_i_7_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \char[3]_i_8 
-       (.I0(counter_reg[1]),
-        .I1(counter_reg[0]),
-        .I2(counter_reg[4]),
-        .I3(counter_reg[5]),
-        .I4(counter_reg[2]),
-        .I5(counter_reg[3]),
-        .O(\char[3]_i_8_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \counter[0]_i_1 
        (.I0(button_sync),
-        .O(clear));
+        .O(\counter[0]_i_1_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \counter[0]_i_3 
@@ -768,15 +396,52 @@ module clean_button_module
     \counter[20]_i_3 
        (.I0(counter_reg[20]),
         .O(\counter[20]_i_3_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
+  LUT4 #(
+    .INIT(16'h8000)) 
     \counter[3]_i_1 
-       (.I0(\char[3]_i_8_n_0 ),
-        .I1(\char[3]_i_7_n_0 ),
-        .I2(\char[3]_i_6_n_0 ),
-        .I3(\char[3]_i_5_n_0 ),
-        .I4(\char[3]_i_4_n_0 ),
-        .O(\counter_reg[1]_0 ));
+       (.I0(\counter[3]_i_2_n_0 ),
+        .I1(\counter[3]_i_3_n_0 ),
+        .I2(\counter[3]_i_4_n_0 ),
+        .I3(\counter[3]_i_5_n_0 ),
+        .O(AS));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
+    \counter[3]_i_2 
+       (.I0(counter_reg[12]),
+        .I1(counter_reg[13]),
+        .I2(counter_reg[10]),
+        .I3(counter_reg[11]),
+        .I4(counter_reg[15]),
+        .I5(counter_reg[14]),
+        .O(\counter[3]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \counter[3]_i_3 
+       (.I0(counter_reg[1]),
+        .I1(counter_reg[0]),
+        .I2(counter_reg[3]),
+        .I3(counter_reg[2]),
+        .O(\counter[3]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
+    \counter[3]_i_4 
+       (.I0(counter_reg[6]),
+        .I1(counter_reg[7]),
+        .I2(counter_reg[4]),
+        .I3(counter_reg[5]),
+        .I4(counter_reg[9]),
+        .I5(counter_reg[8]),
+        .O(\counter[3]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
+    \counter[3]_i_5 
+       (.I0(counter_reg[18]),
+        .I1(counter_reg[19]),
+        .I2(counter_reg[16]),
+        .I3(counter_reg[17]),
+        .I4(counter_reg[21]),
+        .I5(counter_reg[20]),
+        .O(\counter[3]_i_5_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \counter[4]_i_2 
@@ -820,11 +485,11 @@ module clean_button_module
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[0] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[0]_i_2_n_7 ),
         .Q(counter_reg[0]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   (* OPT_MODIFIED = "SWEEP " *) 
   CARRY4 \counter_reg[0]_i_2 
        (.CI(1'b0),
@@ -836,27 +501,27 @@ module clean_button_module
   FDSE #(
     .INIT(1'b1)) 
     \counter_reg[10] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[8]_i_1_n_5 ),
         .Q(counter_reg[10]),
-        .S(clear));
+        .S(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[11] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[8]_i_1_n_4 ),
         .Q(counter_reg[11]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[12] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[12]_i_1_n_7 ),
         .Q(counter_reg[12]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   (* OPT_MODIFIED = "SWEEP " *) 
   CARRY4 \counter_reg[12]_i_1 
        (.CI(\counter_reg[8]_i_1_n_0 ),
@@ -868,35 +533,35 @@ module clean_button_module
   FDSE #(
     .INIT(1'b1)) 
     \counter_reg[13] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[12]_i_1_n_6 ),
         .Q(counter_reg[13]),
-        .S(clear));
+        .S(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[14] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[12]_i_1_n_5 ),
         .Q(counter_reg[14]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[15] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[12]_i_1_n_4 ),
         .Q(counter_reg[15]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[16] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[16]_i_1_n_7 ),
         .Q(counter_reg[16]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   (* OPT_MODIFIED = "SWEEP " *) 
   CARRY4 \counter_reg[16]_i_1 
        (.CI(\counter_reg[12]_i_1_n_0 ),
@@ -908,43 +573,43 @@ module clean_button_module
   FDSE #(
     .INIT(1'b1)) 
     \counter_reg[17] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[16]_i_1_n_6 ),
         .Q(counter_reg[17]),
-        .S(clear));
+        .S(\counter[0]_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \counter_reg[18] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[16]_i_1_n_5 ),
         .Q(counter_reg[18]),
-        .S(clear));
+        .S(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[19] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[16]_i_1_n_4 ),
         .Q(counter_reg[19]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[1] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[0]_i_2_n_6 ),
         .Q(counter_reg[1]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[20] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[20]_i_1_n_7 ),
         .Q(counter_reg[20]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   (* OPT_MODIFIED = "SWEEP " *) 
   CARRY4 \counter_reg[20]_i_1 
        (.CI(\counter_reg[16]_i_1_n_0 ),
@@ -956,35 +621,35 @@ module clean_button_module
   FDSE #(
     .INIT(1'b1)) 
     \counter_reg[21] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[20]_i_1_n_6 ),
         .Q(counter_reg[21]),
-        .S(clear));
+        .S(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[2] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[0]_i_2_n_5 ),
         .Q(counter_reg[2]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[3] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[0]_i_2_n_4 ),
         .Q(counter_reg[3]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[4] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[4]_i_1_n_7 ),
         .Q(counter_reg[4]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   (* OPT_MODIFIED = "SWEEP " *) 
   CARRY4 \counter_reg[4]_i_1 
        (.CI(\counter_reg[0]_i_2_n_0 ),
@@ -996,35 +661,35 @@ module clean_button_module
   FDSE #(
     .INIT(1'b1)) 
     \counter_reg[5] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[4]_i_1_n_6 ),
         .Q(counter_reg[5]),
-        .S(clear));
+        .S(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[6] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[4]_i_1_n_5 ),
         .Q(counter_reg[6]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \counter_reg[7] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[4]_i_1_n_4 ),
         .Q(counter_reg[7]),
-        .S(clear));
+        .S(\counter[0]_i_1_n_0 ));
   FDSE #(
     .INIT(1'b1)) 
     \counter_reg[8] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[8]_i_1_n_7 ),
         .Q(counter_reg[8]),
-        .S(clear));
+        .S(\counter[0]_i_1_n_0 ));
   (* OPT_MODIFIED = "SWEEP " *) 
   CARRY4 \counter_reg[8]_i_1 
        (.CI(\counter_reg[4]_i_1_n_0 ),
@@ -1036,19 +701,183 @@ module clean_button_module
   FDRE #(
     .INIT(1'b0)) 
     \counter_reg[9] 
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(\counter_reg[8]_i_1_n_6 ),
         .Q(counter_reg[9]),
-        .R(clear));
+        .R(\counter[0]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     temp_reg
-       (.C(clk_ssd_BUFG),
+       (.C(CLK),
         .CE(1'b1),
         .D(reset_IBUF),
         .Q(temp),
         .R(1'b0));
+endmodule
+
+module digit_driver_module
+   (c_OBUF,
+    d_OBUF,
+    f_OBUF,
+    e_OBUF,
+    D,
+    an0_OBUF,
+    an1_OBUF,
+    an2_OBUF,
+    an3_OBUF,
+    CLK,
+    AS);
+  output c_OBUF;
+  output d_OBUF;
+  output f_OBUF;
+  output e_OBUF;
+  output [0:0]D;
+  output an0_OBUF;
+  output an1_OBUF;
+  output an2_OBUF;
+  output an3_OBUF;
+  input CLK;
+  input [0:0]AS;
+
+  wire [0:0]AS;
+  wire CLK;
+  wire [0:0]D;
+  wire an0_OBUF;
+  wire an1_OBUF;
+  wire an2_OBUF;
+  wire an3_OBUF;
+  wire c_OBUF;
+  wire [2:1]counter0;
+  wire \counter[0]_i_1__0_n_0 ;
+  wire [3:0]counter_reg__0;
+  wire d_OBUF;
+  wire e_OBUF;
+  wire f_OBUF;
+
+  LUT4 #(
+    .INIT(16'h5600)) 
+    a_OBUF_inst_i_1
+       (.I0(counter_reg__0[2]),
+        .I1(counter_reg__0[0]),
+        .I2(counter_reg__0[1]),
+        .I3(counter_reg__0[3]),
+        .O(d_OBUF));
+  LUT4 #(
+    .INIT(16'hFFEF)) 
+    an0_OBUF_inst_i_1
+       (.I0(counter_reg__0[3]),
+        .I1(counter_reg__0[2]),
+        .I2(counter_reg__0[1]),
+        .I3(counter_reg__0[0]),
+        .O(an0_OBUF));
+  LUT4 #(
+    .INIT(16'hFFDF)) 
+    an1_OBUF_inst_i_1
+       (.I0(counter_reg__0[2]),
+        .I1(counter_reg__0[3]),
+        .I2(counter_reg__0[1]),
+        .I3(counter_reg__0[0]),
+        .O(an1_OBUF));
+  LUT4 #(
+    .INIT(16'hFFDF)) 
+    an2_OBUF_inst_i_1
+       (.I0(counter_reg__0[3]),
+        .I1(counter_reg__0[2]),
+        .I2(counter_reg__0[1]),
+        .I3(counter_reg__0[0]),
+        .O(an2_OBUF));
+  LUT4 #(
+    .INIT(16'hFF7F)) 
+    an3_OBUF_inst_i_1
+       (.I0(counter_reg__0[3]),
+        .I1(counter_reg__0[2]),
+        .I2(counter_reg__0[1]),
+        .I3(counter_reg__0[0]),
+        .O(an3_OBUF));
+  LUT4 #(
+    .INIT(16'h4442)) 
+    c_OBUF_inst_i_1
+       (.I0(counter_reg__0[3]),
+        .I1(counter_reg__0[2]),
+        .I2(counter_reg__0[0]),
+        .I3(counter_reg__0[1]),
+        .O(c_OBUF));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT1 #(
+    .INIT(2'h1)) 
+    \counter[0]_i_1__0 
+       (.I0(counter_reg__0[0]),
+        .O(\counter[0]_i_1__0_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT2 #(
+    .INIT(4'h9)) 
+    \counter[1]_i_1 
+       (.I0(counter_reg__0[1]),
+        .I1(counter_reg__0[0]),
+        .O(counter0[1]));
+  LUT3 #(
+    .INIT(8'hA9)) 
+    \counter[2]_i_1 
+       (.I0(counter_reg__0[2]),
+        .I1(counter_reg__0[0]),
+        .I2(counter_reg__0[1]),
+        .O(counter0[2]));
+  FDPE #(
+    .INIT(1'b1)) 
+    \counter_reg[0] 
+       (.C(CLK),
+        .CE(1'b1),
+        .D(\counter[0]_i_1__0_n_0 ),
+        .PRE(AS),
+        .Q(counter_reg__0[0]));
+  FDPE #(
+    .INIT(1'b1)) 
+    \counter_reg[1] 
+       (.C(CLK),
+        .CE(1'b1),
+        .D(counter0[1]),
+        .PRE(AS),
+        .Q(counter_reg__0[1]));
+  FDPE #(
+    .INIT(1'b1)) 
+    \counter_reg[2] 
+       (.C(CLK),
+        .CE(1'b1),
+        .D(counter0[2]),
+        .PRE(AS),
+        .Q(counter_reg__0[2]));
+  FDPE #(
+    .INIT(1'b1)) 
+    \counter_reg[3] 
+       (.C(CLK),
+        .CE(1'b1),
+        .D(D),
+        .PRE(AS),
+        .Q(counter_reg__0[3]));
+  LUT3 #(
+    .INIT(8'h1E)) 
+    e_OBUF_inst_i_1
+       (.I0(counter_reg__0[1]),
+        .I1(counter_reg__0[0]),
+        .I2(counter_reg__0[2]),
+        .O(e_OBUF));
+  LUT4 #(
+    .INIT(16'h777E)) 
+    f_OBUF_inst_i_1
+       (.I0(counter_reg__0[3]),
+        .I1(counter_reg__0[2]),
+        .I2(counter_reg__0[0]),
+        .I3(counter_reg__0[1]),
+        .O(f_OBUF));
+  LUT4 #(
+    .INIT(16'hFE01)) 
+    g_OBUF_inst_i_1
+       (.I0(counter_reg__0[2]),
+        .I1(counter_reg__0[0]),
+        .I2(counter_reg__0[1]),
+        .I3(counter_reg__0[3]),
+        .O(D));
 endmodule
 `ifndef GLBL
 `define GLBL
