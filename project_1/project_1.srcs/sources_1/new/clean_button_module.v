@@ -1,6 +1,6 @@
 module clean_button_module(input button, input clk, output button_clean);
     reg temp, button_sync;
-    reg [2:0] counter;
+    reg [21:0] counter;
 
     //Sync
     always @(posedge clk) begin
@@ -18,7 +18,7 @@ module clean_button_module(input button, input clk, output button_clean);
             counter <= counter - 1'b1;
         end
         else begin
-            counter <= 2'hFFFFFF;
+            counter <= 22'hFFFFFF;
         end
     end
     

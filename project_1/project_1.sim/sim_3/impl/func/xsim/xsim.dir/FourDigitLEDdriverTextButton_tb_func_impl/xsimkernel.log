@@ -2,3 +2,6 @@ Running: xsim.dir/FourDigitLEDdriverTextButton_tb_func_impl/xsimk -simmode gui -
 Design successfully loaded
 Design Loading Memory Usage: 33468 KB (Peak: 33524 KB)
 Design Loading CPU Usage: 10 ms
+Simulation completed
+Simulation Memory Usage: 119824 KB (Peak: 180740 KB)
+Simulation CPU Usage: 140 ms
