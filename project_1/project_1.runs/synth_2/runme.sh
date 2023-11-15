@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log FourDigitLEDdriver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FourDigitLEDdriver.tcl
+EAStep vivado -log FourDigitLEDdriverTextTimer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FourDigitLEDdriverTextTimer.tcl

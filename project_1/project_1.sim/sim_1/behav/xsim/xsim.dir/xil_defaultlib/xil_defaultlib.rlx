@@ -1,9 +1,14 @@
 0.6
 2018.3
-Dec  7 2018
-00:33:28
-C:/Users/athanasi/Documents/ErgastiriPsifiakwnSistimatwn/project_1/project_1.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
-C:/Users/athanasi/Documents/ErgastiriPsifiakwnSistimatwn/project_1/project_1.srcs/sim_1/new/FourDigitLEDdriver_tb.v,1698952401,verilog,,,,FourDigitLEDdriver_tb,,,,,,,,
-C:/Users/athanasi/Documents/ErgastiriPsifiakwnSistimatwn/project_1/project_1.srcs/sim_1/new/testbench_part1.v,1698951607,verilog,,,,LEDdecoder_tb,,,,,,,,
-C:/Users/athanasi/Documents/ErgastiriPsifiakwnSistimatwn/project_1/project_1.srcs/sources_1/new/part1.v,1698947503,verilog,,C:/Users/athanasi/Documents/ErgastiriPsifiakwnSistimatwn/project_1/project_1.srcs/sources_1/new/part2.v,,LEDdecoder,,,,,,,,
-C:/Users/athanasi/Documents/ErgastiriPsifiakwnSistimatwn/project_1/project_1.srcs/sources_1/new/part2.v,1698951291,verilog,,C:/Users/athanasi/Documents/ErgastiriPsifiakwnSistimatwn/project_1/project_1.srcs/sim_1/new/FourDigitLEDdriver_tb.v,,FourDigitLEDdriver,,,,,,,,
+Dec  6 2018
+23:39:36
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_1/behav/xsim/glbl.v,1699209591,verilog,,,,glbl,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_1/new/testbench_part1.v,1699209591,verilog,,,,LEDdecoder_tb,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/clean_button_module.v,1700044677,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/scroll_time_module.v,,clean_button_module,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/digit_driver_module.v,1699874333,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_1/new/testbench_part1.v,,digit_driver_module,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part1.v,1699448726,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v,,LEDdecoder,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v,1699874683,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v,,FourDigitLEDdriver,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v,1700044462,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part4.v,,FourDigitLEDdriverTextButton,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part4.v,1699966172,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/clean_button_module.v,,FourDigitLEDdriverTextTimer,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/scroll_bnt_module.v,1699631799,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/digit_driver_module.v,,scroll_bnt_module,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/scroll_time_module.v,1699631799,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/scroll_bnt_module.v,,scroll_time_module,,,,,,,,

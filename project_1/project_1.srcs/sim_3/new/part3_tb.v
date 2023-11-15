@@ -12,9 +12,9 @@ module FourDigitLEDdriverTextButton_tb;
         clk = 0; reset = 0; btnr = 0;
         #100 reset = 1;
         #100 reset = 0;
-        #100 btnr <= 1;
+        #500 btnr <= 1;
         #200 btnr <= 0;
-        #200 btnr <= 1;
+        #5200 btnr <= 1;
         #1100 btnr <= 0;
     end
     

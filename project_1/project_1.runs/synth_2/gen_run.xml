@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1699966181">
-  <File Type="VDS-TIMING-PB" Name="FourDigitLEDdriver_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="FourDigitLEDdriver_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="FourDigitLEDdriver.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="FourDigitLEDdriver_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="FourDigitLEDdriver_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="FourDigitLEDdriver_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="FourDigitLEDdriver.vds"/>
-  <File Type="REPORTS-TCL" Name="FourDigitLEDdriver_reports.tcl"/>
-  <File Type="PA-TCL" Name="FourDigitLEDdriver.tcl"/>
+<GenRun Id="synth_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1700046248">
+  <File Type="VDS-TIMING-PB" Name="FourDigitLEDdriverTextTimer_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="FourDigitLEDdriverTextTimer_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="FourDigitLEDdriverTextTimer.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="FourDigitLEDdriverTextTimer_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="FourDigitLEDdriverTextTimer_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="FourDigitLEDdriverTextTimer_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="FourDigitLEDdriverTextTimer.vds"/>
+  <File Type="REPORTS-TCL" Name="FourDigitLEDdriverTextTimer_reports.tcl"/>
+  <File Type="PA-TCL" Name="FourDigitLEDdriverTextTimer.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/part1.v">
@@ -69,7 +69,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="FourDigitLEDdriver"/>
+      <Option Name="TopModule" Val="FourDigitLEDdriverTextTimer"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -91,9 +91,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

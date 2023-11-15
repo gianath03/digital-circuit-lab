@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1699966389">
+<GenRun Id="impl_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1700046248">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BG-DRC" Name="FourDigitLEDdriver.drc"/>
-  <File Type="BG-BGN" Name="FourDigitLEDdriver.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="FourDigitLEDdriver.sysdef"/>
+  <File Type="BG-DRC" Name="FourDigitLEDdriverTextTimer.drc"/>
+  <File Type="BG-BGN" Name="FourDigitLEDdriverTextTimer.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="FourDigitLEDdriverTextTimer.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="FourDigitLEDdriver.ltx"/>
-  <File Type="BITSTR-MMI" Name="FourDigitLEDdriver.mmi"/>
-  <File Type="BITSTR-BMM" Name="FourDigitLEDdriver_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="FourDigitLEDdriver.nky"/>
-  <File Type="BITSTR-RBT" Name="FourDigitLEDdriver.rbt"/>
-  <File Type="BITSTR-MSK" Name="FourDigitLEDdriver.msk"/>
-  <File Type="BG-BIN" Name="FourDigitLEDdriver.bin"/>
-  <File Type="BG-BIT" Name="FourDigitLEDdriver.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="FourDigitLEDdriver_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="FourDigitLEDdriver_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="FourDigitLEDdriver_bus_skew_postroute_physopted.rpt"/>
-  <File Type="RDI-RDI" Name="FourDigitLEDdriver.vdi"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="FourDigitLEDdriver_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="FourDigitLEDdriver_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="FourDigitLEDdriver_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="FourDigitLEDdriver_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="FourDigitLEDdriver_postroute_physopt.dcp"/>
-  <File Type="ROUTE-BUS-SKEW" Name="FourDigitLEDdriver_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="FourDigitLEDdriver_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="FourDigitLEDdriver_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="FourDigitLEDdriver_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="FourDigitLEDdriver_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="FourDigitLEDdriver_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="FourDigitLEDdriver_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="FourDigitLEDdriver_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="FourDigitLEDdriver_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="FourDigitLEDdriver_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="FourDigitLEDdriver_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="FourDigitLEDdriver_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="FourDigitLEDdriver_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="FourDigitLEDdriver_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="FourDigitLEDdriver_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="FourDigitLEDdriver_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="FourDigitLEDdriver_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="FourDigitLEDdriver_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="FourDigitLEDdriver_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="FourDigitLEDdriver_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="FourDigitLEDdriver_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="FourDigitLEDdriver_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="FourDigitLEDdriver_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="FourDigitLEDdriver_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="FourDigitLEDdriver_postplace_pwropt.dcp"/>
-  <File Type="PLACE-TIMING" Name="FourDigitLEDdriver_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="FourDigitLEDdriver_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="FourDigitLEDdriver_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="FourDigitLEDdriver_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="FourDigitLEDdriver_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="FourDigitLEDdriver_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="FourDigitLEDdriver_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="FourDigitLEDdriver_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="FourDigitLEDdriver_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="FourDigitLEDdriver_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="FourDigitLEDdriver_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="FourDigitLEDdriver_pwropt.dcp"/>
-  <File Type="OPT-TIMING" Name="FourDigitLEDdriver_timing_summary_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="FourDigitLEDdriver.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="FourDigitLEDdriver_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="FourDigitLEDdriver_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="FourDigitLEDdriver_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="FourDigitLEDdriver_timing_summary_init.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="FourDigitLEDdriver_bus_skew_routed.rpx"/>
-  <File Type="REPORTS-TCL" Name="FourDigitLEDdriver_reports.tcl"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="FourDigitLEDdriver_bus_skew_routed.pb"/>
-  <File Type="PA-TCL" Name="FourDigitLEDdriver.tcl"/>
+  <File Type="BITSTR-LTX" Name="FourDigitLEDdriverTextTimer.ltx"/>
+  <File Type="BITSTR-MMI" Name="FourDigitLEDdriverTextTimer.mmi"/>
+  <File Type="BITSTR-BMM" Name="FourDigitLEDdriverTextTimer_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="FourDigitLEDdriverTextTimer.nky"/>
+  <File Type="BITSTR-RBT" Name="FourDigitLEDdriverTextTimer.rbt"/>
+  <File Type="BITSTR-MSK" Name="FourDigitLEDdriverTextTimer.msk"/>
+  <File Type="BG-BIN" Name="FourDigitLEDdriverTextTimer.bin"/>
+  <File Type="BG-BIT" Name="FourDigitLEDdriverTextTimer.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="FourDigitLEDdriverTextTimer_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="FourDigitLEDdriverTextTimer_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="FourDigitLEDdriverTextTimer_bus_skew_postroute_physopted.rpt"/>
+  <File Type="RDI-RDI" Name="FourDigitLEDdriverTextTimer.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="FourDigitLEDdriverTextTimer_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="FourDigitLEDdriverTextTimer_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="FourDigitLEDdriverTextTimer_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="FourDigitLEDdriverTextTimer_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="FourDigitLEDdriverTextTimer_postroute_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW" Name="FourDigitLEDdriverTextTimer_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="FourDigitLEDdriverTextTimer_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="FourDigitLEDdriverTextTimer_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="FourDigitLEDdriverTextTimer_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="FourDigitLEDdriverTextTimer_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="FourDigitLEDdriverTextTimer_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="FourDigitLEDdriverTextTimer_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="FourDigitLEDdriverTextTimer_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="FourDigitLEDdriverTextTimer_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="FourDigitLEDdriverTextTimer_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="FourDigitLEDdriverTextTimer_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="FourDigitLEDdriverTextTimer_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="FourDigitLEDdriverTextTimer_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="FourDigitLEDdriverTextTimer_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="FourDigitLEDdriverTextTimer_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="FourDigitLEDdriverTextTimer_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="FourDigitLEDdriverTextTimer_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="FourDigitLEDdriverTextTimer_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="FourDigitLEDdriverTextTimer_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="FourDigitLEDdriverTextTimer_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="FourDigitLEDdriverTextTimer_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="FourDigitLEDdriverTextTimer_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="FourDigitLEDdriverTextTimer_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="FourDigitLEDdriverTextTimer_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="FourDigitLEDdriverTextTimer_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="FourDigitLEDdriverTextTimer_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="FourDigitLEDdriverTextTimer_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="FourDigitLEDdriverTextTimer_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="FourDigitLEDdriverTextTimer_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="FourDigitLEDdriverTextTimer_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="FourDigitLEDdriverTextTimer_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="FourDigitLEDdriverTextTimer_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="FourDigitLEDdriverTextTimer_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="FourDigitLEDdriverTextTimer_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="FourDigitLEDdriverTextTimer_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="FourDigitLEDdriverTextTimer_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="FourDigitLEDdriverTextTimer_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="FourDigitLEDdriverTextTimer_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="FourDigitLEDdriverTextTimer.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="FourDigitLEDdriverTextTimer_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="FourDigitLEDdriverTextTimer_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="FourDigitLEDdriverTextTimer_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="FourDigitLEDdriverTextTimer_timing_summary_init.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="FourDigitLEDdriverTextTimer_bus_skew_routed.rpx"/>
+  <File Type="REPORTS-TCL" Name="FourDigitLEDdriverTextTimer_reports.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="FourDigitLEDdriverTextTimer_bus_skew_routed.pb"/>
+  <File Type="PA-TCL" Name="FourDigitLEDdriverTextTimer.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/part1.v">
@@ -129,7 +129,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="FourDigitLEDdriver"/>
+      <Option Name="TopModule" Val="FourDigitLEDdriverTextTimer"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -151,9 +151,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

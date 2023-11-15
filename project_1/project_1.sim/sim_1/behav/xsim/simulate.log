@@ -1,4 +1,3 @@
 Vivado Simulator 2018.3
 Time resolution is 1 ps
-Error: [Unisim MMCME2_ADV-5] The attribute CLKIN1_PERIOD is set to 0.000000 ns and out of the allowed range 0.938000 ns to 100.000000 ns set by CLKIN_FREQ_MIN/MAX. Instance FourDigitLEDdriver_tb.FourDigitLEDdriver_inst.MMCME2_BASE_inst.mmcm_adv_1
-$finish called at time : 4 ps : File "/wrk/2018.3/continuous/2018_12_06_2405991/data/verilog/src/unisims/MMCME2_ADV.v" Line 2383
+$finish called at time : 160 ns : File "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sim_1/new/testbench_part1.v" Line 26
