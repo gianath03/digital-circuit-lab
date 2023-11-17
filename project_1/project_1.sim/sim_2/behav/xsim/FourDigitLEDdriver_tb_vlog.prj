@@ -8,6 +8,7 @@ verilog xil_defaultlib  \
 "../../../../project_1.srcs/sources_1/new/scroll_time_module.v" \
 "../../../../project_1.srcs/sources_1/new/scroll_bnt_module.v" \
 "../../../../project_1.srcs/sources_1/new/digit_driver_module.v" \
+"../../../../project_1.srcs/sources_1/new/clean_reset_module.v" \
 "../../../../project_1.srcs/sim_2/new/FourDigitLEDdriver_tb.v" \
 
 # compile glbl module

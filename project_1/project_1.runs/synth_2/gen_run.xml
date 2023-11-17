@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1700046248">
-  <File Type="VDS-TIMING-PB" Name="FourDigitLEDdriverTextTimer_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="FourDigitLEDdriverTextTimer_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="FourDigitLEDdriverTextTimer.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="FourDigitLEDdriverTextTimer_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="FourDigitLEDdriverTextTimer_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="FourDigitLEDdriverTextTimer_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="FourDigitLEDdriverTextTimer.vds"/>
-  <File Type="REPORTS-TCL" Name="FourDigitLEDdriverTextTimer_reports.tcl"/>
-  <File Type="PA-TCL" Name="FourDigitLEDdriverTextTimer.tcl"/>
+<GenRun Id="synth_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1700056370">
+  <File Type="VDS-TIMING-PB" Name="FourDigitLEDdriverTextButton_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="FourDigitLEDdriverTextButton_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="FourDigitLEDdriverTextButton.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="FourDigitLEDdriverTextButton_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="FourDigitLEDdriverTextButton_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="FourDigitLEDdriverTextButton_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="FourDigitLEDdriverTextButton.vds"/>
+  <File Type="REPORTS-TCL" Name="FourDigitLEDdriverTextButton_reports.tcl"/>
+  <File Type="PA-TCL" Name="FourDigitLEDdriverTextButton.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/part1.v">
@@ -67,9 +67,16 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/clean_reset_module.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="FourDigitLEDdriverTextTimer"/>
+      <Option Name="TopModule" Val="FourDigitLEDdriverTextButton"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

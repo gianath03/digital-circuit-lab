@@ -9,8 +9,11 @@ Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=6.0,C...
 Compiling module unisims_ver.MMCME2_BASE(CLKFBOUT_MULT_F=6.0,...
+Compiling module xil_defaultlib.scroll_bnt_module
 Compiling module xil_defaultlib.LEDdecoder
+Compiling module xil_defaultlib.clean_reset_module
 Compiling module xil_defaultlib.clean_button_module
+Compiling module xil_defaultlib.digit_driver_module
 Compiling module xil_defaultlib.FourDigitLEDdriverTextButton
 Compiling module xil_defaultlib.FourDigitLEDdriverTextButton_tb
 Compiling module xil_defaultlib.glbl

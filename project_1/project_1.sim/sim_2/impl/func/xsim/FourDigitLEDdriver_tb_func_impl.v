@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Wed Nov 15 12:43:53 2023
+// Date        : Wed Nov 15 14:23:51 2023
 // Host        : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.sim/sim_2/impl/func/xsim/FourDigitLEDdriver_tb_func_impl.v
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* ECO_CHECKSUM = "a54f0fee" *) 
+(* ECO_CHECKSUM = "ff3a32ae" *) 
 (* NotValidForBitStream *)
 module FourDigitLEDdriver
    (reset,
@@ -282,10 +282,12 @@ module clean_button_module
   wire [0:0]AS;
   wire CLK;
   wire button_sync;
-  wire [2:0]counter;
-  wire \counter[0]_i_1_n_0 ;
+  wire [0:0]counter0;
   wire \counter[1]_i_1_n_0 ;
-  wire \counter[2]_i_1_n_0 ;
+  wire \counter[2]_i_1__0_n_0 ;
+  wire \counter[3]_i_1_n_0 ;
+  wire \counter[3]_i_2_n_0 ;
+  wire [3:0]counter_reg__0;
   wire reset_IBUF;
   wire temp;
 
@@ -297,60 +299,80 @@ module clean_button_module
         .D(temp),
         .Q(button_sync),
         .R(1'b0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \counter[0]_i_1 
+       (.I0(counter_reg__0[0]),
+        .O(counter0));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT2 #(
-    .INIT(4'h7)) 
-    \counter[0]_i_1 
-       (.I0(counter[0]),
-        .I1(button_sync),
-        .O(\counter[0]_i_1_n_0 ));
+    .INIT(4'h9)) 
+    \counter[1]_i_1 
+       (.I0(counter_reg__0[0]),
+        .I1(counter_reg__0[1]),
+        .O(\counter[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
-    .INIT(8'h9F)) 
-    \counter[1]_i_1 
-       (.I0(counter[1]),
-        .I1(counter[0]),
-        .I2(button_sync),
-        .O(\counter[1]_i_1_n_0 ));
+    .INIT(8'hE1)) 
+    \counter[2]_i_1__0 
+       (.I0(counter_reg__0[1]),
+        .I1(counter_reg__0[0]),
+        .I2(counter_reg__0[2]),
+        .O(\counter[2]_i_1__0_n_0 ));
+  LUT2 #(
+    .INIT(4'h7)) 
+    \counter[3]_i_1 
+       (.I0(button_sync),
+        .I1(reset_IBUF),
+        .O(\counter[3]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'hA900)) 
-    \counter[2]_i_1 
-       (.I0(counter[2]),
-        .I1(counter[0]),
-        .I2(counter[1]),
-        .I3(button_sync),
-        .O(\counter[2]_i_1_n_0 ));
-  LUT3 #(
-    .INIT(8'h01)) 
+    .INIT(16'hFE01)) 
     \counter[3]_i_2 
-       (.I0(counter[0]),
-        .I1(counter[2]),
-        .I2(counter[1]),
+       (.I0(counter_reg__0[2]),
+        .I1(counter_reg__0[0]),
+        .I2(counter_reg__0[1]),
+        .I3(counter_reg__0[3]),
+        .O(\counter[3]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h0001)) 
+    \counter[3]_i_2__0 
+       (.I0(counter_reg__0[1]),
+        .I1(counter_reg__0[0]),
+        .I2(counter_reg__0[3]),
+        .I3(counter_reg__0[2]),
         .O(AS));
-  FDRE #(
-    .INIT(1'b0)) 
+  FDSE #(
+    .INIT(1'b1)) 
     \counter_reg[0] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\counter[0]_i_1_n_0 ),
-        .Q(counter[0]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
+        .D(counter0),
+        .Q(counter_reg__0[0]),
+        .S(\counter[3]_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \counter_reg[1] 
        (.C(CLK),
         .CE(1'b1),
         .D(\counter[1]_i_1_n_0 ),
-        .Q(counter[1]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
+        .Q(counter_reg__0[1]),
+        .S(\counter[3]_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
     \counter_reg[2] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\counter[2]_i_1_n_0 ),
-        .Q(counter[2]),
-        .R(1'b0));
+        .D(\counter[2]_i_1__0_n_0 ),
+        .Q(counter_reg__0[2]),
+        .S(\counter[3]_i_1_n_0 ));
+  FDSE #(
+    .INIT(1'b1)) 
+    \counter_reg[3] 
+       (.C(CLK),
+        .CE(1'b1),
+        .D(\counter[3]_i_2_n_0 ),
+        .Q(counter_reg__0[3]),
+        .S(\counter[3]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     temp_reg
@@ -391,10 +413,10 @@ module digit_driver_module
   wire an2_OBUF;
   wire an3_OBUF;
   wire c_OBUF;
-  wire \counter[0]_i_1_n_0 ;
-  wire \counter[1]_i_1_n_0 ;
+  wire \counter[0]_i_1__0_n_0 ;
+  wire \counter[1]_i_1__0_n_0 ;
   wire \counter[2]_i_1_n_0 ;
-  wire \counter[3]_i_1_n_0 ;
+  wire \counter[3]_i_1__0_n_0 ;
   wire d_OBUF;
   wire e_OBUF;
 
@@ -448,15 +470,15 @@ module digit_driver_module
         .O(c_OBUF));
   LUT1 #(
     .INIT(2'h1)) 
-    \counter[0]_i_1 
+    \counter[0]_i_1__0 
        (.I0(Q[0]),
-        .O(\counter[0]_i_1_n_0 ));
+        .O(\counter[0]_i_1__0_n_0 ));
   LUT2 #(
     .INIT(4'h9)) 
-    \counter[1]_i_1 
+    \counter[1]_i_1__0 
        (.I0(Q[0]),
         .I1(Q[1]),
-        .O(\counter[1]_i_1_n_0 ));
+        .O(\counter[1]_i_1__0_n_0 ));
   LUT3 #(
     .INIT(8'hE1)) 
     \counter[2]_i_1 
@@ -466,18 +488,18 @@ module digit_driver_module
         .O(\counter[2]_i_1_n_0 ));
   LUT4 #(
     .INIT(16'hFE01)) 
-    \counter[3]_i_1 
+    \counter[3]_i_1__0 
        (.I0(Q[2]),
         .I1(Q[0]),
         .I2(Q[1]),
         .I3(Q[3]),
-        .O(\counter[3]_i_1_n_0 ));
+        .O(\counter[3]_i_1__0_n_0 ));
   FDPE #(
     .INIT(1'b1)) 
     \counter_reg[0] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\counter[0]_i_1_n_0 ),
+        .D(\counter[0]_i_1__0_n_0 ),
         .PRE(AS),
         .Q(Q[0]));
   FDPE #(
@@ -485,7 +507,7 @@ module digit_driver_module
     \counter_reg[1] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\counter[1]_i_1_n_0 ),
+        .D(\counter[1]_i_1__0_n_0 ),
         .PRE(AS),
         .Q(Q[1]));
   FDPE #(
@@ -501,7 +523,7 @@ module digit_driver_module
     \counter_reg[3] 
        (.C(CLK),
         .CE(1'b1),
-        .D(\counter[3]_i_1_n_0 ),
+        .D(\counter[3]_i_1__0_n_0 ),
         .PRE(AS),
         .Q(Q[3]));
   LUT3 #(
