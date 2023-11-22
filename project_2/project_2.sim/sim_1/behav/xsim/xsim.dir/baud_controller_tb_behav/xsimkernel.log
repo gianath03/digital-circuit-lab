@@ -1,0 +1,4 @@
+Running: xsim.dir/baud_controller_tb_behav/xsimk -simmode gui -wdb baud_controller_tb_behav.wdb -simrunnum 0 -socket 50175
+Design successfully loaded
+Design Loading Memory Usage: 32452 KB (Peak: 33040 KB)
+Design Loading CPU Usage: 10 ms
