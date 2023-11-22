@@ -18,7 +18,6 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,15 +31,14 @@ set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project
 set_property ip_output_repo /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part1.v
-  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part2.v
-  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part3.v
-  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/part4.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/LEDdecoder.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/FourDigitLEDdriver.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/FourDigitLEDdriverTextButton.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/FourDigitLEDdriverTextTimer.v
   /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/clean_button_module.v
   /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/scroll_time_module.v
   /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/scroll_bnt_module.v
   /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/digit_driver_module.v
-  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.srcs/sources_1/new/clean_reset_module.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

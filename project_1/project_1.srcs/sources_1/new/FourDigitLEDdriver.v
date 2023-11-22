@@ -1,42 +1,20 @@
 `timescale 1ns / 1ps
 
-module FourDigitLEDdriverTextTimer(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, dp);
+module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, dp);
     input clk, reset;
     output an3, an2, an1, an0;
     output a, b, c, d, e, f, g, dp;
 
-    wire clkfb, clk_ssd, reset_clean;
-    wire [3:0] addr;
     wire dp = 1'b1;
+    wire clkfb, clk_ssd, reset_clean;
+    wire [1:0] relative_addr;
     reg [3:0] counter;
     wire an3, an2, an1, an0;
-    wire [3:0] char;
-    wire [1:0] relative_addr;
-    reg [3:0] message [0:15];
-
-    always @(posedge reset) begin
-        message[0] = 4'h0;
-        message[1] = 4'h1;
-        message[2] = 4'h2;
-        message[3] = 4'h3;
-        message[4] = 4'h4;
-        message[5] = 4'h5;
-        message[6] = 4'h6;
-        message[7] = 4'h7;
-        message[8] = 4'h8;
-        message[9] = 4'h9;
-        message[10] = 4'ha;
-        message[11] = 4'hb;
-        message[12] = 4'hc;
-        message[13] = 4'hd;
-        message[14] = 4'he;
-        message[15] = 4'hf;
-    end
+    reg [3:0] char;
 
    // MMCME2_BASE: Base Mixed Mode Clock Manager
    //              Artix-7
    // Xilinx HDL Language Template, version 2018.3
-
    MMCME2_BASE #(
       .BANDWIDTH("OPTIMIZED"),   // Jitter programming (OPTIMIZED, HIGH, LOW)
       .CLKFBOUT_MULT_F(6.0),     // Multiply value for all CLKOUT (2.000-64.000).
@@ -92,20 +70,15 @@ module FourDigitLEDdriverTextTimer(reset, clk, an3, an2, an1, an0, a, b, c, d, e
       // Clock Inputs: 1-bit (each) input: Clock input
       .CLKIN1(clk),       // 1-bit input: Clock
       // Control Ports: 1-bit (each) input: MMCM control ports
-      .PWRDWN(1'b0),       // 1-bit input: Power-down
+      .PWRDWN(PWRDWN),       // 1-bit input: Power-down
       .RST(RST),             // 1-bit input: Reset
       // Feedback Clocks: 1-bit (each) input: Clock feedback ports
       .CLKFBIN(clkfb)      // 1-bit input: Feedback clock
    );
+   // End of MMCME2_BASE_inst instantiation
 
-    // End of MMCME2_BASE_inst instantiation
-
-    assign char = message[addr+relative_addr];
-
-    //Module instances
-    scroll_time_module scroll_time_module_inst (.clk(clk_ssd), .reset(reset_clean), .addr(addr));
-    LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
-    clean_reset_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
+    LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(relative_addr));
+    clean_button_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
     digit_driver_module digit_driver_module_inst (.clk(clk_ssd), .reset(reset_clean), .relative_addr(relative_addr), .anodes({an3,an2,an1,an0}));
-    
+
 endmodule

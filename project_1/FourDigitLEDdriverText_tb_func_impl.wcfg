@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="FourDigitLEDdriverTextButton_tb_func_impl.wdb" id="1">
+      <db_ref path="FourDigitLEDdriverTextButton_tb_behav.wdb" id="1">
          <top_modules>
             <top_module name="FourDigitLEDdriverTextButton_tb" />
             <top_module name="glbl" />
@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="3421159422fs"></ZoomEndTime>
-      <Cursor1Time time="1800000000fs"></Cursor1Time>
+      <ZoomStartTime time="2516666667fs"></ZoomStartTime>
+      <ZoomEndTime time="9016666668fs"></ZoomEndTime>
+      <Cursor1Time time="7600000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="15" />
    <wvobject type="logic" fp_name="/FourDigitLEDdriverTextButton_tb/FourDigitLEDdriverTextButton_inst/clk_ssd">
       <obj_property name="ElementShortName">clk_ssd</obj_property>
       <obj_property name="ObjectShortName">clk_ssd</obj_property>
@@ -79,5 +79,33 @@
          <obj_property name="ElementShortName">g</obj_property>
          <obj_property name="ObjectShortName">g</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/FourDigitLEDdriverTextButton_tb/FourDigitLEDdriverTextButton_inst/scroll_bnt_module_inst/addr">
+      <obj_property name="ElementShortName">addr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider85" type="divider">
+      <obj_property name="label">---------------------------</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/FourDigitLEDdriverTextButton_tb/FourDigitLEDdriverTextButton_inst/clean_bnt/button">
+      <obj_property name="ElementShortName">button</obj_property>
+      <obj_property name="ObjectShortName">button</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/FourDigitLEDdriverTextButton_tb/FourDigitLEDdriverTextButton_inst/clean_bnt/temp">
+      <obj_property name="ElementShortName">temp</obj_property>
+      <obj_property name="ObjectShortName">temp</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/FourDigitLEDdriverTextButton_tb/FourDigitLEDdriverTextButton_inst/clean_bnt/button_sync">
+      <obj_property name="ElementShortName">button_sync</obj_property>
+      <obj_property name="ObjectShortName">button_sync</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/FourDigitLEDdriverTextButton_tb/FourDigitLEDdriverTextButton_inst/clean_bnt/button_clean">
+      <obj_property name="ElementShortName">button_clean</obj_property>
+      <obj_property name="ObjectShortName">button_clean</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/FourDigitLEDdriverTextButton_tb/FourDigitLEDdriverTextButton_inst/clean_bnt/counter">
+      <obj_property name="ElementShortName">counter[1:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[1:0]</obj_property>
    </wvobject>
 </wave_config>

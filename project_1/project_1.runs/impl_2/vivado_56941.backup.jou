@@ -2,11 +2,11 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Nov 15 14:22:09 2023
-# Process ID: 43364
+# Start of session at: Wed Nov 22 13:10:56 2023
+# Process ID: 56941
 # Current directory: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.runs/impl_2
-# Command line: vivado -log FourDigitLEDdriver.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FourDigitLEDdriver.tcl -notrace
-# Log file: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.runs/impl_2/FourDigitLEDdriver.vdi
+# Command line: vivado -log FourDigitLEDdriverTextButton.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FourDigitLEDdriverTextButton.tcl -notrace
+# Log file: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.runs/impl_2/FourDigitLEDdriverTextButton.vdi
 # Journal file: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_1/project_1.runs/impl_2/vivado.jou
 #-----------------------------------------------------------
-source FourDigitLEDdriver.tcl -notrace
+source FourDigitLEDdriverTextButton.tcl -notrace

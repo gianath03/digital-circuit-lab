@@ -1,15 +1,15 @@
 `timescale 1ns / 1ps
 
-module FourDigitLEDdriverTextButton(reset, btnr, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, dp);
-    input clk, reset, btnr;
+module FourDigitLEDdriverTextTimer(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, dp);
+    input clk, reset;
     output an3, an2, an1, an0;
     output a, b, c, d, e, f, g, dp;
 
-    wire clkfb, clk_ssd, reset_clean, btnr_clean;
+    wire clkfb, clk_ssd, reset_clean;
+    wire [3:0] addr;
     wire dp = 1'b1;
     reg [3:0] counter;
     wire an3, an2, an1, an0;
-    wire [3:0] addr;
     wire [3:0] char;
     wire [1:0] relative_addr;
     reg [3:0] message [0:15];
@@ -92,20 +92,20 @@ module FourDigitLEDdriverTextButton(reset, btnr, clk, an3, an2, an1, an0, a, b, 
       // Clock Inputs: 1-bit (each) input: Clock input
       .CLKIN1(clk),       // 1-bit input: Clock
       // Control Ports: 1-bit (each) input: MMCM control ports
-      .PWRDWN(PWRDWN),       // 1-bit input: Power-down
+      .PWRDWN(1'b0),       // 1-bit input: Power-down
       .RST(RST),             // 1-bit input: Reset
       // Feedback Clocks: 1-bit (each) input: Clock feedback ports
       .CLKFBIN(clkfb)      // 1-bit input: Feedback clock
    );
+
     // End of MMCME2_BASE_inst instantiation
 
     assign char = message[addr+relative_addr];
 
-    //Instantiate modules
-    scroll_bnt_module scroll_bnt_module_inst (.clk(clk_ssd), .reset(reset_clean), .btn(btnr_clean), .addr(addr));
+    //Module instances
+    scroll_time_module scroll_time_module_inst (.clk(clk_ssd), .reset(reset_clean), .addr(addr));
     LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
-    clean_reset_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
-    clean_button_module clean_bnt(.button(btnr), .clk(clk_ssd), .button_clean(btnr_clean));
+    clean_button_module clean_reset(.button(reset), .clk(clk_ssd), .button_clean(reset_clean));
     digit_driver_module digit_driver_module_inst (.clk(clk_ssd), .reset(reset_clean), .relative_addr(relative_addr), .anodes({an3,an2,an1,an0}));
     
 endmodule

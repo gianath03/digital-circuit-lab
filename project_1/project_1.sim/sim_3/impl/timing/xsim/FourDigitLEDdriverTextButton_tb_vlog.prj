@@ -1,7 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
 "FourDigitLEDdriverTextButton_tb_time_impl.v" \
-"../../../../../project_1.srcs/sim_3/new/part3_tb.v" \
+"../../../../../project_1.srcs/sim_3/new/FourDigitLEDdriverTextButton_tb.v" \
 
 # Do not sort compile order
 nosort
