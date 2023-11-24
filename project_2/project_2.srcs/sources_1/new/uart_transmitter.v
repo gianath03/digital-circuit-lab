@@ -4,19 +4,20 @@ module uart_transmitter(reset, clk, Tx_DATA, baud_select, Tx_WR, Tx_EN, TxD, Tx_
     input [2:0] baud_select;
     input Tx_EN;
     input Tx_WR;
-    output TxD;
-    output Tx_BUSY;
+    output reg TxD;
+    output reg Tx_BUSY;
 
     reg [7:0] data;
     reg [3:0] sample_counter;
     reg [3:0] stages;
     reg parity_bit;
 
+    //Read data from system.
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             data <= 8'hFF;
         end
-        if (Tx_WR) begin
+        else if (Tx_WR && !Tx_BUSY) begin
             data <= Tx_DATA;
         end
         else begin
@@ -24,8 +25,12 @@ module uart_transmitter(reset, clk, Tx_DATA, baud_select, Tx_WR, Tx_EN, TxD, Tx_
         end
     end
 
-    always @(posedge Tx_sample_ENABLE or posedge Tx_EN) begin
-        if (Tx_EN) begin
+    //Set baud rate to Tx_sample_ENABLE /16 speed.
+    always @(posedge Tx_sample_ENABLE or posedge reset) begin
+        if (reset) begin
+            sample_counter <= 4'hF;
+        end
+        else if (Tx_EN || Tx_BUSY) begin
             sample_counter <= sample_counter - 1'b1;
         end
         else begin
@@ -33,16 +38,30 @@ module uart_transmitter(reset, clk, Tx_DATA, baud_select, Tx_WR, Tx_EN, TxD, Tx_
         end
     end
 
-    always @(negedge sample_counter) begin
-        if (Tx_EN) begin
-            if (stages == 1'hA) begin
+    //Send data
+    always @(posedge (sample_counter ? 1'b0 : 1'b1) or posedge reset) begin
+        if (reset) begin
+            stages <= 4'hA;
+        end
+        else if (Tx_EN || Tx_BUSY) begin
+            if (stages == 4'hA) begin
                 stages <= 4'h0;
             end
             else
-                stages = stages + 1'b1;
+                stages <= stages + 1'b1;
         end
         else begin
-            stages = 4'hA;
+            stages <= 4'hA;
+        end
+    end
+
+    //For Tx_BUSY signal.
+    always @(stages) begin
+        if (stages == 4'hA) begin
+            Tx_BUSY = 1'b0;
+        end
+        else begin
+            Tx_BUSY = 1'b1;
         end
     end
 

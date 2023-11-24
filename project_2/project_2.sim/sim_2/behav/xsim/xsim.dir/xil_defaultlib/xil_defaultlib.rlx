@@ -1,0 +1,8 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_2/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_2/new/uart_transmitter_tb.v,1700853452,verilog,,,,uart_transmitter_tb,,,,,,,,
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v,1700691290,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v,,baud_controller,,,,,,,,
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v,1700853374,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_2/new/uart_transmitter_tb.v,,uart_transmitter,,,,,,,,

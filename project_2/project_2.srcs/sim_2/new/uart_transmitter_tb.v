@@ -10,12 +10,16 @@ module uart_transmitter_tb;
     wire TxD;
     wire Tx_BUSY;
 
-    uart_transmitter uart_transmitter_inst (.reset(reset), .clk(clk), .Tx_DATA(Tx_DATA), .baud_controller(baud_controller), .Tx_WR(Tx_WR), .Tx_EN(Tx_EN), .TxD(TxD), .Tx_BUSY(Tx_BUSY));
+    uart_transmitter uart_transmitter_inst (.reset(reset), .clk(clk), .Tx_DATA(Tx_DATA), .baud_select(baud_select), .Tx_WR(Tx_WR), .Tx_EN(Tx_EN), .TxD(TxD), .Tx_BUSY(Tx_BUSY));
 
     initial begin
-        clk = 1'b0; reset = 1'b0; baud_select = 3'b000;
+        clk = 1'b0; reset = 1'b0; baud_select = 3'b111; Tx_DATA = 8'b10101010; Tx_EN = 1'b0; Tx_EN = 1'b0; Tx_WR = 1'b0;
         #200 reset = 1'b1;
         #400 reset = 1'b0;
+        #1000 Tx_WR = 1'b1;
+        #15 Tx_WR = 1'b0;
+        #13 Tx_EN = 1'b1;
+        #11000 Tx_EN = 1'b0;
     end
 
     always begin

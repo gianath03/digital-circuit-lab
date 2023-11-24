@@ -10,11 +10,11 @@ module baud_controller(reset, clk, baud_select, sample_ENABLE);
             counter <= counter_reset_value;
         end
         else begin
-            if (counter) begin
-                counter <= counter - 1'b1;
+            if (~counter) begin
+                counter <= counter_reset_value;
             end
             else begin
-                counter <= counter_reset_value;
+                counter <= counter - 1'b1;
             end
         end
     end
