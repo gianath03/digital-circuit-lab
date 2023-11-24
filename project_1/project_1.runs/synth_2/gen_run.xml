@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1700653642">
-  <File Type="VDS-TIMING-PB" Name="FourDigitLEDdriverTextButton_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="FourDigitLEDdriverTextButton_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="FourDigitLEDdriverTextButton.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="FourDigitLEDdriverTextButton_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="FourDigitLEDdriverTextButton_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="FourDigitLEDdriverTextButton_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="FourDigitLEDdriverTextButton.vds"/>
-  <File Type="REPORTS-TCL" Name="FourDigitLEDdriverTextButton_reports.tcl"/>
+<GenRun Id="synth_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1700848277">
   <File Type="PA-TCL" Name="FourDigitLEDdriverTextButton.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="FourDigitLEDdriverTextButton_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="FourDigitLEDdriverTextButton_reports.tcl"/>
+  <File Type="RDS-RDS" Name="FourDigitLEDdriverTextButton.vds"/>
+  <File Type="RDS-UTIL" Name="FourDigitLEDdriverTextButton_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="FourDigitLEDdriverTextButton_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="FourDigitLEDdriverTextButton.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="FourDigitLEDdriverTextButton_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="FourDigitLEDdriverTextButton_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/LEDdecoder.v">

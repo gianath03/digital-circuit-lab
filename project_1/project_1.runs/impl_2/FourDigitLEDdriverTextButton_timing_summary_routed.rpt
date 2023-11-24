@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Nov 22 13:48:17 2023
-| Host         : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Fri Nov 24 19:54:12 2023
+| Host         : athanasi-DESKTOP running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file FourDigitLEDdriverTextButton_timing_summary_routed.rpt -pb FourDigitLEDdriverTextButton_timing_summary_routed.pb -rpx FourDigitLEDdriverTextButton_timing_summary_routed.rpx -warn_on_violation
 | Design       : FourDigitLEDdriverTextButton
 | Device       : 7a100t-csg324
@@ -1410,13 +1410,13 @@ Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actua
 Min Period        n/a     BUFG/I              n/a            2.155         200.000     197.845    BUFGCTRL_X0Y16   clk_ssd_BUFG_inst/I
 Min Period        n/a     MMCME2_ADV/CLKOUT1  n/a            1.249         200.000     198.751    MMCME2_ADV_X1Y2  MMCME2_BASE_inst/CLKOUT1
 Min Period        n/a     FDRE/C              n/a            1.000         200.000     199.000    SLICE_X4Y85      clean_bnt/button_sync_reg/C
-Min Period        n/a     FDSE/C              n/a            1.000         200.000     199.000    SLICE_X3Y83      clean_bnt/counter_reg[0]/C
 Min Period        n/a     FDSE/C              n/a            1.000         200.000     199.000    SLICE_X3Y85      clean_bnt/counter_reg[10]/C
 Min Period        n/a     FDSE/C              n/a            1.000         200.000     199.000    SLICE_X3Y85      clean_bnt/counter_reg[11]/C
 Min Period        n/a     FDSE/C              n/a            1.000         200.000     199.000    SLICE_X3Y86      clean_bnt/counter_reg[12]/C
 Min Period        n/a     FDSE/C              n/a            1.000         200.000     199.000    SLICE_X3Y86      clean_bnt/counter_reg[13]/C
 Min Period        n/a     FDSE/C              n/a            1.000         200.000     199.000    SLICE_X3Y86      clean_bnt/counter_reg[14]/C
 Min Period        n/a     FDSE/C              n/a            1.000         200.000     199.000    SLICE_X3Y86      clean_bnt/counter_reg[15]/C
+Min Period        n/a     FDSE/C              n/a            1.000         200.000     199.000    SLICE_X3Y87      clean_bnt/counter_reg[16]/C
 Max Period        n/a     MMCME2_ADV/CLKOUT1  n/a            213.360       200.000     13.360     MMCME2_ADV_X1Y2  MMCME2_BASE_inst/CLKOUT1
 Low Pulse Width   Slow    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X3Y85      clean_bnt/counter_reg[10]/C
 Low Pulse Width   Slow    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X3Y85      clean_bnt/counter_reg[11]/C
@@ -1428,7 +1428,6 @@ Low Pulse Width   Slow    FDSE/C              n/a            0.500         100.0
 Low Pulse Width   Slow    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X3Y85      clean_bnt/counter_reg[9]/C
 Low Pulse Width   Slow    FDRE/C              n/a            0.500         100.000     99.500     SLICE_X2Y85      clean_reset/button_sync_reg/C
 Low Pulse Width   Slow    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X0Y85      clean_reset/counter_reg[10]/C
-High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X3Y83      clean_bnt/counter_reg[0]/C
 High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X3Y83      clean_bnt/counter_reg[1]/C
 High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X3Y83      clean_bnt/counter_reg[2]/C
 High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X3Y83      clean_bnt/counter_reg[3]/C
@@ -1436,8 +1435,9 @@ High Pulse Width  Fast    FDSE/C              n/a            0.500         100.0
 High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X3Y84      clean_bnt/counter_reg[5]/C
 High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X3Y84      clean_bnt/counter_reg[6]/C
 High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X3Y84      clean_bnt/counter_reg[7]/C
-High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X0Y83      clean_reset/counter_reg[0]/C
 High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X0Y83      clean_reset/counter_reg[1]/C
+High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X0Y83      clean_reset/counter_reg[2]/C
+High Pulse Width  Fast    FDSE/C              n/a            0.500         100.000     99.500     SLICE_X0Y83      clean_reset/counter_reg[3]/C
 
 
 
