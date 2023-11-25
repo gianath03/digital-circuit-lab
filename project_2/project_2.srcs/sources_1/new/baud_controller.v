@@ -18,7 +18,7 @@ module baud_controller(reset, clk, baud_select, sample_ENABLE);
             end
         end
     end
-    
+
     always @(baud_select) begin
         case (baud_select)
             3'b000: counter_reset_value = 15'd20833;
