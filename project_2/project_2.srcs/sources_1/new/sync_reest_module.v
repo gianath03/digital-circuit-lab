@@ -3,7 +3,7 @@ module sync_reest_module(input reset, input clk, output reset_clean);
 
     //Sync
     always @(posedge clk) begin
-        temp <= button;
+        temp <= reset;
     end
 
     always @(posedge clk) begin
@@ -11,6 +11,6 @@ module sync_reest_module(input reset, input clk, output reset_clean);
     end
     //End Sync
 
-    assign button_clean = (reset && temp && reset_sync) ? 1'b1 : 1'b0;
+    assign reset_clean = (reset && temp && reset_sync) ? 1'b1 : 1'b0;
 
 endmodule

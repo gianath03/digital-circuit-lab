@@ -1,4 +1,4 @@
-module trasmitter_baud (output wire baud_tick, input reset, input Tx_sample_ENABLE);
+module trasmitter_baud (output wire baud_tick, input Tx_EN, input Tx_BUSY, input reset, input Tx_sample_ENABLE);
     reg [3:0] sample_counter;
 
     always @(posedge Tx_sample_ENABLE or posedge reset) begin

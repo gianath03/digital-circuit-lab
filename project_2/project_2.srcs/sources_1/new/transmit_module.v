@@ -1,4 +1,4 @@
-module transmit_module (input reset, input Tx_EN, output reg Tx_BUSY, input data, input baud_tick, output TxD);
+module transmit_module (input reset, input Tx_EN, output reg Tx_BUSY, input [7:0] data, input baud_tick, output reg TxD);
     reg [3:0] stages;
 
     //Start stages counter until the transmittion finishes.

@@ -1,5 +1,4 @@
-module uart_receiver(reset, clk, Rx_DATA, baud_select, Rx_EN, RxD, \
-Rx_FERROR, Rx_PERROR, Rx_VALID);
+module uart_receiver(reset, clk, Rx_DATA, baud_select, Rx_EN, RxD, Rx_FERROR, Rx_PERROR, Rx_VALID);
     input reset, clk;
     input [2:0] baud_select;
     input Rx_EN;
@@ -10,6 +9,8 @@ Rx_FERROR, Rx_PERROR, Rx_VALID);
     output Rx_VALID; // Rx_DATA is Valid //
 
     wire reset_clean;
+
+    
 
     //Sync reset to the clock.
     sync_reest_module sync_reest (.clk(clk), .reset(reset), .reset_clean(reset_clean));

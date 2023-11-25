@@ -7,14 +7,14 @@ module baud_controller(reset, clk, baud_select, sample_ENABLE);
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            counter <= counter_reset_value;
+            counter <= 15'h0;
         end
         else begin
-            if (~counter) begin
-                counter <= counter_reset_value;
+            if (counter) begin
+                counter <= counter - 1'b1;
             end
             else begin
-                counter <= counter - 1'b1;
+                counter <= counter_reset_value;
             end
         end
     end
