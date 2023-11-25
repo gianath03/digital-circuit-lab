@@ -6,7 +6,7 @@ module uart_transmitter(reset, clk, Tx_DATA, baud_select, Tx_WR, Tx_EN, TxD, Tx_
     input Tx_WR;
     output reg TxD;
     output reg Tx_BUSY;
-    
+
     reg [7:0] data;
     wire reset_clean;
 
@@ -24,5 +24,4 @@ module uart_transmitter(reset, clk, Tx_DATA, baud_select, Tx_WR, Tx_EN, TxD, Tx_
 
     //Module that creates the correct baud rate depending on the baud_select.
     baud_controller baud_controller_tx_inst(reset_clean, clk, baud_select, Tx_sample_ENABLE);
-
 endmodule
