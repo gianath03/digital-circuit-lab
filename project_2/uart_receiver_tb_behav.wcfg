@@ -11,18 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="64600000001fs"></ZoomEndTime>
-      <Cursor1Time time="16595000000fs"></Cursor1Time>
+      <ZoomStartTime time="132661666667fs"></ZoomStartTime>
+      <ZoomEndTime time="502161666668fs"></ZoomEndTime>
+      <Cursor1Time time="203045000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="126"></ValueColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="22" />
-   <wave_markers>
-      <marker label="" time="22400000000" />
-   </wave_markers>
+   <WVObjectSize size="21" />
    <wvobject type="logic" fp_name="/uart_receiver_tb/reset">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -80,22 +77,18 @@
       <obj_property name="ElementShortName">RxD</obj_property>
       <obj_property name="ObjectShortName">RxD</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/FERROR">
+      <obj_property name="ElementShortName">FERROR</obj_property>
+      <obj_property name="ObjectShortName">FERROR</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/PERROR">
+      <obj_property name="ElementShortName">PERROR</obj_property>
+      <obj_property name="ObjectShortName">PERROR</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/data">
       <obj_property name="ElementShortName">data[7:0]</obj_property>
       <obj_property name="ObjectShortName">data[7:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/Rx_VALID">
-      <obj_property name="ElementShortName">Rx_VALID</obj_property>
-      <obj_property name="ObjectShortName">Rx_VALID</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/Rx_PERROR">
-      <obj_property name="ElementShortName">Rx_PERROR</obj_property>
-      <obj_property name="ObjectShortName">Rx_PERROR</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/Rx_FERROR">
-      <obj_property name="ElementShortName">Rx_FERROR</obj_property>
-      <obj_property name="ObjectShortName">Rx_FERROR</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/stages">
       <obj_property name="ElementShortName">stages[3:0]</obj_property>

@@ -13,6 +13,7 @@ module uart_receiver_tb ();
         clk = 1'b0; reset = 1'b0; baud_select = 3'b111; Rx_EN = 1'b0; RxD = 1'b1;
         #200 reset = 1'b1;
         #1000 reset = 1'b0;
+//10101010
         #1000 Rx_EN = 1'b1;
         #1000 RxD = 1'b0;
         #8680 RxD = 1'b0;
@@ -25,6 +26,49 @@ module uart_receiver_tb ();
         #8680 RxD = 1'b1;
         #8680 RxD = 1'b0;
         #8680 RxD = 1'b1;
+        #8680 Rx_EN = 1'b0;
+//01010101
+        #50000 Rx_EN = 1'b1;
+        #1000 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 Rx_EN = 1'b0;
+//11001100
+        #50000 Rx_EN = 1'b1;
+        #1000 RxD = 1'b0;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 Rx_EN = 1'b0;
+//10001001
+        #50000 Rx_EN = 1'b1;
+        #1000 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b1;
+        #8680 Rx_EN = 1'b0;
     end
 
     always begin

@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/baud_controller_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Wed Nov 22 16:47:34 2023" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Mon Nov 27 15:55:41 2023" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2018.3 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2405991" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "LIN64" -context "software_version_and_target_device"
@@ -14,19 +14,19 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "8084ca02-0896-4ce7-9dd3-f305be23846a" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "d5894e8e3316436a9d12ab5bf4f946c0" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "11" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "19" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Debian" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "Debian GNU/Linux 12 (bookworm)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz" -context "user_environment"
-webtalk_add_data -client project -key cpu_speed -value "1785.411 MHz" -context "user_environment"
+webtalk_add_data -client project -key cpu_speed -value "3363.360 MHz" -context "user_environment"
 webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
 webtalk_add_data -client project -key system_ram -value "20.000 GB" -context "user_environment"
 webtalk_register_client -client xsim
 webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
-webtalk_add_data -client xsim -key runtime -value "64863310 ns" -context "xsim\\usage"
-webtalk_add_data -client xsim -key iteration -value "0" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "2.56_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key runtime -value "10001 us" -context "xsim\\usage"
+webtalk_add_data -client xsim -key iteration -value "1" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.41_sec" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Simulation_Memory -value "114448_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 3735645182 -regid "" -xml /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/baud_controller_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/baud_controller_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/baud_controller_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_transmit -clientid 4161428081 -regid "" -xml /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/baud_controller_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/baud_controller_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_1/behav/xsim/xsim.dir/baud_controller_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate
