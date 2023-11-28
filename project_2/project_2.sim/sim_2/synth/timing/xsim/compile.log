@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_2/synth/timing/xsim/uart_transmitter_tb_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module baud_controller
+INFO: [VRFC 10-311] analyzing module sync_reest_module
+INFO: [VRFC 10-311] analyzing module transmit_module
+INFO: [VRFC 10-311] analyzing module transmitter_WR_module
+INFO: [VRFC 10-311] analyzing module trasmitter_baud
+INFO: [VRFC 10-311] analyzing module uart_transmitter
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_2/new/uart_transmitter_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_transmitter_tb

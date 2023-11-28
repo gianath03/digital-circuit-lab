@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Tue Nov 28 16:18:23 2023
+// Date        : Tue Nov 28 20:03:22 2023
 // Host        : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_2/impl/func/xsim/uart_transmitter_tb_func_impl.v
@@ -16,57 +16,54 @@ module baud_controller
    (counter1,
     CLK,
     AS,
-    DI,
     baud_select_IBUF);
   output counter1;
   input CLK;
   input [0:0]AS;
-  input [0:0]DI;
   input [2:0]baud_select_IBUF;
 
   wire [0:0]AS;
   wire CLK;
-  wire [0:0]DI;
   wire [2:0]baud_select_IBUF;
   wire counter1;
-  wire counter1_BUFG_inst_i_2_n_0;
-  wire counter1_BUFG_inst_i_3_n_0;
-  wire counter1_BUFG_inst_i_4_n_0;
-  wire counter1_BUFG_inst_i_5_n_0;
-  wire counter1_BUFG_inst_i_6_n_0;
   wire \counter[0]_i_2_n_0 ;
   wire \counter[0]_i_3_n_0 ;
   wire \counter[0]_i_4_n_0 ;
   wire \counter[0]_i_5_n_0 ;
+  wire \counter[0]_i_6_n_0 ;
+  wire \counter[0]_i_7_n_0 ;
+  wire \counter[0]_i_8_n_0 ;
+  wire \counter[0]_i_9_n_0 ;
   wire \counter[12]_i_2_n_0 ;
   wire \counter[12]_i_3_n_0 ;
   wire \counter[12]_i_4_n_0 ;
   wire \counter[12]_i_5_n_0 ;
-  wire \counter[16]_i_2_n_0 ;
-  wire \counter[16]_i_3_n_0 ;
-  wire \counter[16]_i_4_n_0 ;
+  wire \counter[12]_i_6_n_0 ;
   wire \counter[4]_i_2_n_0 ;
   wire \counter[4]_i_3_n_0 ;
   wire \counter[4]_i_4_n_0 ;
   wire \counter[4]_i_5_n_0 ;
+  wire \counter[4]_i_6_n_0 ;
+  wire \counter[4]_i_7_n_0 ;
+  wire \counter[4]_i_8_n_0 ;
+  wire \counter[4]_i_9_n_0 ;
   wire \counter[8]_i_2_n_0 ;
   wire \counter[8]_i_3_n_0 ;
   wire \counter[8]_i_4_n_0 ;
   wire \counter[8]_i_5_n_0 ;
-  wire [18:0]counter_reg;
+  wire \counter[8]_i_6_n_0 ;
+  wire \counter[8]_i_7_n_0 ;
+  wire \counter[8]_i_8_n_0 ;
+  wire \counter[8]_i_9_n_0 ;
+  wire [14:0]counter_reg;
   wire \counter_reg[0]_i_1_n_0 ;
   wire \counter_reg[0]_i_1_n_4 ;
   wire \counter_reg[0]_i_1_n_5 ;
   wire \counter_reg[0]_i_1_n_6 ;
   wire \counter_reg[0]_i_1_n_7 ;
-  wire \counter_reg[12]_i_1_n_0 ;
-  wire \counter_reg[12]_i_1_n_4 ;
   wire \counter_reg[12]_i_1_n_5 ;
   wire \counter_reg[12]_i_1_n_6 ;
   wire \counter_reg[12]_i_1_n_7 ;
-  wire \counter_reg[16]_i_1_n_5 ;
-  wire \counter_reg[16]_i_1_n_6 ;
-  wire \counter_reg[16]_i_1_n_7 ;
   wire \counter_reg[4]_i_1_n_0 ;
   wire \counter_reg[4]_i_1_n_4 ;
   wire \counter_reg[4]_i_1_n_5 ;
@@ -77,213 +74,262 @@ module baud_controller
   wire \counter_reg[8]_i_1_n_5 ;
   wire \counter_reg[8]_i_1_n_6 ;
   wire \counter_reg[8]_i_1_n_7 ;
+  wire \sample_counter[3]_i_4_n_0 ;
+  wire \sample_counter[3]_i_5_n_0 ;
+  wire \sample_counter[3]_i_6_n_0 ;
   wire [2:0]\NLW_counter_reg[0]_i_1_CO_UNCONNECTED ;
-  wire [2:0]\NLW_counter_reg[12]_i_1_CO_UNCONNECTED ;
-  wire [3:0]\NLW_counter_reg[16]_i_1_CO_UNCONNECTED ;
-  wire [3:3]\NLW_counter_reg[16]_i_1_O_UNCONNECTED ;
+  wire [3:0]\NLW_counter_reg[12]_i_1_CO_UNCONNECTED ;
+  wire [3:3]\NLW_counter_reg[12]_i_1_O_UNCONNECTED ;
   wire [2:0]\NLW_counter_reg[4]_i_1_CO_UNCONNECTED ;
   wire [2:0]\NLW_counter_reg[8]_i_1_CO_UNCONNECTED ;
 
   LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    counter1_BUFG_inst_i_1
-       (.I0(counter1_BUFG_inst_i_2_n_0),
-        .I1(counter1_BUFG_inst_i_3_n_0),
-        .I2(counter1_BUFG_inst_i_4_n_0),
-        .I3(counter1_BUFG_inst_i_5_n_0),
-        .I4(counter1_BUFG_inst_i_6_n_0),
-        .O(counter1));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    counter1_BUFG_inst_i_2
-       (.I0(counter_reg[15]),
-        .I1(counter_reg[18]),
-        .I2(counter_reg[13]),
-        .I3(counter_reg[16]),
-        .O(counter1_BUFG_inst_i_2_n_0));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    counter1_BUFG_inst_i_3
-       (.I0(counter_reg[3]),
-        .I1(counter_reg[6]),
-        .I2(counter_reg[0]),
-        .I3(counter_reg[4]),
-        .O(counter1_BUFG_inst_i_3_n_0));
-  LUT3 #(
-    .INIT(8'hFE)) 
-    counter1_BUFG_inst_i_4
-       (.I0(counter_reg[2]),
-        .I1(counter_reg[1]),
-        .I2(counter_reg[17]),
-        .O(counter1_BUFG_inst_i_4_n_0));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    counter1_BUFG_inst_i_5
-       (.I0(counter_reg[7]),
-        .I1(counter_reg[10]),
-        .I2(counter_reg[5]),
-        .I3(counter_reg[8]),
-        .O(counter1_BUFG_inst_i_5_n_0));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    counter1_BUFG_inst_i_6
-       (.I0(counter_reg[11]),
-        .I1(counter_reg[14]),
-        .I2(counter_reg[9]),
-        .I3(counter_reg[12]),
-        .O(counter1_BUFG_inst_i_6_n_0));
-  LUT5 #(
-    .INIT(32'h55550CF0)) 
+    .INIT(32'h2E22E2E2)) 
     \counter[0]_i_2 
        (.I0(counter_reg[3]),
-        .I1(baud_select_IBUF[1]),
+        .I1(counter1),
         .I2(baud_select_IBUF[0]),
-        .I3(baud_select_IBUF[2]),
-        .I4(counter1),
+        .I3(baud_select_IBUF[1]),
+        .I4(baud_select_IBUF[2]),
         .O(\counter[0]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'h00FFB2B2)) 
+    .INIT(32'hE222EEE2)) 
     \counter[0]_i_3 
-       (.I0(baud_select_IBUF[2]),
-        .I1(baud_select_IBUF[0]),
-        .I2(baud_select_IBUF[1]),
-        .I3(counter_reg[2]),
-        .I4(counter1),
+       (.I0(counter_reg[2]),
+        .I1(counter1),
+        .I2(baud_select_IBUF[2]),
+        .I3(baud_select_IBUF[1]),
+        .I4(baud_select_IBUF[0]),
         .O(\counter[0]_i_3_n_0 ));
   LUT5 #(
-    .INIT(32'h5555CCF0)) 
+    .INIT(32'hEEE222E2)) 
     \counter[0]_i_4 
        (.I0(counter_reg[1]),
-        .I1(baud_select_IBUF[0]),
+        .I1(counter1),
         .I2(baud_select_IBUF[1]),
         .I3(baud_select_IBUF[2]),
-        .I4(counter1),
+        .I4(baud_select_IBUF[0]),
         .O(\counter[0]_i_4_n_0 ));
   LUT5 #(
-    .INIT(32'h55553C0F)) 
+    .INIT(32'h2E22E2EE)) 
     \counter[0]_i_5 
        (.I0(counter_reg[0]),
+        .I1(counter1),
+        .I2(baud_select_IBUF[2]),
+        .I3(baud_select_IBUF[0]),
+        .I4(baud_select_IBUF[1]),
+        .O(\counter[0]_i_5_n_0 ));
+  LUT5 #(
+    .INIT(32'h585800FF)) 
+    \counter[0]_i_6 
+       (.I0(baud_select_IBUF[2]),
+        .I1(baud_select_IBUF[1]),
+        .I2(baud_select_IBUF[0]),
+        .I3(counter_reg[3]),
+        .I4(counter1),
+        .O(\counter[0]_i_6_n_0 ));
+  LUT5 #(
+    .INIT(32'hD4D400FF)) 
+    \counter[0]_i_7 
+       (.I0(baud_select_IBUF[0]),
+        .I1(baud_select_IBUF[1]),
+        .I2(baud_select_IBUF[2]),
+        .I3(counter_reg[2]),
+        .I4(counter1),
+        .O(\counter[0]_i_7_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8B800FF)) 
+    \counter[0]_i_8 
+       (.I0(baud_select_IBUF[0]),
         .I1(baud_select_IBUF[2]),
         .I2(baud_select_IBUF[1]),
-        .I3(baud_select_IBUF[0]),
+        .I3(counter_reg[1]),
         .I4(counter1),
-        .O(\counter[0]_i_5_n_0 ));
+        .O(\counter[0]_i_8_n_0 ));
+  LUT5 #(
+    .INIT(32'h595900FF)) 
+    \counter[0]_i_9 
+       (.I0(baud_select_IBUF[1]),
+        .I1(baud_select_IBUF[0]),
+        .I2(baud_select_IBUF[2]),
+        .I3(counter_reg[0]),
+        .I4(counter1),
+        .O(\counter[0]_i_9_n_0 ));
   LUT2 #(
     .INIT(4'h4)) 
     \counter[12]_i_2 
-       (.I0(counter_reg[15]),
-        .I1(counter1),
+       (.I0(counter1),
+        .I1(counter_reg[13]),
         .O(\counter[12]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'h00FF0101)) 
+  LUT4 #(
+    .INIT(16'h222E)) 
     \counter[12]_i_3 
+       (.I0(counter_reg[12]),
+        .I1(counter1),
+        .I2(baud_select_IBUF[2]),
+        .I3(baud_select_IBUF[1]),
+        .O(\counter[12]_i_3_n_0 ));
+  LUT5 #(
+    .INIT(32'h010100FF)) 
+    \counter[12]_i_4 
        (.I0(baud_select_IBUF[1]),
         .I1(baud_select_IBUF[0]),
         .I2(baud_select_IBUF[2]),
         .I3(counter_reg[14]),
         .I4(counter1),
-        .O(\counter[12]_i_3_n_0 ));
+        .O(\counter[12]_i_4_n_0 ));
   LUT2 #(
-    .INIT(4'h4)) 
-    \counter[12]_i_4 
+    .INIT(4'h1)) 
+    \counter[12]_i_5 
        (.I0(counter_reg[13]),
         .I1(counter1),
-        .O(\counter[12]_i_4_n_0 ));
+        .O(\counter[12]_i_5_n_0 ));
   LUT4 #(
-    .INIT(16'h0F11)) 
-    \counter[12]_i_5 
-       (.I0(baud_select_IBUF[2]),
-        .I1(baud_select_IBUF[1]),
+    .INIT(16'h110F)) 
+    \counter[12]_i_6 
+       (.I0(baud_select_IBUF[1]),
+        .I1(baud_select_IBUF[2]),
         .I2(counter_reg[12]),
         .I3(counter1),
-        .O(\counter[12]_i_5_n_0 ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \counter[16]_i_2 
-       (.I0(counter_reg[18]),
-        .I1(counter1),
-        .O(\counter[16]_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \counter[16]_i_3 
-       (.I0(counter_reg[17]),
-        .I1(counter1),
-        .O(\counter[16]_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h4)) 
-    \counter[16]_i_4 
-       (.I0(counter_reg[16]),
-        .I1(counter1),
-        .O(\counter[16]_i_4_n_0 ));
+        .O(\counter[12]_i_6_n_0 ));
   LUT5 #(
-    .INIT(32'h00FF2828)) 
+    .INIT(32'h2EE22222)) 
     \counter[4]_i_2 
+       (.I0(counter_reg[7]),
+        .I1(counter1),
+        .I2(baud_select_IBUF[2]),
+        .I3(baud_select_IBUF[1]),
+        .I4(baud_select_IBUF[0]),
+        .O(\counter[4]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'h222EEE2E)) 
+    \counter[4]_i_3 
+       (.I0(counter_reg[6]),
+        .I1(counter1),
+        .I2(baud_select_IBUF[1]),
+        .I3(baud_select_IBUF[2]),
+        .I4(baud_select_IBUF[0]),
+        .O(\counter[4]_i_3_n_0 ));
+  LUT5 #(
+    .INIT(32'hEEE2222E)) 
+    \counter[4]_i_4 
+       (.I0(counter_reg[5]),
+        .I1(counter1),
+        .I2(baud_select_IBUF[0]),
+        .I3(baud_select_IBUF[1]),
+        .I4(baud_select_IBUF[2]),
+        .O(\counter[4]_i_4_n_0 ));
+  LUT5 #(
+    .INIT(32'hE2222EE2)) 
+    \counter[4]_i_5 
+       (.I0(counter_reg[4]),
+        .I1(counter1),
+        .I2(baud_select_IBUF[0]),
+        .I3(baud_select_IBUF[1]),
+        .I4(baud_select_IBUF[2]),
+        .O(\counter[4]_i_5_n_0 ));
+  LUT5 #(
+    .INIT(32'h282800FF)) 
+    \counter[4]_i_6 
+       (.I0(baud_select_IBUF[0]),
+        .I1(baud_select_IBUF[1]),
+        .I2(baud_select_IBUF[2]),
+        .I3(counter_reg[7]),
+        .I4(counter1),
+        .O(\counter[4]_i_6_n_0 ));
+  LUT5 #(
+    .INIT(32'h474700FF)) 
+    \counter[4]_i_7 
        (.I0(baud_select_IBUF[0]),
         .I1(baud_select_IBUF[2]),
         .I2(baud_select_IBUF[1]),
-        .I3(counter_reg[7]),
+        .I3(counter_reg[6]),
         .I4(counter1),
-        .O(\counter[4]_i_2_n_0 ));
+        .O(\counter[4]_i_7_n_0 ));
   LUT5 #(
-    .INIT(32'h5555330F)) 
-    \counter[4]_i_3 
-       (.I0(counter_reg[6]),
-        .I1(baud_select_IBUF[0]),
-        .I2(baud_select_IBUF[1]),
-        .I3(baud_select_IBUF[2]),
-        .I4(counter1),
-        .O(\counter[4]_i_3_n_0 ));
-  LUT5 #(
-    .INIT(32'h5555F0C3)) 
-    \counter[4]_i_4 
-       (.I0(counter_reg[5]),
+    .INIT(32'hA9A900FF)) 
+    \counter[4]_i_8 
+       (.I0(baud_select_IBUF[2]),
         .I1(baud_select_IBUF[1]),
-        .I2(baud_select_IBUF[2]),
-        .I3(baud_select_IBUF[0]),
+        .I2(baud_select_IBUF[0]),
+        .I3(counter_reg[5]),
         .I4(counter1),
-        .O(\counter[4]_i_4_n_0 ));
+        .O(\counter[4]_i_8_n_0 ));
   LUT5 #(
-    .INIT(32'h00FF8686)) 
-    \counter[4]_i_5 
-       (.I0(baud_select_IBUF[1]),
-        .I1(baud_select_IBUF[0]),
-        .I2(baud_select_IBUF[2]),
+    .INIT(32'h949400FF)) 
+    \counter[4]_i_9 
+       (.I0(baud_select_IBUF[2]),
+        .I1(baud_select_IBUF[1]),
+        .I2(baud_select_IBUF[0]),
         .I3(counter_reg[4]),
         .I4(counter1),
-        .O(\counter[4]_i_5_n_0 ));
+        .O(\counter[4]_i_9_n_0 ));
   LUT2 #(
     .INIT(4'h4)) 
     \counter[8]_i_2 
-       (.I0(counter_reg[11]),
-        .I1(counter1),
+       (.I0(counter1),
+        .I1(counter_reg[11]),
         .O(\counter[8]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'h00FF0606)) 
+    .INIT(32'h22222EE2)) 
     \counter[8]_i_3 
-       (.I0(baud_select_IBUF[1]),
-        .I1(baud_select_IBUF[0]),
-        .I2(baud_select_IBUF[2]),
-        .I3(counter_reg[10]),
-        .I4(counter1),
+       (.I0(counter_reg[10]),
+        .I1(counter1),
+        .I2(baud_select_IBUF[1]),
+        .I3(baud_select_IBUF[0]),
+        .I4(baud_select_IBUF[2]),
         .O(\counter[8]_i_3_n_0 ));
   LUT5 #(
-    .INIT(32'h00FF0808)) 
+    .INIT(32'h2222E222)) 
     \counter[8]_i_4 
-       (.I0(baud_select_IBUF[1]),
-        .I1(baud_select_IBUF[0]),
-        .I2(baud_select_IBUF[2]),
-        .I3(counter_reg[9]),
-        .I4(counter1),
+       (.I0(counter_reg[9]),
+        .I1(counter1),
+        .I2(baud_select_IBUF[1]),
+        .I3(baud_select_IBUF[0]),
+        .I4(baud_select_IBUF[2]),
         .O(\counter[8]_i_4_n_0 ));
   LUT5 #(
-    .INIT(32'h00FF1515)) 
+    .INIT(32'h22222EEE)) 
     \counter[8]_i_5 
+       (.I0(counter_reg[8]),
+        .I1(counter1),
+        .I2(baud_select_IBUF[1]),
+        .I3(baud_select_IBUF[2]),
+        .I4(baud_select_IBUF[0]),
+        .O(\counter[8]_i_5_n_0 ));
+  LUT2 #(
+    .INIT(4'h1)) 
+    \counter[8]_i_6 
+       (.I0(counter_reg[11]),
+        .I1(counter1),
+        .O(\counter[8]_i_6_n_0 ));
+  LUT5 #(
+    .INIT(32'h141400FF)) 
+    \counter[8]_i_7 
+       (.I0(baud_select_IBUF[2]),
+        .I1(baud_select_IBUF[0]),
+        .I2(baud_select_IBUF[1]),
+        .I3(counter_reg[10]),
+        .I4(counter1),
+        .O(\counter[8]_i_7_n_0 ));
+  LUT5 #(
+    .INIT(32'h404000FF)) 
+    \counter[8]_i_8 
+       (.I0(baud_select_IBUF[2]),
+        .I1(baud_select_IBUF[0]),
+        .I2(baud_select_IBUF[1]),
+        .I3(counter_reg[9]),
+        .I4(counter1),
+        .O(\counter[8]_i_8_n_0 ));
+  LUT5 #(
+    .INIT(32'h151500FF)) 
+    \counter[8]_i_9 
        (.I0(baud_select_IBUF[0]),
         .I1(baud_select_IBUF[2]),
         .I2(baud_select_IBUF[1]),
         .I3(counter_reg[8]),
         .I4(counter1),
-        .O(\counter[8]_i_5_n_0 ));
+        .O(\counter[8]_i_9_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \counter_reg[0] 
@@ -297,9 +343,9 @@ module baud_controller
        (.CI(1'b0),
         .CO({\counter_reg[0]_i_1_n_0 ,\NLW_counter_reg[0]_i_1_CO_UNCONNECTED [2:0]}),
         .CYINIT(1'b0),
-        .DI({DI,DI,DI,DI}),
+        .DI({\counter[0]_i_2_n_0 ,\counter[0]_i_3_n_0 ,\counter[0]_i_4_n_0 ,\counter[0]_i_5_n_0 }),
         .O({\counter_reg[0]_i_1_n_4 ,\counter_reg[0]_i_1_n_5 ,\counter_reg[0]_i_1_n_6 ,\counter_reg[0]_i_1_n_7 }),
-        .S({\counter[0]_i_2_n_0 ,\counter[0]_i_3_n_0 ,\counter[0]_i_4_n_0 ,\counter[0]_i_5_n_0 }));
+        .S({\counter[0]_i_6_n_0 ,\counter[0]_i_7_n_0 ,\counter[0]_i_8_n_0 ,\counter[0]_i_9_n_0 }));
   FDCE #(
     .INIT(1'b0)) 
     \counter_reg[10] 
@@ -327,11 +373,11 @@ module baud_controller
   (* OPT_MODIFIED = "SWEEP " *) 
   CARRY4 \counter_reg[12]_i_1 
        (.CI(\counter_reg[8]_i_1_n_0 ),
-        .CO({\counter_reg[12]_i_1_n_0 ,\NLW_counter_reg[12]_i_1_CO_UNCONNECTED [2:0]}),
+        .CO(\NLW_counter_reg[12]_i_1_CO_UNCONNECTED [3:0]),
         .CYINIT(1'b0),
-        .DI({DI,DI,DI,DI}),
-        .O({\counter_reg[12]_i_1_n_4 ,\counter_reg[12]_i_1_n_5 ,\counter_reg[12]_i_1_n_6 ,\counter_reg[12]_i_1_n_7 }),
-        .S({\counter[12]_i_2_n_0 ,\counter[12]_i_3_n_0 ,\counter[12]_i_4_n_0 ,\counter[12]_i_5_n_0 }));
+        .DI({1'b0,1'b0,\counter[12]_i_2_n_0 ,\counter[12]_i_3_n_0 }),
+        .O({\NLW_counter_reg[12]_i_1_O_UNCONNECTED [3],\counter_reg[12]_i_1_n_5 ,\counter_reg[12]_i_1_n_6 ,\counter_reg[12]_i_1_n_7 }),
+        .S({1'b0,\counter[12]_i_4_n_0 ,\counter[12]_i_5_n_0 ,\counter[12]_i_6_n_0 }));
   FDCE #(
     .INIT(1'b0)) 
     \counter_reg[13] 
@@ -348,46 +394,6 @@ module baud_controller
         .CLR(AS),
         .D(\counter_reg[12]_i_1_n_5 ),
         .Q(counter_reg[14]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \counter_reg[15] 
-       (.C(CLK),
-        .CE(1'b1),
-        .CLR(AS),
-        .D(\counter_reg[12]_i_1_n_4 ),
-        .Q(counter_reg[15]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \counter_reg[16] 
-       (.C(CLK),
-        .CE(1'b1),
-        .CLR(AS),
-        .D(\counter_reg[16]_i_1_n_7 ),
-        .Q(counter_reg[16]));
-  (* OPT_MODIFIED = "SWEEP " *) 
-  CARRY4 \counter_reg[16]_i_1 
-       (.CI(\counter_reg[12]_i_1_n_0 ),
-        .CO(\NLW_counter_reg[16]_i_1_CO_UNCONNECTED [3:0]),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,DI,DI}),
-        .O({\NLW_counter_reg[16]_i_1_O_UNCONNECTED [3],\counter_reg[16]_i_1_n_5 ,\counter_reg[16]_i_1_n_6 ,\counter_reg[16]_i_1_n_7 }),
-        .S({1'b0,\counter[16]_i_2_n_0 ,\counter[16]_i_3_n_0 ,\counter[16]_i_4_n_0 }));
-  FDCE #(
-    .INIT(1'b0)) 
-    \counter_reg[17] 
-       (.C(CLK),
-        .CE(1'b1),
-        .CLR(AS),
-        .D(\counter_reg[16]_i_1_n_6 ),
-        .Q(counter_reg[17]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \counter_reg[18] 
-       (.C(CLK),
-        .CE(1'b1),
-        .CLR(AS),
-        .D(\counter_reg[16]_i_1_n_5 ),
-        .Q(counter_reg[18]));
   FDCE #(
     .INIT(1'b0)) 
     \counter_reg[1] 
@@ -425,9 +431,9 @@ module baud_controller
        (.CI(\counter_reg[0]_i_1_n_0 ),
         .CO({\counter_reg[4]_i_1_n_0 ,\NLW_counter_reg[4]_i_1_CO_UNCONNECTED [2:0]}),
         .CYINIT(1'b0),
-        .DI({DI,DI,DI,DI}),
+        .DI({\counter[4]_i_2_n_0 ,\counter[4]_i_3_n_0 ,\counter[4]_i_4_n_0 ,\counter[4]_i_5_n_0 }),
         .O({\counter_reg[4]_i_1_n_4 ,\counter_reg[4]_i_1_n_5 ,\counter_reg[4]_i_1_n_6 ,\counter_reg[4]_i_1_n_7 }),
-        .S({\counter[4]_i_2_n_0 ,\counter[4]_i_3_n_0 ,\counter[4]_i_4_n_0 ,\counter[4]_i_5_n_0 }));
+        .S({\counter[4]_i_6_n_0 ,\counter[4]_i_7_n_0 ,\counter[4]_i_8_n_0 ,\counter[4]_i_9_n_0 }));
   FDCE #(
     .INIT(1'b0)) 
     \counter_reg[5] 
@@ -465,9 +471,9 @@ module baud_controller
        (.CI(\counter_reg[4]_i_1_n_0 ),
         .CO({\counter_reg[8]_i_1_n_0 ,\NLW_counter_reg[8]_i_1_CO_UNCONNECTED [2:0]}),
         .CYINIT(1'b0),
-        .DI({DI,DI,DI,DI}),
+        .DI({\counter[8]_i_2_n_0 ,\counter[8]_i_3_n_0 ,\counter[8]_i_4_n_0 ,\counter[8]_i_5_n_0 }),
         .O({\counter_reg[8]_i_1_n_4 ,\counter_reg[8]_i_1_n_5 ,\counter_reg[8]_i_1_n_6 ,\counter_reg[8]_i_1_n_7 }),
-        .S({\counter[8]_i_2_n_0 ,\counter[8]_i_3_n_0 ,\counter[8]_i_4_n_0 ,\counter[8]_i_5_n_0 }));
+        .S({\counter[8]_i_6_n_0 ,\counter[8]_i_7_n_0 ,\counter[8]_i_8_n_0 ,\counter[8]_i_9_n_0 }));
   FDCE #(
     .INIT(1'b0)) 
     \counter_reg[9] 
@@ -476,6 +482,40 @@ module baud_controller
         .CLR(AS),
         .D(\counter_reg[8]_i_1_n_6 ),
         .Q(counter_reg[9]));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
+    \sample_counter[3]_i_3 
+       (.I0(\sample_counter[3]_i_4_n_0 ),
+        .I1(counter_reg[0]),
+        .I2(counter_reg[2]),
+        .I3(counter_reg[1]),
+        .I4(\sample_counter[3]_i_5_n_0 ),
+        .I5(\sample_counter[3]_i_6_n_0 ),
+        .O(counter1));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \sample_counter[3]_i_4 
+       (.I0(counter_reg[4]),
+        .I1(counter_reg[3]),
+        .I2(counter_reg[6]),
+        .I3(counter_reg[5]),
+        .O(\sample_counter[3]_i_4_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \sample_counter[3]_i_5 
+       (.I0(counter_reg[12]),
+        .I1(counter_reg[11]),
+        .I2(counter_reg[14]),
+        .I3(counter_reg[13]),
+        .O(\sample_counter[3]_i_5_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \sample_counter[3]_i_6 
+       (.I0(counter_reg[8]),
+        .I1(counter_reg[7]),
+        .I2(counter_reg[10]),
+        .I3(counter_reg[9]),
+        .O(\sample_counter[3]_i_6_n_0 ));
 endmodule
 
 module sync_reest_module
@@ -492,6 +532,13 @@ module sync_reest_module
   wire reset_sync;
   wire temp;
 
+  LUT3 #(
+    .INIT(8'h80)) 
+    \data[7]_i_2 
+       (.I0(reset_IBUF),
+        .I1(temp),
+        .I2(reset_sync),
+        .O(AS));
   FDRE #(
     .INIT(1'b0)) 
     reset_sync_reg
@@ -500,13 +547,6 @@ module sync_reest_module
         .D(temp),
         .Q(reset_sync),
         .R(1'b0));
-  LUT3 #(
-    .INIT(8'h80)) 
-    \stages[3]_i_3 
-       (.I0(temp),
-        .I1(reset_sync),
-        .I2(reset_IBUF),
-        .O(AS));
   FDRE #(
     .INIT(1'b0)) 
     temp_reg
@@ -518,135 +558,134 @@ module sync_reest_module
 endmodule
 
 module transmit_module
-   (Q,
-    E,
+   (E,
+    Q,
     D,
     Tx_BUSY_OBUF,
-    Tx_EN_IBUF,
     Tx_WR_IBUF,
+    Tx_EN_IBUF,
     \sample_counter_reg[0] ,
-    CLK,
-    AS);
-  output [3:0]Q;
+    \stages_reg[3]_0 );
   output [0:0]E;
+  output [3:0]Q;
   output [0:0]D;
   output Tx_BUSY_OBUF;
-  input Tx_EN_IBUF;
   input Tx_WR_IBUF;
+  input Tx_EN_IBUF;
   input [0:0]\sample_counter_reg[0] ;
-  input CLK;
-  input [0:0]AS;
+  input \stages_reg[3]_0 ;
 
-  wire [0:0]AS;
-  wire CLK;
   wire [0:0]D;
   wire [0:0]E;
   wire [3:0]Q;
   wire Tx_BUSY_OBUF;
   wire Tx_EN_IBUF;
   wire Tx_WR_IBUF;
+  wire p_0_in;
   wire [0:0]\sample_counter_reg[0] ;
   wire \stages[0]_i_1_n_0 ;
   wire \stages[1]_i_1_n_0 ;
   wire \stages[2]_i_1_n_0 ;
-  wire \stages[3]_i_1_n_0 ;
+  wire \stages[3]_i_2_n_0 ;
+  wire \stages_reg[3]_0 ;
 
   LUT4 #(
-    .INIT(16'hFFDF)) 
+    .INIT(16'hFFF7)) 
     Tx_BUSY_OBUF_inst_i_1
        (.I0(Q[3]),
-        .I1(Q[2]),
-        .I2(Q[1]),
+        .I1(Q[1]),
+        .I2(Q[2]),
         .I3(Q[0]),
         .O(Tx_BUSY_OBUF));
   LUT5 #(
-    .INIT(32'h00200000)) 
+    .INIT(32'h02000000)) 
     \data[7]_i_1 
        (.I0(Tx_WR_IBUF),
         .I1(Q[0]),
-        .I2(Q[1]),
-        .I3(Q[2]),
+        .I2(Q[2]),
+        .I3(Q[1]),
         .I4(Q[3]),
         .O(E));
   LUT6 #(
-    .INIT(64'h00000020FFFFFFFF)) 
+    .INIT(64'h00000008FFFFFFFF)) 
     \sample_counter[0]_i_1 
        (.I0(Q[3]),
-        .I1(Q[2]),
-        .I2(Q[1]),
+        .I1(Q[1]),
+        .I2(Q[2]),
         .I3(Q[0]),
         .I4(Tx_EN_IBUF),
         .I5(\sample_counter_reg[0] ),
         .O(D));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
-    .INIT(16'h00DF)) 
+    .INIT(16'h00BF)) 
     \stages[0]_i_1 
-       (.I0(Q[3]),
-        .I1(Q[2]),
-        .I2(Q[1]),
+       (.I0(Q[2]),
+        .I1(Q[1]),
+        .I2(Q[3]),
         .I3(Q[0]),
         .O(\stages[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h3C3C1C3C)) 
+  LUT4 #(
+    .INIT(16'h4A5A)) 
     \stages[1]_i_1 
-       (.I0(Tx_EN_IBUF),
-        .I1(Q[0]),
+       (.I0(Q[0]),
+        .I1(Q[2]),
         .I2(Q[1]),
         .I3(Q[3]),
-        .I4(Q[2]),
         .O(\stages[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
-    .INIT(8'h6A)) 
+    .INIT(8'h6C)) 
     \stages[2]_i_1 
-       (.I0(Q[2]),
-        .I1(Q[1]),
-        .I2(Q[0]),
+       (.I0(Q[0]),
+        .I1(Q[2]),
+        .I2(Q[1]),
         .O(\stages[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h3CCCC4CC)) 
+  LUT1 #(
+    .INIT(2'h1)) 
     \stages[3]_i_1 
        (.I0(Tx_EN_IBUF),
-        .I1(Q[3]),
-        .I2(Q[2]),
-        .I3(Q[1]),
-        .I4(Q[0]),
-        .O(\stages[3]_i_1_n_0 ));
-  FDCE #(
+        .O(p_0_in));
+  LUT4 #(
+    .INIT(16'h6F80)) 
+    \stages[3]_i_2 
+       (.I0(Q[0]),
+        .I1(Q[2]),
+        .I2(Q[1]),
+        .I3(Q[3]),
+        .O(\stages[3]_i_2_n_0 ));
+  FDRE #(
     .INIT(1'b0)) 
     \stages_reg[0] 
-       (.C(CLK),
+       (.C(\stages_reg[3]_0 ),
         .CE(1'b1),
-        .CLR(AS),
         .D(\stages[0]_i_1_n_0 ),
-        .Q(Q[0]));
-  FDPE #(
+        .Q(Q[0]),
+        .R(p_0_in));
+  FDSE #(
     .INIT(1'b1)) 
     \stages_reg[1] 
-       (.C(CLK),
+       (.C(\stages_reg[3]_0 ),
         .CE(1'b1),
         .D(\stages[1]_i_1_n_0 ),
-        .PRE(AS),
-        .Q(Q[1]));
-  FDCE #(
+        .Q(Q[1]),
+        .S(p_0_in));
+  FDRE #(
     .INIT(1'b0)) 
     \stages_reg[2] 
-       (.C(CLK),
+       (.C(\stages_reg[3]_0 ),
         .CE(1'b1),
-        .CLR(AS),
         .D(\stages[2]_i_1_n_0 ),
-        .Q(Q[2]));
-  FDPE #(
+        .Q(Q[2]),
+        .R(p_0_in));
+  FDSE #(
     .INIT(1'b1)) 
     \stages_reg[3] 
-       (.C(CLK),
+       (.C(\stages_reg[3]_0 ),
         .CE(1'b1),
-        .D(\stages[3]_i_1_n_0 ),
-        .PRE(AS),
-        .Q(Q[3]));
+        .D(\stages[3]_i_2_n_0 ),
+        .Q(Q[3]),
+        .S(p_0_in));
 endmodule
 
 module transmitter_WR_module
@@ -684,42 +723,42 @@ module transmitter_WR_module
   wire \data_reg_n_0_[0] ;
 
   LUT5 #(
-    .INIT(32'hFFE400E4)) 
+    .INIT(32'hB8BBB888)) 
     TxD_OBUF_inst_i_1
-       (.I0(Q[2]),
-        .I1(TxD_OBUF_inst_i_2_n_0),
+       (.I0(TxD_OBUF_inst_i_2_n_0),
+        .I1(Q[3]),
         .I2(TxD_OBUF_inst_i_3_n_0),
-        .I3(Q[3]),
+        .I3(Q[2]),
         .I4(TxD_OBUF_inst_i_4_n_0),
         .O(TxD_OBUF));
-  LUT5 #(
-    .INIT(32'hF0AACC00)) 
+  LUT6 #(
+    .INIT(64'hFFF2FFFEFFFEFFF2)) 
     TxD_OBUF_inst_i_2
-       (.I0(data1),
-        .I1(\data_reg_n_0_[0] ),
-        .I2(data2),
-        .I3(Q[0]),
-        .I4(Q[1]),
+       (.I0(data7),
+        .I1(Q[0]),
+        .I2(Q[1]),
+        .I3(Q[2]),
+        .I4(TxD_OBUF_inst_i_5_n_0),
+        .I5(TxD_OBUF_inst_i_6_n_0),
         .O(TxD_OBUF_inst_i_2_n_0));
   LUT6 #(
-    .INIT(64'hCACAFFF0CACA0F00)) 
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
     TxD_OBUF_inst_i_3
-       (.I0(data4),
-        .I1(data6),
+       (.I0(data6),
+        .I1(data5),
         .I2(Q[1]),
-        .I3(data3),
+        .I3(data4),
         .I4(Q[0]),
-        .I5(data5),
+        .I5(data3),
         .O(TxD_OBUF_inst_i_3_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFF66FFF0)) 
+  LUT5 #(
+    .INIT(32'hAFC0A0C0)) 
     TxD_OBUF_inst_i_4
-       (.I0(TxD_OBUF_inst_i_5_n_0),
-        .I1(TxD_OBUF_inst_i_6_n_0),
-        .I2(data7),
-        .I3(Q[2]),
-        .I4(Q[0]),
-        .I5(Q[1]),
+       (.I0(data2),
+        .I1(data1),
+        .I2(Q[1]),
+        .I3(Q[0]),
+        .I4(\data_reg_n_0_[0] ),
         .O(TxD_OBUF_inst_i_4_n_0));
   LUT3 #(
     .INIT(8'h96)) 
@@ -805,62 +844,63 @@ endmodule
 
 module trasmitter_baud
    (Q,
-    CLK,
-    D,
+    \sample_counter_reg[1]_0 ,
     Tx_BUSY_OBUF,
     Tx_EN_IBUF,
     \sample_counter_reg[3]_0 ,
-    AS);
+    AS,
+    D);
   output [0:0]Q;
-  output CLK;
-  input [0:0]D;
+  output \sample_counter_reg[1]_0 ;
   input Tx_BUSY_OBUF;
   input Tx_EN_IBUF;
   input \sample_counter_reg[3]_0 ;
   input [0:0]AS;
+  input [0:0]D;
 
   wire [0:0]AS;
-  wire CLK;
   wire [0:0]D;
   wire [0:0]Q;
   wire Tx_BUSY_OBUF;
   wire Tx_EN_IBUF;
-  wire [3:1]p_0_in;
+  wire \sample_counter[1]_i_1_n_0 ;
+  wire \sample_counter[2]_i_1_n_0 ;
+  wire \sample_counter[3]_i_1_n_0 ;
+  wire \sample_counter_reg[1]_0 ;
   wire \sample_counter_reg[3]_0 ;
   wire [3:1]sample_counter_reg__0;
 
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
-    .INIT(16'h999F)) 
+    .INIT(16'hF11F)) 
     \sample_counter[1]_i_1 
-       (.I0(sample_counter_reg__0[1]),
-        .I1(Q),
-        .I2(Tx_BUSY_OBUF),
-        .I3(Tx_EN_IBUF),
-        .O(p_0_in[1]));
+       (.I0(Tx_BUSY_OBUF),
+        .I1(Tx_EN_IBUF),
+        .I2(sample_counter_reg__0[1]),
+        .I3(Q),
+        .O(\sample_counter[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
-    .INIT(32'hE1E1E1FF)) 
+    .INIT(32'hF1F1F11F)) 
     \sample_counter[2]_i_1 
-       (.I0(sample_counter_reg__0[1]),
-        .I1(Q),
+       (.I0(Tx_BUSY_OBUF),
+        .I1(Tx_EN_IBUF),
         .I2(sample_counter_reg__0[2]),
-        .I3(Tx_BUSY_OBUF),
-        .I4(Tx_EN_IBUF),
-        .O(p_0_in[2]));
+        .I3(Q),
+        .I4(sample_counter_reg__0[1]),
+        .O(\sample_counter[2]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hAAA9AAA9AAA9FFFF)) 
+    .INIT(64'hF1F1F1F1F1F1F11F)) 
     \sample_counter[3]_i_1 
-       (.I0(sample_counter_reg__0[3]),
-        .I1(sample_counter_reg__0[1]),
-        .I2(Q),
-        .I3(sample_counter_reg__0[2]),
-        .I4(Tx_BUSY_OBUF),
-        .I5(Tx_EN_IBUF),
-        .O(p_0_in[3]));
+       (.I0(Tx_BUSY_OBUF),
+        .I1(Tx_EN_IBUF),
+        .I2(sample_counter_reg__0[3]),
+        .I3(sample_counter_reg__0[1]),
+        .I4(Q),
+        .I5(sample_counter_reg__0[2]),
+        .O(\sample_counter[3]_i_1_n_0 ));
   FDPE #(
-    .INIT(1'b1),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b1)) 
     \sample_counter_reg[0] 
        (.C(\sample_counter_reg[3]_0 ),
         .CE(1'b1),
@@ -868,43 +908,40 @@ module trasmitter_baud
         .PRE(AS),
         .Q(Q));
   FDPE #(
-    .INIT(1'b1),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b1)) 
     \sample_counter_reg[1] 
        (.C(\sample_counter_reg[3]_0 ),
         .CE(1'b1),
-        .D(p_0_in[1]),
+        .D(\sample_counter[1]_i_1_n_0 ),
         .PRE(AS),
         .Q(sample_counter_reg__0[1]));
   FDPE #(
-    .INIT(1'b1),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b1)) 
     \sample_counter_reg[2] 
        (.C(\sample_counter_reg[3]_0 ),
         .CE(1'b1),
-        .D(p_0_in[2]),
+        .D(\sample_counter[2]_i_1_n_0 ),
         .PRE(AS),
         .Q(sample_counter_reg__0[2]));
   FDPE #(
-    .INIT(1'b1),
-    .IS_C_INVERTED(1'b1)) 
+    .INIT(1'b1)) 
     \sample_counter_reg[3] 
        (.C(\sample_counter_reg[3]_0 ),
         .CE(1'b1),
-        .D(p_0_in[3]),
+        .D(\sample_counter[3]_i_1_n_0 ),
         .PRE(AS),
         .Q(sample_counter_reg__0[3]));
   LUT4 #(
     .INIT(16'h0001)) 
-    \stages[3]_i_2 
-       (.I0(sample_counter_reg__0[2]),
+    \stages[3]_i_3 
+       (.I0(sample_counter_reg__0[1]),
         .I1(Q),
-        .I2(sample_counter_reg__0[1]),
-        .I3(sample_counter_reg__0[3]),
-        .O(CLK));
+        .I2(sample_counter_reg__0[3]),
+        .I3(sample_counter_reg__0[2]),
+        .O(\sample_counter_reg[1]_0 ));
 endmodule
 
-(* ECO_CHECKSUM = "eadeb185" *) 
+(* ECO_CHECKSUM = "71bb0950" *) 
 (* NotValidForBitStream *)
 module uart_transmitter
    (reset,
@@ -936,19 +973,18 @@ module uart_transmitter
   wire Tx_WR_IBUF;
   wire [2:0]baud_select;
   wire [2:0]baud_select_IBUF;
-  wire baud_tick;
   wire clk;
   wire clk_IBUF;
   wire clk_IBUF_BUFG;
-  wire counter1;
-  wire counter1_BUFG;
-  wire [0:0]p_0_in;
   wire reset;
   wire reset_IBUF;
   wire reset_clean;
+  wire \sample_counter_reg[3]_i_2_n_0 ;
   wire [0:0]sample_counter_reg__0;
   wire [3:0]stages;
-  wire transmit_module_inst_n_4;
+  wire transmit_module_inst_n_0;
+  wire transmit_module_inst_n_5;
+  wire trasmitter_baud_inst_n_1;
 
   OBUF TxD_OBUF_inst
        (.I(TxD_OBUF),
@@ -989,9 +1025,8 @@ module uart_transmitter
   baud_controller baud_controller_tx_inst
        (.AS(reset_clean),
         .CLK(clk_IBUF_BUFG),
-        .DI(counter1_BUFG),
         .baud_select_IBUF(baud_select_IBUF),
-        .counter1(counter1));
+        .counter1(\sample_counter_reg[3]_i_2_n_0 ));
   IBUF \baud_select_IBUF[0]_inst 
        (.I(baud_select[0]),
         .O(baud_select_IBUF[0]));
@@ -1007,9 +1042,6 @@ module uart_transmitter
   IBUF clk_IBUF_inst
        (.I(clk),
         .O(clk_IBUF));
-  BUFG counter1_BUFG_inst
-       (.I(counter1),
-        .O(counter1_BUFG));
   IBUF reset_IBUF_inst
        (.I(reset),
         .O(reset_IBUF));
@@ -1018,30 +1050,29 @@ module uart_transmitter
         .CLK(clk_IBUF_BUFG),
         .reset_IBUF(reset_IBUF));
   transmit_module transmit_module_inst
-       (.AS(reset_clean),
-        .CLK(baud_tick),
-        .D(p_0_in),
-        .E(transmit_module_inst_n_4),
+       (.D(transmit_module_inst_n_5),
+        .E(transmit_module_inst_n_0),
         .Q(stages),
         .Tx_BUSY_OBUF(Tx_BUSY_OBUF),
         .Tx_EN_IBUF(Tx_EN_IBUF),
         .Tx_WR_IBUF(Tx_WR_IBUF),
-        .\sample_counter_reg[0] (sample_counter_reg__0));
+        .\sample_counter_reg[0] (sample_counter_reg__0),
+        .\stages_reg[3]_0 (trasmitter_baud_inst_n_1));
   transmitter_WR_module transmitter_WR
        (.AS(reset_clean),
         .CLK(clk_IBUF_BUFG),
         .D(Tx_DATA_IBUF),
-        .E(transmit_module_inst_n_4),
+        .E(transmit_module_inst_n_0),
         .Q(stages),
         .TxD_OBUF(TxD_OBUF));
   trasmitter_baud trasmitter_baud_inst
        (.AS(reset_clean),
-        .CLK(baud_tick),
-        .D(p_0_in),
+        .D(transmit_module_inst_n_5),
         .Q(sample_counter_reg__0),
         .Tx_BUSY_OBUF(Tx_BUSY_OBUF),
         .Tx_EN_IBUF(Tx_EN_IBUF),
-        .\sample_counter_reg[3]_0 (counter1_BUFG));
+        .\sample_counter_reg[1]_0 (trasmitter_baud_inst_n_1),
+        .\sample_counter_reg[3]_0 (\sample_counter_reg[3]_i_2_n_0 ));
 endmodule
 `ifndef GLBL
 `define GLBL

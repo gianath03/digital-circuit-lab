@@ -60,18 +60,22 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/impl_1/uart_transmitter.dcp
+  create_project -in_memory -part xc7a100tcsg324-1
+  set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.cache/wt [current_project]
   set_property parent.project_path /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.xpr [current_project]
   set_property ip_output_repo /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  add_files -quiet /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1/uart_transmitter.dcp
+  read_xdc /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/constrs_1/new/constraints.xdc
+  link_design -top uart_transmitter -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {

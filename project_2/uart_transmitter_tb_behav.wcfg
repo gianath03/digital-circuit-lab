@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="uart_transmitter_tb_behav.wdb" id="1">
+      <db_ref path="uart_transmitter_tb_time_impl.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
             <top_module name="uart_transmitter_tb" />
@@ -11,18 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="325000000001fs"></ZoomEndTime>
-      <Cursor1Time time="46295000000fs"></Cursor1Time>
+      <ZoomStartTime time="9500063000fs"></ZoomStartTime>
+      <ZoomEndTime time="12790063001fs"></ZoomEndTime>
+      <Cursor1Time time="10555063000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="122"></ValueColumnWidth>
+      <ValueColumnWidth column_width="114"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
-   <wave_markers>
-      <marker label="" time="55095000000" />
-   </wave_markers>
+   <WVObjectSize size="10" />
    <wvobject type="logic" fp_name="/uart_transmitter_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -56,22 +53,30 @@
       <obj_property name="ElementShortName">TxD</obj_property>
       <obj_property name="ObjectShortName">TxD</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/uart_transmitter_tb/uart_transmitter_inst/data">
-      <obj_property name="ElementShortName">data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">data[7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+   <wvobject type="vbus" fp_name="vbus67">
+      <obj_property name="label">stages</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/uart_transmitter_tb/uart_transmitter_inst/transmit_module_inst/\stages[3]_i_1_n_0 ">
+         <obj_property name="ElementShortName">\stages[3]_i_1_n_0 </obj_property>
+         <obj_property name="ObjectShortName">\stages[3]_i_1_n_0 </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/uart_transmitter_tb/uart_transmitter_inst/transmit_module_inst/\stages[2]_i_1_n_0 ">
+         <obj_property name="ElementShortName">\stages[2]_i_1_n_0 </obj_property>
+         <obj_property name="ObjectShortName">\stages[2]_i_1_n_0 </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/uart_transmitter_tb/uart_transmitter_inst/transmit_module_inst/\stages[1]_i_1_n_0 ">
+         <obj_property name="ElementShortName">\stages[1]_i_1_n_0 </obj_property>
+         <obj_property name="ObjectShortName">\stages[1]_i_1_n_0 </obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/uart_transmitter_tb/uart_transmitter_inst/transmit_module_inst/\stages[0]_i_1_n_0 ">
+         <obj_property name="ElementShortName">\stages[0]_i_1_n_0 </obj_property>
+         <obj_property name="ObjectShortName">\stages[0]_i_1_n_0 </obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject type="array" fp_name="/uart_transmitter_tb/uart_transmitter_inst/transmit_module_inst/stages">
-      <obj_property name="ElementShortName">stages[3:0]</obj_property>
-      <obj_property name="ObjectShortName">stages[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/uart_transmitter_tb/uart_transmitter_inst/Tx_sample_ENABLE">
-      <obj_property name="ElementShortName">Tx_sample_ENABLE</obj_property>
-      <obj_property name="ObjectShortName">Tx_sample_ENABLE</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/uart_transmitter_tb/uart_transmitter_inst/baud_controller_tx_inst/counter">
-      <obj_property name="ElementShortName">counter[18:0]</obj_property>
-      <obj_property name="ObjectShortName">counter[18:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject type="logic" fp_name="/uart_transmitter_tb/uart_transmitter_inst/transmit_module_inst/\sample_counter_reg[0] [0]">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">[0]</obj_property>
+      <obj_property name="ObjectShortName">[0]</obj_property>
+      <obj_property name="label">Tx_sample</obj_property>
    </wvobject>
 </wave_config>

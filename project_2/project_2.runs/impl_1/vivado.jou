@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Nov 28 16:15:54 2023
-# Process ID: 35686
+# Start of session at: Tue Nov 28 19:59:29 2023
+# Process ID: 16857
 # Current directory: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/impl_1
 # Command line: vivado -log uart_transmitter.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source uart_transmitter.tcl -notrace
 # Log file: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/impl_1/uart_transmitter.vdi

@@ -19,7 +19,7 @@ module uart_transmitter_tb;
         #1000 Tx_WR = 1'b1;
         #1000 Tx_WR = 1'b0; Tx_DATA = 8'h00;
         #13 Tx_EN = 1'b1;
-        #11000 Tx_EN = 1'b0;
+        #104160 Tx_EN = 1'b0;
     end
 
     always begin
