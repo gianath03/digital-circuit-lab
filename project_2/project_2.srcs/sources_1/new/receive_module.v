@@ -9,11 +9,12 @@ module receive_module (input reset, input Rx_EN, input Rx_sample_ENABLE, input R
         if (reset) begin
             baud_enable <= 1'b0;
         end
-        if (Rx_EN && !RxD) begin
+        else if (stages == 4'h0 && Rx_EN && !RxD) begin
             baud_enable <= 1'b1;
         end
-        else if (stages == 4'h0) begin
+        else if (stages == 4'hB) begin
             baud_enable <= 1'b0;
+            stages <= 4'h0;
         end
         else begin
             baud_enable <= baud_enable;
@@ -37,7 +38,7 @@ module receive_module (input reset, input Rx_EN, input Rx_sample_ENABLE, input R
     assign baud_tick = counter ? 1'b1 : 1'b0;
 
     always @(posedge baud_tick or posedge reset) begin
-        if (reset || stages == 4'hA) begin
+        if (reset) begin
             stages <= 4'h0;
         end
         else begin
@@ -76,7 +77,7 @@ module receive_module (input reset, input Rx_EN, input Rx_sample_ENABLE, input R
                 4'h5: data[5] <= RxD;
                 4'h6: data[6] <= RxD;
                 4'h7: data[7] <= RxD;
-                4'h8: PERROR <= ~(data[0] + data[1] + data[2] + data[3] + data[4] + data[5] + data[6] + data[7] == RxD);  //parity bit
+                4'h8: PERROR <= ~(((data[0] + data[1]) + (data[2] + data[3])) + ((data[4] + data[5]) + (data[6] + data[7])) == RxD);  //parity bit
                 4'h9: FERROR <= ~RxD;
                 default: data <= data;
             endcase
