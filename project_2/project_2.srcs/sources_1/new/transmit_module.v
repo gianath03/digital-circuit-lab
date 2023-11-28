@@ -29,7 +29,7 @@ module transmit_module (input reset, input Tx_EN, output reg Tx_BUSY, input [7:0
     end
 
     //Changes the output of the transmitter depending on the stage.
-    always @(stages) begin
+    always @(stages or data) begin
         case (stages)
             4'h0: TxD = 1'b0;
             4'h1: TxD = data[0];

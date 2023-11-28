@@ -12,14 +12,17 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="129200000001fs"></ZoomEndTime>
-      <Cursor1Time time="9995000000fs"></Cursor1Time>
+      <ZoomEndTime time="325000000001fs"></ZoomEndTime>
+      <Cursor1Time time="46295000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="126"></ValueColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="12" />
+   <wave_markers>
+      <marker label="" time="55095000000" />
+   </wave_markers>
    <wvobject type="logic" fp_name="/uart_transmitter_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -61,5 +64,14 @@
    <wvobject type="array" fp_name="/uart_transmitter_tb/uart_transmitter_inst/transmit_module_inst/stages">
       <obj_property name="ElementShortName">stages[3:0]</obj_property>
       <obj_property name="ObjectShortName">stages[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/uart_transmitter_tb/uart_transmitter_inst/Tx_sample_ENABLE">
+      <obj_property name="ElementShortName">Tx_sample_ENABLE</obj_property>
+      <obj_property name="ObjectShortName">Tx_sample_ENABLE</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/uart_transmitter_tb/uart_transmitter_inst/baud_controller_tx_inst/counter">
+      <obj_property name="ElementShortName">counter[18:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[18:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

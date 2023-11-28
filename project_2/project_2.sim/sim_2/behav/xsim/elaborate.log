@@ -4,21 +4,4 @@ Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto d5894e8e33
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v" Line 1. Module uart_transmitter doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reest_module.v" Line 1. Module sync_reest_module doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v" Line 2. Module transmitter_WR_module doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/trasmitter_baud.v" Line 1. Module trasmitter_baud doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v" Line 1. Module transmit_module doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v" Line 1. Module baud_controller doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.sync_reest_module
-Compiling module xil_defaultlib.transmitter_WR_module
-Compiling module xil_defaultlib.trasmitter_baud
-Compiling module xil_defaultlib.transmit_module
-Compiling module xil_defaultlib.baud_controller
-Compiling module xil_defaultlib.uart_transmitter
-Compiling module xil_defaultlib.uart_transmitter_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot uart_transmitter_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

@@ -3,10 +3,10 @@
 Dec  6 2018
 23:39:36
 /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_2/behav/xsim/glbl.v,1700918681,verilog,,,,glbl,,,,,,,,
-/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_2/new/uart_transmitter_tb.v,1700920457,verilog,,,,uart_transmitter_tb,,,,,,,,
-/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v,1700921818,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reest_module.v,,baud_controller,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_2/new/uart_transmitter_tb.v,1701181459,verilog,,,,uart_transmitter_tb,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v,1701093679,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reest_module.v,,baud_controller,,,,,,,,
 /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reest_module.v,1700920505,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v,,sync_reest_module,,,,,,,,
-/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v,1700919816,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v,,transmit_module,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v,1701180645,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v,,transmit_module,,,,,,,,
 /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v,1700920328,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/trasmitter_baud.v,,transmitter_WR_module,,,,,,,,
 /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/trasmitter_baud.v,1700920116,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v,,trasmitter_baud,,,,,,,,
 /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v,1700920601,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_2/new/uart_transmitter_tb.v,,uart_transmitter,,,,,,,,

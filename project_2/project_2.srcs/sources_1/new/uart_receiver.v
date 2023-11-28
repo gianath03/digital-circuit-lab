@@ -9,13 +9,11 @@ module uart_receiver(reset, clk, Rx_DATA, baud_select, Rx_EN, RxD, Rx_FERROR, Rx
     output Rx_VALID; // Rx_DATA is Valid //
 
     wire reset_clean;
-    wire [7:0] data;
-    assign Rx_DATA = Rx_VALID ? data : 8'b0;
 
     //Sync reset to the clock.
     sync_reest_module sync_reest (.clk(clk), .reset(reset), .reset_clean(reset_clean));
 
-    receive_module receive_module_inst (.reset(reset_clean), .Rx_EN(Rx_EN), .Rx_sample_ENABLE(Rx_sample_ENABLE), .RxD(RxD), .data(data), .Rx_VALID(Rx_VALID), .Rx_PERROR(Rx_PERROR), .Rx_FERROR(Rx_FERROR));
+    receive_module receive_module_inst (.reset(reset_clean), .Rx_EN(Rx_EN), .Rx_sample_ENABLE(Rx_sample_ENABLE), .RxD(RxD), .Rx_DATA(Rx_DATA), .Rx_VALID(Rx_VALID), .Rx_PERROR(Rx_PERROR), .Rx_FERROR(Rx_FERROR));
 
     //Module that creates the correct baud rate depending on the baud_select.
     baud_controller baud_controller_rx_inst(reset_clean, clk, baud_select, Rx_sample_ENABLE);

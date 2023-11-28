@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="uart_receiver_tb_behav.wdb" id="1">
+      <db_ref path="uart_receiver_tb_time_synth.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
             <top_module name="uart_receiver_tb" />
@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="132661666667fs"></ZoomStartTime>
-      <ZoomEndTime time="502161666668fs"></ZoomEndTime>
-      <Cursor1Time time="203045000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="131600000001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="122"></ValueColumnWidth>
+      <ValueColumnWidth column_width="114"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="21" />
+   <WVObjectSize size="14" />
    <wvobject type="logic" fp_name="/uart_receiver_tb/reset">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -61,22 +61,6 @@
       <obj_property name="label">receive_module</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/reset">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/Rx_EN">
-      <obj_property name="ElementShortName">Rx_EN</obj_property>
-      <obj_property name="ObjectShortName">Rx_EN</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/Rx_sample_ENABLE">
-      <obj_property name="ElementShortName">Rx_sample_ENABLE</obj_property>
-      <obj_property name="ObjectShortName">Rx_sample_ENABLE</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/RxD">
-      <obj_property name="ElementShortName">RxD</obj_property>
-      <obj_property name="ObjectShortName">RxD</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/FERROR">
       <obj_property name="ElementShortName">FERROR</obj_property>
       <obj_property name="ObjectShortName">FERROR</obj_property>
@@ -90,21 +74,8 @@
       <obj_property name="ObjectShortName">data[7:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/stages">
-      <obj_property name="ElementShortName">stages[3:0]</obj_property>
-      <obj_property name="ObjectShortName">stages[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/counter">
-      <obj_property name="ElementShortName">counter[5:0]</obj_property>
-      <obj_property name="ObjectShortName">counter[5:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/baud_tick">
-      <obj_property name="ElementShortName">baud_tick</obj_property>
-      <obj_property name="ObjectShortName">baud_tick</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/baud_enable">
-      <obj_property name="ElementShortName">baud_enable</obj_property>
-      <obj_property name="ObjectShortName">baud_enable</obj_property>
+   <wvobject type="array" fp_name="/uart_receiver_tb/uart_receiver_inst/receive_module_inst/stage_counter_reg__0">
+      <obj_property name="ElementShortName">stage_counter_reg__0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">stage_counter_reg__0[3:0]</obj_property>
    </wvobject>
 </wave_config>
