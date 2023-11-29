@@ -13,6 +13,7 @@ module uart_receiver(reset, clk, Rx_DATA, baud_select, Rx_EN, RxD, Rx_FERROR, Rx
     //Sync reset to the clock.
     sync_reest_module sync_reest (.clk(clk), .reset(reset), .reset_clean(reset_clean));
 
+    //Recieves data when Rx_EN is enabled.
     receive_module receive_module_inst (.clk(clk), .reset(reset_clean), .Rx_EN(Rx_EN), .Rx_sample_ENABLE(Rx_sample_ENABLE), .RxD(RxD), .Rx_DATA(Rx_DATA), .Rx_VALID(Rx_VALID), .Rx_PERROR(Rx_PERROR), .Rx_FERROR(Rx_FERROR));
 
     //Module that creates the correct baud rate depending on the baud_select.

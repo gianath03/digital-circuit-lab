@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Wed Nov 29 15:19:05 2023
-| Host             : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
+| Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date             : Wed Nov 29 19:37:45 2023
+| Host             : athanasi-DESKTOP running 64-bit major release  (build 9200)
 | Command          : report_power -file uart_receiver_power_routed.rpt -pb uart_receiver_power_summary_routed.pb -rpx uart_receiver_power_routed.rpx
 | Design           : uart_receiver
 | Device           : xc7a100tcsg324-1
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      123 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       54 |     63400 |            0.09 |
-|   CARRY4       |    <0.001 |        4 |     15850 |            0.03 |
+| Slice Logic    |    <0.001 |      138 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       63 |     63400 |            0.10 |
+|   CARRY4       |    <0.001 |        6 |     15850 |            0.04 |
 |   Register     |    <0.001 |       49 |    126800 |            0.04 |
 |   Others       |     0.000 |        6 |       --- |             --- |
-| Signals        |    <0.001 |       85 |       --- |             --- |
+| Signals        |    <0.001 |       91 |       --- |             --- |
 | I/O            |    <0.001 |       18 |       210 |            8.57 |
 | Static Power   |     0.091 |          |           |                 |
 | Total          |     0.092 |          |           |                 |

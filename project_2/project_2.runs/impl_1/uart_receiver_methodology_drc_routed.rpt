@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Wed Nov 29 15:19:04 2023
-| Host         : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Wed Nov 29 19:37:45 2023
+| Host         : athanasi-DESKTOP running 64-bit major release  (build 9200)
 | Command      : report_methodology -file uart_receiver_methodology_drc_routed.rpt -pb uart_receiver_methodology_drc_routed.pb -rpx uart_receiver_methodology_drc_routed.rpx
 | Design       : uart_receiver
 | Device       : xc7a100tcsg324-1
@@ -35,7 +35,7 @@ Table of Contents
 -----------------
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell sync_reest/data[7]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) baud_controller_rx_inst/counter_reg[0]/CLR, baud_controller_rx_inst/counter_reg[10]/CLR, baud_controller_rx_inst/counter_reg[11]/CLR, baud_controller_rx_inst/counter_reg[12]/CLR, baud_controller_rx_inst/counter_reg[13]/CLR, baud_controller_rx_inst/counter_reg[14]/CLR, baud_controller_rx_inst/counter_reg[1]/CLR, baud_controller_rx_inst/counter_reg[2]/CLR, baud_controller_rx_inst/counter_reg[3]/CLR, baud_controller_rx_inst/counter_reg[4]/CLR, baud_controller_rx_inst/counter_reg[5]/CLR, baud_controller_rx_inst/counter_reg[6]/CLR, baud_controller_rx_inst/counter_reg[7]/CLR, baud_controller_rx_inst/counter_reg[8]/CLR, baud_controller_rx_inst/counter_reg[9]/CLR (the first 15 of 41 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell sync_reest/Rx_DATA[7]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) baud_controller_rx_inst/counter_reg[0]/CLR, baud_controller_rx_inst/counter_reg[10]/CLR, baud_controller_rx_inst/counter_reg[11]/CLR, baud_controller_rx_inst/counter_reg[12]/CLR, baud_controller_rx_inst/counter_reg[13]/CLR, baud_controller_rx_inst/counter_reg[14]/CLR, baud_controller_rx_inst/counter_reg[1]/CLR, baud_controller_rx_inst/counter_reg[2]/CLR, baud_controller_rx_inst/counter_reg[3]/CLR, baud_controller_rx_inst/counter_reg[4]/CLR, baud_controller_rx_inst/counter_reg[5]/CLR, baud_controller_rx_inst/counter_reg[6]/CLR, baud_controller_rx_inst/counter_reg[7]/CLR, baud_controller_rx_inst/counter_reg[8]/CLR, baud_controller_rx_inst/counter_reg[9]/CLR (the first 15 of 41 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning
