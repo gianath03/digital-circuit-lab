@@ -3,9 +3,9 @@
 Dec  7 2018
 00:33:28
 C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_4/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
-C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_4/new/uart_transceiver_tb.v,1701281248,verilog,,,,uart_transceiver_tb,,,,,,,,
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_4/new/uart_transceiver_tb.v,1701295472,verilog,,,,uart_transceiver_tb,,,,,,,,
 C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v,1701275814,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v,,baud_controller,,,,,,,,
-C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v,1701279236,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reest_module.v,,receive_module,,,,,,,,
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v,1701296127,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reest_module.v,,receive_module,,,,,,,,
 C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reest_module.v,1701275814,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v,,sync_reest_module,,,,,,,,
 C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v,1701275814,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v,,transmit_module,,,,,,,,
 C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v,1701275814,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/trasmitter_baud.v,,transmitter_WR_module,,,,,,,,
