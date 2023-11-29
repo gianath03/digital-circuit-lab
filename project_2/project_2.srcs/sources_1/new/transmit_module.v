@@ -1,17 +1,22 @@
-module transmit_module (, input Tx_EN, output reg Tx_BUSY, input [7:0] data, input baud_tick, output reg TxD);
+module transmit_module (input reset, input clock, input Tx_EN, output reg Tx_BUSY, input [7:0] data, input baud_tick, output reg TxD);
     reg [3:0] stages;
 
     //Start stages counter until the transmittion finishes.
-    always @(posedge baud_tick) begin
-        if (Tx_EN) begin
-            if (stages == 4'hA) begin
-                stages <= 4'h0;
-            end
-            else
-                stages <= stages + 1'b1;
-        end
-        else begin
+    always @(posedge clock or posedge reset) begin
+        if (reset) begin
             stages <= 4'hA;
+        end
+        else if (baud_tick) begin
+            if (Tx_EN) begin
+                if (stages == 4'hA) begin
+                    stages <= 4'h0;
+                end
+                else
+                    stages <= stages + 1'b1;
+            end
+            else begin
+                stages <= 4'hA;
+            end
         end
     end
 

@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log uart_transmitter.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_transmitter.tcl" );
+         "-log uart_receiver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_receiver.tcl" );
 
 
 

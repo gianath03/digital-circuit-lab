@@ -12,7 +12,15 @@ module baud_controller_tb;
         clk = 1'b0; reset = 1'b0; baud_select = 3'b111;
         #200 reset = 1'b1;
         #400 reset = 1'b0;
-        #10000000 baud_select = 3'b001;
+        #400     baud_select = 3'b000;
+        #3333300 baud_select = 3'b001;
+        #3333300 baud_select = 3'b010;
+        #3333300 baud_select = 3'b011;
+        #3333300 baud_select = 3'b100;
+        #3333300 baud_select = 3'b101;
+        #3333300 baud_select = 3'b110;
+        #3333300 baud_select = 3'b111;
+        #3333300 $finish;
     end
 
     always begin

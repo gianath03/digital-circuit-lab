@@ -17,10 +17,10 @@ module uart_transmitter(reset, clk, Tx_DATA, baud_select, Tx_WR, Tx_EN, TxD, Tx_
     transmitter_WR_module transmitter_WR (.clk(clk), .reset(reset_clean), .data(data), .Tx_DATA(Tx_DATA), .Tx_BUSY(Tx_BUSY), .Tx_WR(Tx_WR));
 
     //Set baud rate to Tx_sample_ENABLE /16 speed.
-    trasmitter_baud trasmitter_baud_inst (.baud_tick(baud_tick), .Tx_EN(Tx_EN), .Tx_BUSY(Tx_BUSY), .reset(reset_clean), .Tx_sample_ENABLE(Tx_sample_ENABLE));
+    trasmitter_baud trasmitter_baud_inst (.clock(clk), .baud_tick(baud_tick), .Tx_EN(Tx_EN), .Tx_BUSY(Tx_BUSY), .reset(reset_clean), .Tx_sample_ENABLE(Tx_sample_ENABLE));
 
     //Trasmit module when Tx_EN until Tx_BUSY is 0.
-    transmit_module transmit_module_inst (.Tx_EN(Tx_EN), .Tx_BUSY(Tx_BUSY), .data(data), .baud_tick(baud_tick), .TxD(TxD));
+    transmit_module transmit_module_inst (.reset(reset), .clock(clk), .Tx_EN(Tx_EN), .Tx_BUSY(Tx_BUSY), .data(data), .baud_tick(baud_tick), .TxD(TxD));
 
     //Module that creates the correct baud rate depending on the baud_select.
     baud_controller baud_controller_tx_inst(reset_clean, clk, baud_select, Tx_sample_ENABLE);
