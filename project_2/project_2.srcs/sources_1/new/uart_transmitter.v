@@ -20,7 +20,7 @@ module uart_transmitter(reset, clk, Tx_DATA, baud_select, Tx_WR, Tx_EN, TxD, Tx_
     trasmitter_baud trasmitter_baud_inst (.baud_tick(baud_tick), .Tx_EN(Tx_EN), .Tx_BUSY(Tx_BUSY), .reset(reset_clean), .Tx_sample_ENABLE(Tx_sample_ENABLE));
 
     //Trasmit module when Tx_EN until Tx_BUSY is 0.
-    transmit_module transmit_module_inst (.reset(reset_clean), .Tx_EN(Tx_EN), .Tx_BUSY(Tx_BUSY), .data(data), .baud_tick(baud_tick), .TxD(TxD));
+    transmit_module transmit_module_inst (.Tx_EN(Tx_EN), .Tx_BUSY(Tx_BUSY), .data(data), .baud_tick(baud_tick), .TxD(TxD));
 
     //Module that creates the correct baud rate depending on the baud_select.
     baud_controller baud_controller_tx_inst(reset_clean, clk, baud_select, Tx_sample_ENABLE);

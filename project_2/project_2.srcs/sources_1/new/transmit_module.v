@@ -1,4 +1,4 @@
-module transmit_module (input reset, input Tx_EN, output reg Tx_BUSY, input [7:0] data, input baud_tick, output reg TxD);
+module transmit_module (, input Tx_EN, output reg Tx_BUSY, input [7:0] data, input baud_tick, output reg TxD);
     reg [3:0] stages;
 
     //Start stages counter until the transmittion finishes.
@@ -37,7 +37,7 @@ module transmit_module (input reset, input Tx_EN, output reg Tx_BUSY, input [7:0
             4'h6: TxD = data[5];
             4'h7: TxD = data[6];
             4'h8: TxD = data[7];
-            4'h9: TxD = data[0] + data[1] + data[2] + data[3] + data[4] + data[5] + data[6] + data[7]; //parity bit
+            4'h9: TxD = data[0] ^ data[1] ^ data[2] ^ data[3] ^ data[4] ^ data[5] ^ data[6] ^ data[7]; //parity bit
             4'hA: TxD = 1'b1;
             default: TxD = 1'b1;
         endcase

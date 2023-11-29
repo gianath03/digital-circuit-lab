@@ -2,3 +2,6 @@ Running: xsim.dir/uart_transmitter_tb_func_impl/xsimk -simmode gui -wdb uart_tra
 Design successfully loaded
 Design Loading Memory Usage: 32980 KB (Peak: 33156 KB)
 Design Loading CPU Usage: 40 ms
+Simulation completed
+Simulation Memory Usage: 115236 KB (Peak: 180252 KB)
+Simulation CPU Usage: 240 ms
