@@ -12,8 +12,6 @@ module uart_transceiver(
     output Rx_PERROR, 
     output Rx_VALID);
 
-    sync_reest_module sync_reest (.clk(clk), .reset(reset), .reset_clean(reset_clean));
-
     uart_transmitter uart_transmitter_inst (reset_clean, clk, Tx_DATA, baud_select, Tx_WR, Tx_EN, TxD, Tx_BUSY);
     uart_receiver uart_receiver (reset_clean, clk, Rx_DATA, baud_select, Rx_EN, TxD, Rx_FERROR, Rx_PERROR, Rx_VALID);
 

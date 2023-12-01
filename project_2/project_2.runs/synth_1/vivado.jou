@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
 # Vivado v2018.3 (64-bit)
-# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Thu Nov 30 00:51:18 2023
-# Process ID: 16892
-# Current directory: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1
-# Command line: vivado.exe -log uart_transceiver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_transceiver.tcl
-# Log file: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1/uart_transceiver.vds
-# Journal file: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1\vivado.jou
+# Start of session at: Fri Dec  1 18:37:52 2023
+# Process ID: 31912
+# Current directory: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1
+# Command line: vivado -log uart_receiver.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_receiver.tcl
+# Log file: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1/uart_receiver.vds
+# Journal file: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
-source uart_transceiver.tcl -notrace
+source uart_receiver.tcl -notrace

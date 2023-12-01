@@ -2,12 +2,12 @@
 # Webtalk v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed Nov 29 15:21:29 2023
-# Process ID: 37163
+# Start of session at: Fri Dec  1 18:44:05 2023
+# Process ID: 37085
 # Current directory: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_3/impl/timing/xsim
 # Command line: wbtcv -mode batch -source /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_3/impl/timing/xsim/xsim.dir/uart_receiver_tb_time_impl/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_3/impl/timing/xsim/webtalk.log
 # Journal file: /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_3/impl/timing/xsim/webtalk.jou
 #-----------------------------------------------------------
 source /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_3/impl/timing/xsim/xsim.dir/uart_receiver_tb_time_impl/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Wed Nov 29 15:21:30 2023...
+INFO: [Common 17-206] Exiting Webtalk at Fri Dec  1 18:44:06 2023...
