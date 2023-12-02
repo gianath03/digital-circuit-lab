@@ -17,10 +17,20 @@ module uart_system(
     output an2,
     output an3);
 
+    //When Rx_VALID flag is raised
+    assign data = Rx_VALID ? Tx_DATA : 8'h0;
+
     //Sync reset to clk.
     sync_reest_module sync_reest (.clk(clk), .reset(reset), .reset_clean(reset_clean));
 
-    
+    //Anti-bounce for the user button.
+    clean_button_module clean_button (.clk(clk), .button(bnt), .button_clean(bnt_clean));
+
+    //Synthesizable "testbench" acting as the system.
+    system_controller system_controller_inst (reset_clean, clk, bnt_clean, Tx_DATA Tx_EN, Tx_WR, Rx_EN);
+
+    //Driver for the four digit LED of the previous project.
+    FourDigitLEDdriver FourDigitLEDdriver_inst (reset_clean, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, dp, data);
 
     //UART module.
     uart_transceiver uart_transceiver_inst(
