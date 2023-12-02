@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1701448670">
-  <File Type="VDS-TIMING-PB" Name="uart_receiver_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="uart_receiver_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="uart_receiver.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="uart_receiver_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="uart_receiver_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="uart_receiver_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="uart_receiver.vds"/>
-  <File Type="REPORTS-TCL" Name="uart_receiver_reports.tcl"/>
-  <File Type="PA-TCL" Name="uart_receiver.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1701537367">
+  <File Type="VDS-TIMING-PB" Name="uart_system_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="uart_system_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="uart_system.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="uart_system_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="uart_system_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="uart_system_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="uart_system.vds"/>
+  <File Type="REPORTS-TCL" Name="uart_system_reports.tcl"/>
+  <File Type="PA-TCL" Name="uart_system.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/LEDdriver/FourDigitLEDdriver.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/LEDdriver/LEDdecoder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/baud_controller.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -19,6 +33,20 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/check_incomming_mes.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clean_button_module.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/LEDdriver/digit_driver_module.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -53,16 +81,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/uart_receiver.v">
+    <File Path="$PSRCDIR/sources_1/new/sync_reest_module.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/sync_reest_module.v">
+    <File Path="$PSRCDIR/sources_1/new/system_controller.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -70,7 +97,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/transmit_module.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -78,7 +104,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/transmitter_WR_module.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -86,7 +111,20 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/trasmitter_baud.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_receiver.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_transceiver.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -94,7 +132,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/uart_transmitter.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_system.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -102,7 +146,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="uart_receiver"/>
+      <Option Name="TopModule" Val="uart_system"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

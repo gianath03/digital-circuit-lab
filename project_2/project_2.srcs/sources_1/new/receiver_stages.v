@@ -27,6 +27,9 @@ module receiver_stages(
                 stages <= 4'h0;
             end
         end
+        else begin
+            stages <= stages;
+        end
     end
 
     //Changes the input of the receiver depending on the stage.

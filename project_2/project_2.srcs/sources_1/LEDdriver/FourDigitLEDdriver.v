@@ -6,7 +6,7 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
    output an3, an2, an1, an0;
    output a, b, c, d, e, f, g, dp;
    wire dp = 1'b1;
-   wire clkfb, clk_ssd, reset_clean;
+   wire clkfb, clk_ssd;
    wire [1:0] relative_addr;
    reg [3:0] counter;
    wire an3, an2, an1, an0;
@@ -91,5 +91,5 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
    LEDdecoder LEDdecoder_inst (.LED({a,b,c,d,e,f,g}), .char(char));
 
    //The module that handles what each digit of the display will show.
-   digit_driver_module digit_driver_module_inst (.clk(clk_ssd), .reset(reset_clean), .relative_addr(relative_addr), .anodes({an3,an2,an1,an0}));
+   digit_driver_module digit_driver_module_inst (.clk(clk_ssd), .reset(reset), .relative_addr(relative_addr), .anodes({an3,an2,an1,an0}));
 endmodule

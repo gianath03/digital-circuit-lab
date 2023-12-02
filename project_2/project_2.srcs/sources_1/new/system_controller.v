@@ -2,7 +2,7 @@ module system_controller(
     input reset,
     input clk,
     input bnt,
-    output reg [7:0] Tx_DATA
+    output reg [7:0] Tx_DATA,
     output reg Tx_EN,
     output reg Tx_WR,
     output reg Rx_EN);
@@ -10,9 +10,9 @@ module system_controller(
     reg [3:0] stages;
     reg [26:0] counter;
 
-    always @(posedge clk, posedge reset) begin
+    always @(posedge clk or posedge reset) begin
         if (reset) begin
-            stages <= 0;
+            stages <= 4'h0;
         end
         if (stages ~^ 4'hC) begin
             stages <= 4'h0;
@@ -23,10 +23,16 @@ module system_controller(
         else if (!counter) begin
             stages <= stages + 1'b1;
         end
+        else begin
+            stages <= stages;
+        end
     end
 
-    always @(posedge clk, posedge reset) begin
-        if (reset || (stages ~^ 4'h2 || stages ~^ 4'h4 || stages ~^ 4'h6 || stages ~^ 4'h8)) begin
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            counter <= 27'hFFFFFFF;
+        end
+        else if (stages ~^ 4'h2 || stages ~^ 4'h4 || stages ~^ 4'h6 || stages ~^ 4'h8) begin
             counter <= 27'hFFFFFFF;
         end
         else begin
