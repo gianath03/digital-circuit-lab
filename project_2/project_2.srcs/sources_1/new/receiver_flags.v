@@ -1,7 +1,6 @@
 module receiver_flags(
     input clk,
     input reset, 
-    input baud_tick, 
     input [3:0] stages, 
     input [7:0] data, 
     input FERROR, 

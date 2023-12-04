@@ -17,9 +17,10 @@ module uart_system(
     output an1,
     output an2,
     output an3);
+    wire [7:0] data;
 
     //When Rx_VALID flag is raised
-    assign data = Rx_VALID ? Tx_DATA : 8'h0;
+    assign data = Rx_VALID ? Rx_DATA : 8'h0;
 
     //Sync reset to clk.
     sync_reest_module sync_reest (.clk(clk), .reset(reset), .reset_clean(reset_clean));

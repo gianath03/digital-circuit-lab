@@ -1,0 +1,6 @@
+0.6
+2018.3
+Dec  6 2018
+23:39:36
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_5/synth/timing/xsim/uart_transceiver_tb_time_synth.v,1701694263,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_4/new/uart_transceiver_tb.v,,baud_controller;baud_controller_0;check_incomming_mes;glbl;receive_module;receiver_baud;receiver_flags;receiver_stages;transmit_module;transmitter_WR_module;trasmitter_baud;uart_receiver;uart_transceiver;uart_transmitter,,,,,,,,
+/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_4/new/uart_transceiver_tb.v,1701445714,verilog,,,,uart_transceiver_tb,,,,,,,,

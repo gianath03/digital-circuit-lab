@@ -20,5 +20,5 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
 
     //Modules the produces the correct flags (Rx_VALID, Rx_PERROR, Rx_FERROR)
     // and outputs the data the receiver has collected when flag Rx_VALID is raised.
-    receiver_flags receiver_flags_inst (.clk(clk), .reset(reset), .baud_tick(baud_tick), .stages(stages), .FERROR(FERROR), .PERROR(PERROR), .data(data), .Rx_VALID(Rx_VALID), .Rx_FERROR(Rx_FERROR), .Rx_PERROR(Rx_PERROR), .Rx_DATA(Rx_DATA));
+    receiver_flags receiver_flags_inst (.clk(clk), .reset(reset), .stages(stages), .FERROR(FERROR), .PERROR(PERROR), .data(data), .Rx_VALID(Rx_VALID), .Rx_FERROR(Rx_FERROR), .Rx_PERROR(Rx_PERROR), .Rx_DATA(Rx_DATA));
 endmodule

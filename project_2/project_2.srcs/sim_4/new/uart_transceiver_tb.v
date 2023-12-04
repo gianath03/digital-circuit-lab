@@ -19,8 +19,10 @@ module uart_transceiver_tb();
         #1000 reset = 1'b0;
         #1000 Tx_WR = 1'b1;
         #1000 Tx_WR = 1'b0; Tx_DATA = 8'h00; Rx_EN = 1'b1;
-        #13 Tx_EN = 1'b1;
-        #1000000000 Tx_EN = 1'b0;
+        #100 Tx_EN = 1'b1;
+        #1000000 Tx_EN = 1'b0; Tx_WR = 1'b1; Tx_DATA = 8'h55; Tx_EN = 1'b0;
+        #100 Tx_WR = 1'b0; Tx_DATA = 8'h0; Tx_EN = 1'b1;
+        #1000000 Tx_EN= 1'b0;
     end
 
     always begin

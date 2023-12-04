@@ -1,0 +1,21 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../project_2.srcs/sources_1/new/baud_controller.v" \
+"../../../../project_2.srcs/sources_1/new/check_incomming_mes.v" \
+"../../../../project_2.srcs/sources_1/new/receive_module.v" \
+"../../../../project_2.srcs/sources_1/new/receiver_baud.v" \
+"../../../../project_2.srcs/sources_1/new/receiver_flags.v" \
+"../../../../project_2.srcs/sources_1/new/receiver_stages.v" \
+"../../../../project_2.srcs/sources_1/new/transmit_module.v" \
+"../../../../project_2.srcs/sources_1/new/transmitter_WR_module.v" \
+"../../../../project_2.srcs/sources_1/new/trasmitter_baud.v" \
+"../../../../project_2.srcs/sources_1/new/uart_receiver.v" \
+"../../../../project_2.srcs/sources_1/new/uart_transceiver.v" \
+"../../../../project_2.srcs/sources_1/new/uart_transmitter.v" \
+"../../../../project_2.srcs/sim_4/new/uart_transceiver_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

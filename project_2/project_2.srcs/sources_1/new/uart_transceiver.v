@@ -14,7 +14,7 @@ module uart_transceiver(
 
     //Instanciate module for the receiver and transmitter
     // and create a loopback connection of the two.
-    uart_transmitter uart_transmitter_inst (clean, clk, Tx_DATA, baud_select, Tx_WR, Tx_EN, TxD, Tx_BUSY);
-    uart_receiver uart_receiver (clean, clk, Rx_DATA, baud_select, Rx_EN, TxD, Rx_FERROR, Rx_PERROR, Rx_VALID);
+    uart_transmitter uart_transmitter_inst (reset, clk, Tx_DATA, baud_select, Tx_WR, Tx_EN, TxD, Tx_BUSY);
+    uart_receiver uart_receiver (reset, clk, Rx_DATA, baud_select, Rx_EN, TxD, Rx_FERROR, Rx_PERROR, Rx_VALID);
 
 endmodule
