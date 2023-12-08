@@ -92,8 +92,7 @@ module transmit_module (input reset, input clock, input Tx_EN, output reg Tx_BUS
                 Tx_BUSY = 1'b1;
             end
             state_parity  : begin
-                if (Tx_EN) next_state = state_stopBit;
-                else next_state = state_stopBit;
+                next_state = state_stopBit;
 
                 TxD = data[0] ^ data[1] ^ data[2] ^ data[3] ^ data[4] ^ data[5] ^
                     data[6] ^ data[7];
