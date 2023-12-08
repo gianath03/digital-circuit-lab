@@ -69,12 +69,12 @@ set rc [catch {
   set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.cache/wt [current_project]
-  set_property parent.project_path /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.xpr [current_project]
-  set_property ip_output_repo /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.cache/wt [current_project]
+  set_property parent.project_path C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.xpr [current_project]
+  set_property ip_output_repo C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1/uart_transmitter.dcp
-  read_xdc /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/constrs_1/new/constraints.xdc
+  add_files -quiet C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1/uart_transmitter.dcp
+  read_xdc C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/constrs_1/new/constraints.xdc
   link_design -top uart_transmitter -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]

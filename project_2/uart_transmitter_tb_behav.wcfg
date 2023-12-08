@@ -11,62 +11,58 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="3185500000fs"></ZoomStartTime>
-      <ZoomEndTime time="3518500001fs"></ZoomEndTime>
-      <Cursor1Time time="3405000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="201000000001fs"></ZoomEndTime>
+      <Cursor1Time time="201000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="106"></ValueColumnWidth>
+      <ValueColumnWidth column_width="102"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
-   <wvobject type="logic" fp_name="/uart_transmitter_tb/clk">
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/uart_transmitter_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/uart_transmitter_tb/reset">
+   <wvobject fp_name="/uart_transmitter_tb/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/uart_transmitter_tb/Tx_DATA">
+   <wvobject fp_name="/uart_transmitter_tb/Tx_DATA" type="array">
       <obj_property name="ElementShortName">Tx_DATA[7:0]</obj_property>
       <obj_property name="ObjectShortName">Tx_DATA[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/uart_transmitter_tb/baud_select">
+   <wvobject fp_name="/uart_transmitter_tb/baud_select" type="array">
       <obj_property name="ElementShortName">baud_select[2:0]</obj_property>
       <obj_property name="ObjectShortName">baud_select[2:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/uart_transmitter_tb/Tx_EN">
+   <wvobject fp_name="/uart_transmitter_tb/Tx_EN" type="logic">
       <obj_property name="ElementShortName">Tx_EN</obj_property>
       <obj_property name="ObjectShortName">Tx_EN</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/uart_transmitter_tb/Tx_WR">
+   <wvobject fp_name="/uart_transmitter_tb/Tx_WR" type="logic">
       <obj_property name="ElementShortName">Tx_WR</obj_property>
       <obj_property name="ObjectShortName">Tx_WR</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/uart_transmitter_tb/Tx_BUSY">
+   <wvobject fp_name="/uart_transmitter_tb/Tx_BUSY" type="logic">
       <obj_property name="ElementShortName">Tx_BUSY</obj_property>
       <obj_property name="ObjectShortName">Tx_BUSY</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/uart_transmitter_tb/TxD">
+   <wvobject fp_name="/uart_transmitter_tb/TxD" type="logic">
       <obj_property name="ElementShortName">TxD</obj_property>
       <obj_property name="ObjectShortName">TxD</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/uart_transmitter_tb/uart_transmitter_inst/trasmitter_baud_inst/baud_tick">
+   <wvobject fp_name="/uart_transmitter_tb/uart_transmitter_inst/trasmitter_baud_inst/baud_tick" type="logic">
       <obj_property name="ElementShortName">baud_tick</obj_property>
       <obj_property name="ObjectShortName">baud_tick</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/uart_transmitter_tb/uart_transmitter_inst/trasmitter_baud_inst/Tx_sample_ENABLE">
+   <wvobject fp_name="/uart_transmitter_tb/uart_transmitter_inst/trasmitter_baud_inst/Tx_sample_ENABLE" type="logic">
       <obj_property name="ElementShortName">Tx_sample_ENABLE</obj_property>
       <obj_property name="ObjectShortName">Tx_sample_ENABLE</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/uart_transmitter_tb/uart_transmitter_inst/transmit_module_inst/stages">
-      <obj_property name="ElementShortName">stages[3:0]</obj_property>
-      <obj_property name="ObjectShortName">stages[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/uart_transmitter_tb/uart_transmitter_inst/trasmitter_baud_inst/sample_counter">
-      <obj_property name="ElementShortName">sample_counter[3:0]</obj_property>
-      <obj_property name="ObjectShortName">sample_counter[3:0]</obj_property>
+   <wvobject fp_name="/uart_transmitter_tb/uart_transmitter_inst/transmit_module_inst/current_state" type="array">
+      <obj_property name="ElementShortName">current_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state[3:0]</obj_property>
    </wvobject>
 </wave_config>

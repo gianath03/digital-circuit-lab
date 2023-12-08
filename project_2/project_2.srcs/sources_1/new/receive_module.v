@@ -8,9 +8,6 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
 
     assign baud_tick = Rx_sample_ENABLE ? (counter ? 1'b0 : 1'b1) : 1'b0;
 
-    //Module that listens for incomming messages and then enables the stages FSM.
-    check_incomming_mes check_incomming_mes_inst (.clk(clk), .reset(reset), .Rx_sample_ENABLE(Rx_sample_ENABLE), .stages(stages), .Rx_EN(Rx_EN), .RxD(RxD), .baud_enable(baud_enable));
-
     //Module that creates the baud rate for the receiver
     // it differs from trasmitter baud because it "skips" start bit.
     receiver_baud receiver_baud_inst (.clk(clk), .Rx_sample_ENABLE(Rx_sample_ENABLE), .baud_enable(baud_enable), .counter(counter));

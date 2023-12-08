@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Mon Dec  4 16:10:24 2023
-| Host         : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Fri Dec  8 23:54:13 2023
+| Host         : athanasi-DESKTOP running 64-bit major release  (build 9200)
 | Command      : report_utilization -file uart_transmitter_utilization_synth.rpt -pb uart_transmitter_utilization_synth.pb
 | Design       : uart_transmitter
 | Device       : 7a100tcsg324-1
@@ -147,10 +147,10 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDCE     |   21 |        Flop & Latch |
-| LUT5     |   18 |                 LUT |
+| LUT5     |   20 |                 LUT |
 | IBUF     |   15 |                  IO |
-| LUT4     |   11 |                 LUT |
 | FDPE     |   10 |        Flop & Latch |
+| LUT4     |    9 |                 LUT |
 | LUT6     |    6 |                 LUT |
 | CARRY4   |    4 |          CarryLogic |
 | OBUF     |    2 |                  IO |
