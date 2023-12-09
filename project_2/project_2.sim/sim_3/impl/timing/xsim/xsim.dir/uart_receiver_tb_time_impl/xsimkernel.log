@@ -2,3 +2,6 @@ Running: xsim.dir/uart_receiver_tb_time_impl/xsimk -simmode gui -wdb uart_receiv
 Design successfully loaded
 Design Loading Memory Usage: 34952 KB (Peak: 34952 KB)
 Design Loading CPU Usage: 20 ms
+Simulation completed
+Simulation Memory Usage: 117208 KB (Peak: 182224 KB)
+Simulation CPU Usage: 8690 ms

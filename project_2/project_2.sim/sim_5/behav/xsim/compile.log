@@ -1,15 +1,9 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module baud_controller
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/check_incomming_mes.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module check_incomming_mes
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module receive_module
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receiver_baud.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module receiver_baud
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receiver_flags.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module receiver_flags
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receiver_stages.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module receiver_stages
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module transmit_module
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v" into library xil_defaultlib

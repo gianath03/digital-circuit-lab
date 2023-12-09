@@ -28,7 +28,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            current_state <= state_stopBit;
+            current_state <= state_waiting;
         end
         else if (Rx_sample_ENABLE)
             current_state <= next_state;

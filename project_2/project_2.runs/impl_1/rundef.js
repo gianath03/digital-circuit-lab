@@ -29,7 +29,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log uart_receiver.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source uart_receiver.tcl -notrace" );
+         "-log uart_transceiver.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source uart_transceiver.tcl -notrace" );
 
 
 
