@@ -25,7 +25,7 @@ module uart_system(
     assign data = Rx_VALID ? Rx_DATA : 8'h0;
 
     //Sync reset to clk.
-    sync_reest_module sync_reest (.clk(clk), .reset(reset), .reset_clean(reset_clean));
+    sync_reset_module sync_reset (.clk(clk), .reset(reset), .reset_clean(reset_clean));
 
     //Anti-bounce for the user button.
     clean_button_module clean_button (.clk(clk), .button(bnt), .button_clean(bnt_clean));

@@ -11,11 +11,12 @@ module transmit_module (input reset, input clock, input Tx_EN, output reg Tx_BUS
               state_data6    = 4'h7,
               state_data7    = 4'h8,
               state_parity   = 4'h9,
-              state_stopBit  = 4'hA;
+              state_stopBit  = 4'hA,
+              state_waiting  = 4'hB;
 
     always @(posedge clock or posedge reset) begin
         if (reset) begin
-            current_state <= state_stopBit;
+            current_state <= state_waiting;
         end
         else if (baud_tick) begin
             current_state <= next_state;
@@ -29,7 +30,7 @@ module transmit_module (input reset, input clock, input Tx_EN, output reg Tx_BUS
         case (current_state)
             state_startBit: begin
                 if (Tx_EN) next_state = state_data0;
-                else next_state = state_stopBit;
+                else next_state = current_state;
 
                 TxD = 1'b0;
                 Tx_BUSY = 1'b1;
@@ -99,7 +100,15 @@ module transmit_module (input reset, input clock, input Tx_EN, output reg Tx_BUS
                 Tx_BUSY = 1'b1;
             end
             state_stopBit : begin
+                if (!Tx_EN) next_state = state_waiting;
+                else next_state = current_state;
+
+                TxD = 1'b1;
+                Tx_BUSY = 1'b0;
+            end
+            state_waiting: begin
                 if (Tx_EN) next_state = state_startBit;
+                else next_state = current_state;
 
                 TxD = 1'b1;
                 Tx_BUSY = 1'b0;

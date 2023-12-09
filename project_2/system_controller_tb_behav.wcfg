@@ -11,144 +11,145 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="276345000000fs"></ZoomStartTime>
-      <ZoomEndTime time="289825000001fs"></ZoomEndTime>
-      <Cursor1Time time="278385000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1401000000001fs"></ZoomEndTime>
+      <Cursor1Time time="473305000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+      <ValueColumnWidth column_width="94"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="28" />
-   <wvobject type="logic" fp_name="/system_controller_tb/reset">
+   <WVObjectSize size="29" />
+   <wvobject fp_name="/system_controller_tb/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/clk">
+   <wvobject fp_name="/system_controller_tb/bnt" type="logic">
+      <obj_property name="ElementShortName">bnt</obj_property>
+      <obj_property name="ObjectShortName">bnt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/system_controller_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/system_controller_tb/baud_select">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/system_controller_inst/next_state" type="array">
+      <obj_property name="ElementShortName">next_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/system_controller_inst/current_state" type="array">
+      <obj_property name="ElementShortName">current_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/system_controller_tb/baud_select" type="array">
       <obj_property name="ElementShortName">baud_select[2:0]</obj_property>
       <obj_property name="ObjectShortName">baud_select[2:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/a">
+   <wvobject fp_name="/system_controller_tb/a" type="logic">
       <obj_property name="ElementShortName">a</obj_property>
       <obj_property name="ObjectShortName">a</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/b">
+   <wvobject fp_name="/system_controller_tb/b" type="logic">
       <obj_property name="ElementShortName">b</obj_property>
       <obj_property name="ObjectShortName">b</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/c">
+   <wvobject fp_name="/system_controller_tb/c" type="logic">
       <obj_property name="ElementShortName">c</obj_property>
       <obj_property name="ObjectShortName">c</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/d">
+   <wvobject fp_name="/system_controller_tb/d" type="logic">
       <obj_property name="ElementShortName">d</obj_property>
       <obj_property name="ObjectShortName">d</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/e">
+   <wvobject fp_name="/system_controller_tb/e" type="logic">
       <obj_property name="ElementShortName">e</obj_property>
       <obj_property name="ObjectShortName">e</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/f">
+   <wvobject fp_name="/system_controller_tb/f" type="logic">
       <obj_property name="ElementShortName">f</obj_property>
       <obj_property name="ObjectShortName">f</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/g">
+   <wvobject fp_name="/system_controller_tb/g" type="logic">
       <obj_property name="ElementShortName">g</obj_property>
       <obj_property name="ObjectShortName">g</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/dp">
+   <wvobject fp_name="/system_controller_tb/dp" type="logic">
       <obj_property name="ElementShortName">dp</obj_property>
       <obj_property name="ObjectShortName">dp</obj_property>
    </wvobject>
-   <wvobject type="vbus" fp_name="vbus26">
+   <wvobject fp_name="vbus26" type="vbus">
       <obj_property name="label">anodes</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject type="logic" fp_name="/system_controller_tb/an3">
+      <wvobject fp_name="/system_controller_tb/an3" type="logic">
          <obj_property name="ElementShortName">an3</obj_property>
          <obj_property name="ObjectShortName">an3</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/system_controller_tb/an2">
+      <wvobject fp_name="/system_controller_tb/an2" type="logic">
          <obj_property name="ElementShortName">an2</obj_property>
          <obj_property name="ObjectShortName">an2</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/system_controller_tb/an1">
+      <wvobject fp_name="/system_controller_tb/an1" type="logic">
          <obj_property name="ElementShortName">an1</obj_property>
          <obj_property name="ObjectShortName">an1</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/system_controller_tb/an0">
+      <wvobject fp_name="/system_controller_tb/an0" type="logic">
          <obj_property name="ElementShortName">an0</obj_property>
          <obj_property name="ObjectShortName">an0</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/data">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/data" type="array">
       <obj_property name="ElementShortName">data[7:0]</obj_property>
       <obj_property name="ObjectShortName">data[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/Tx_DATA">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/Tx_DATA" type="array">
       <obj_property name="ElementShortName">Tx_DATA[7:0]</obj_property>
       <obj_property name="ObjectShortName">Tx_DATA[7:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/uart_transceiver_inst/TxD">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/uart_transceiver_inst/TxD" type="logic">
       <obj_property name="ElementShortName">TxD</obj_property>
       <obj_property name="ObjectShortName">TxD</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Tx_EN">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/Tx_EN" type="logic">
       <obj_property name="ElementShortName">Tx_EN</obj_property>
       <obj_property name="ObjectShortName">Tx_EN</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Tx_WR">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/Tx_WR" type="logic">
       <obj_property name="ElementShortName">Tx_WR</obj_property>
       <obj_property name="ObjectShortName">Tx_WR</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Rx_EN">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/Rx_EN" type="logic">
       <obj_property name="ElementShortName">Rx_EN</obj_property>
       <obj_property name="ObjectShortName">Rx_EN</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Tx_BUSY">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/Tx_BUSY" type="logic">
       <obj_property name="ElementShortName">Tx_BUSY</obj_property>
       <obj_property name="ObjectShortName">Tx_BUSY</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/Rx_DATA">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/Rx_DATA" type="array">
       <obj_property name="ElementShortName">Rx_DATA[7:0]</obj_property>
       <obj_property name="ObjectShortName">Rx_DATA[7:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Rx_FERROR">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/Rx_FERROR" type="logic">
       <obj_property name="ElementShortName">Rx_FERROR</obj_property>
       <obj_property name="ObjectShortName">Rx_FERROR</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Rx_PERROR">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/Rx_PERROR" type="logic">
       <obj_property name="ElementShortName">Rx_PERROR</obj_property>
       <obj_property name="ObjectShortName">Rx_PERROR</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Rx_VALID">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/Rx_VALID" type="logic">
       <obj_property name="ElementShortName">Rx_VALID</obj_property>
       <obj_property name="ObjectShortName">Rx_VALID</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/system_controller_inst/counter">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/system_controller_inst/counter" type="array">
       <obj_property name="ElementShortName">counter[26:0]</obj_property>
       <obj_property name="ObjectShortName">counter[26:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/system_controller_inst/current_state">
-      <obj_property name="ElementShortName">current_state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">current_state[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/system_controller_inst/next_state">
-      <obj_property name="ElementShortName">next_state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">next_state[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/FourDigitLEDdriver_inst/LEDdecoder_inst/char">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/FourDigitLEDdriver_inst/LEDdecoder_inst/char" type="array">
       <obj_property name="ElementShortName">char[4:0]</obj_property>
       <obj_property name="ObjectShortName">char[4:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/FourDigitLEDdriver_inst/LEDdecoder_inst/LED">
+   <wvobject fp_name="/system_controller_tb/uart_system_inst/FourDigitLEDdriver_inst/LEDdecoder_inst/LED" type="array">
       <obj_property name="ElementShortName">LED[6:0]</obj_property>
       <obj_property name="ObjectShortName">LED[6:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

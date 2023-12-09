@@ -6,12 +6,7 @@ module trasmitter_baud (output wire baud_tick, input Tx_EN, input Tx_BUSY, input
             sample_counter <= 4'hA;
         end
         else if(Tx_sample_ENABLE) begin
-            if (Tx_EN || Tx_BUSY) begin
-                sample_counter <= sample_counter - 1'b1;
-            end
-            else begin
-                sample_counter <= 4'hF;
-            end
+            sample_counter <= sample_counter - 1'b1;
         end
     end
 

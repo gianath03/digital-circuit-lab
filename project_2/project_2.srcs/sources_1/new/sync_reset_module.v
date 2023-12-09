@@ -1,4 +1,4 @@
-module sync_reest_module(input reset, input clk, output reset_clean);
+module sync_reset_module(input reset, input clk, output reset_clean);
     reg temp, reset_sync;
 
     //Sync

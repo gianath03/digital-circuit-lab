@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1702115953">
   <File Type="PA-TCL" Name="uart_transceiver.tcl"/>
-  <File Type="REPORTS-TCL" Name="uart_transceiver_reports.tcl"/>
   <File Type="OPT-DCP" Name="uart_transceiver_opt.dcp"/>
+  <File Type="REPORTS-TCL" Name="uart_transceiver_reports.tcl"/>
+  <File Type="PHYSOPT-DCP" Name="uart_transceiver_physopt.dcp"/>
   <File Type="OPT-HWDEF" Name="uart_transceiver.hwdef"/>
   <File Type="PWROPT-DCP" Name="uart_transceiver_pwropt.dcp"/>
   <File Type="PLACE-DCP" Name="uart_transceiver_placed.dcp"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="uart_transceiver_incremental_reuse_pre_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="uart_transceiver_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="uart_transceiver_physopt.dcp"/>
   <File Type="ROUTE-ERROR-DCP" Name="uart_transceiver_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="uart_transceiver_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="uart_transceiver_routed_bb.dcp"/>
