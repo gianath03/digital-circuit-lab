@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="689833333333fs"></ZoomStartTime>
-      <ZoomEndTime time="703233333334fs"></ZoomEndTime>
-      <Cursor1Time time="701000000000fs"></Cursor1Time>
+      <ZoomStartTime time="276345000000fs"></ZoomStartTime>
+      <ZoomEndTime time="289825000001fs"></ZoomEndTime>
+      <Cursor1Time time="278385000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="102"></ValueColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="22" />
+   <WVObjectSize size="28" />
    <wvobject type="logic" fp_name="/system_controller_tb/reset">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -67,6 +67,7 @@
    <wvobject type="vbus" fp_name="vbus26">
       <obj_property name="label">anodes</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="logic" fp_name="/system_controller_tb/an3">
          <obj_property name="ElementShortName">an3</obj_property>
          <obj_property name="ObjectShortName">an3</obj_property>
@@ -88,9 +89,13 @@
       <obj_property name="ElementShortName">data[7:0]</obj_property>
       <obj_property name="ObjectShortName">data[7:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Tx_DATA">
-      <obj_property name="ElementShortName">Tx_DATA</obj_property>
-      <obj_property name="ObjectShortName">Tx_DATA</obj_property>
+   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/Tx_DATA">
+      <obj_property name="ElementShortName">Tx_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Tx_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/uart_transceiver_inst/TxD">
+      <obj_property name="ElementShortName">TxD</obj_property>
+      <obj_property name="ObjectShortName">TxD</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Tx_EN">
       <obj_property name="ElementShortName">Tx_EN</obj_property>
@@ -108,9 +113,9 @@
       <obj_property name="ElementShortName">Tx_BUSY</obj_property>
       <obj_property name="ObjectShortName">Tx_BUSY</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Rx_DATA">
-      <obj_property name="ElementShortName">Rx_DATA</obj_property>
-      <obj_property name="ObjectShortName">Rx_DATA</obj_property>
+   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/Rx_DATA">
+      <obj_property name="ElementShortName">Rx_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Rx_DATA[7:0]</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Rx_FERROR">
       <obj_property name="ElementShortName">Rx_FERROR</obj_property>
@@ -123,5 +128,27 @@
    <wvobject type="logic" fp_name="/system_controller_tb/uart_system_inst/Rx_VALID">
       <obj_property name="ElementShortName">Rx_VALID</obj_property>
       <obj_property name="ObjectShortName">Rx_VALID</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/system_controller_inst/counter">
+      <obj_property name="ElementShortName">counter[26:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[26:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/system_controller_inst/current_state">
+      <obj_property name="ElementShortName">current_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/system_controller_inst/next_state">
+      <obj_property name="ElementShortName">next_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/FourDigitLEDdriver_inst/LEDdecoder_inst/char">
+      <obj_property name="ElementShortName">char[4:0]</obj_property>
+      <obj_property name="ObjectShortName">char[4:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/system_controller_tb/uart_system_inst/FourDigitLEDdriver_inst/LEDdecoder_inst/LED">
+      <obj_property name="ElementShortName">LED[6:0]</obj_property>
+      <obj_property name="ObjectShortName">LED[6:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

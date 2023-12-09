@@ -10,7 +10,7 @@ module FourDigitLEDdriver(reset, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, d
    wire [1:0] relative_addr;
    reg [3:0] counter;
    wire an3, an2, an1, an0;
-   reg [3:0] char;
+   reg [4:0] char;
 
    // MMCME2_BASE: Base Mixed Mode Clock Manager
    //              Artix-7

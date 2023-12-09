@@ -35,12 +35,16 @@ module system_controller(
 
     always @(posedge clk or posedge reset) begin
         if (reset)
-            counter <= ;
-        else
-            counter <= counter - 1;
+            counter <= 27'h2927; //27'hFFFFFFF;
+        else begin
+            if (!counter)
+                counter <= 27'h2927;
+            else 
+                counter <= counter - 1'b1;
+        end
     end
 
-    always @(current_state) begin
+    always @(current_state or counter) begin
         next_state = current_state;
         Tx_EN   = 1'b0;
         Tx_WR   = 1'b0;
@@ -147,7 +151,7 @@ module system_controller(
                 Tx_DATA = 8'h0;
             end
             state_wait89: begin
-                if (bnt) next_state = state_data_writeAA;
+                if (bnt) next_state = state_writeAA;
                 else next_state = current_state;
 
                 Tx_EN   = 1'b0;

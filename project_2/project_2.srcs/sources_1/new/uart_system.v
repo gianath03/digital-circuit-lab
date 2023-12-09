@@ -18,6 +18,8 @@ module uart_system(
     output an2,
     output an3);
     wire [7:0] data;
+    wire [7:0] Tx_DATA;
+    wire [7:0] Rx_DATA;
 
     //When Rx_VALID flag is raised
     assign data = Rx_VALID ? Rx_DATA : 8'h0;
