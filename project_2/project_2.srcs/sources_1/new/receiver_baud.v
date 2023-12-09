@@ -14,7 +14,7 @@ output reg [5:0] counter);
                 end
             end
             else begin
-                counter <= 6'd8;
+                counter <= 6'd7;
             end
         end
         else begin

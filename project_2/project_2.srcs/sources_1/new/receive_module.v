@@ -6,7 +6,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
     reg baud_enable;
     reg FERROR, PERROR;
     reg [7:0] data;
-    reg [10:0] out;
+    reg [9:0] out;
     parameter state_startBit = 4'h0,
               state_data0    = 4'h1,
               state_data1    = 4'h2,
@@ -17,7 +17,8 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
               state_data6    = 4'h7,
               state_data7    = 4'h8,
               state_parity   = 4'h9,
-              state_stopBit  = 4'hA;
+              state_stopBit  = 4'hA,
+              state_waiting  = 4'hB;
 
     assign baud_tick = Rx_sample_ENABLE ? (counter ? 1'b0 : 1'b1) : 1'b0;
 
@@ -33,7 +34,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
             current_state <= next_state;
     end
 
-    always @(current_state or RxD or Rx_EN or baud_tick or Rx_PERROR or Rx_FERROR) begin
+    always @(current_state or RxD or Rx_EN or baud_tick or Rx_PERROR or Rx_FERROR or data) begin
         next_state = current_state;
         baud_enable = 1'b1;
         out = 10'hFF;
@@ -45,7 +46,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                     if (baud_tick) next_state = state_data0;
                     else next_state = current_state;
                 end
-                else next_state = state_stopBit;
+                else next_state = state_waiting;
 
                 out = 10'hFF;
                 baud_enable = 1'b1;
@@ -54,7 +55,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                 if (Rx_EN)
                     if (baud_tick) next_state = state_data1;
                     else next_state = current_state;
-                else next_state = state_stopBit;
+                else next_state = state_waiting;
 
                 out = 10'h0 + RxD;
                 baud_enable = 1'b1;
@@ -63,7 +64,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                 if (Rx_EN)
                     if (baud_tick) next_state = state_data2;
                     else next_state = current_state;
-                else next_state = state_stopBit;
+                else next_state = state_waiting;
 
                 out = 10'h0 + RxD << 1;
                 baud_enable = 1'b1;
@@ -72,7 +73,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                 if (Rx_EN) 
                     if (baud_tick) next_state = state_data3;
                     else next_state = current_state;
-                else next_state = state_stopBit;
+                else next_state = state_waiting;
 
                 out = 10'h0 + RxD << 2;
                 baud_enable = 1'b1;
@@ -81,7 +82,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                 if (Rx_EN) 
                     if (baud_tick) next_state = state_data4;
                     else next_state = current_state;
-                else next_state = state_stopBit;
+                else next_state = state_waiting;
 
                 out = 10'h0 + RxD << 3;
                 baud_enable = 1'b1;
@@ -90,7 +91,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                 if (Rx_EN) 
                     if (baud_tick) next_state = state_data5;
                     else next_state = current_state;
-                else next_state = state_stopBit;
+                else next_state = state_waiting;
 
                 out = 10'h0 + RxD << 4;
                 baud_enable = 1'b1;
@@ -99,7 +100,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                 if (Rx_EN) 
                     if (baud_tick) next_state = state_data6;
                     else next_state = current_state;
-                else next_state = state_stopBit;
+                else next_state = state_waiting;
 
                 out = 10'h0 + RxD << 5;
                 baud_enable = 1'b1;
@@ -108,7 +109,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                 if (Rx_EN) 
                     if (baud_tick) next_state = state_data7;
                     else next_state = current_state;
-                else next_state = state_stopBit;
+                else next_state = state_waiting;
 
                 out = 10'h0 + RxD << 6;
                 baud_enable = 1'b1;
@@ -117,22 +118,34 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                 if (Rx_EN) 
                     if (baud_tick) next_state = state_parity;
                     else next_state = current_state;
-                else next_state = state_stopBit;
+                else next_state = state_waiting;
 
                 out = 10'h0 + RxD << 7;
                 baud_enable = 1'b1;
             end
             state_parity: begin
-                if (baud_tick) next_state = state_stopBit;
+                if (Rx_EN) 
+                    if (baud_tick) next_state = state_stopBit;
+                    else next_state = current_state;
+                else next_state = state_waiting;
 
-                out = 10'h0 + (~(data[0] ^ data[1] ^ data[2] ^ data[3] ^ data[4] ^ data[5] ^
+                out = 10'h0 + (!(data[0] ^ data[1] ^ data[2] ^ data[3] ^ data[4] ^ data[5] ^
                     data[6] ^ data[7] == RxD) << 8);
                 baud_enable = 1'b1;
             end
             state_stopBit: begin
-                if (Rx_EN && RxD == 1'b0) next_state = state_startBit;
+                if (Rx_EN) 
+                    if (baud_tick) next_state = state_waiting;
+                    else next_state = current_state;
+                else next_state = state_waiting;
 
-                if (!Rx_PERROR && ~Rx_FERROR) begin
+                out = 10'h0 + (~RxD) << 9;
+                baud_enable = 1'b1;
+            end
+            state_waiting: begin
+                if (Rx_EN && RxD == 1'b0) next_state = state_startBit;
+                
+                if (!Rx_PERROR && !Rx_FERROR) begin
                    Rx_VALID = 1'b1;
                    Rx_DATA = data; 
                 end
@@ -141,11 +154,11 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                     Rx_DATA = 8'h0; 
                 end
 
-                out = 10'h0 + (~RxD) << 9;
+                out = 10'h0;
                 baud_enable = 1'b0;
             end
             default: begin
-                next_state = state_stopBit;
+                next_state = state_waiting;
 
                 out = 10'b0;
                 baud_enable = 1'b0;
@@ -157,11 +170,13 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
         if (reset) begin
             {Rx_FERROR, Rx_PERROR, data} <= 10'h0;
         end
-        else if (out == 10'hFF) begin
-            {Rx_FERROR, Rx_PERROR, data} <= 10'h0;
+        else if (baud_tick) begin
+             if (out == 10'hFF) begin
+                {Rx_FERROR, Rx_PERROR, data} <= 10'h0;
+            end
+            else 
+                {Rx_FERROR, Rx_PERROR, data} <= {Rx_FERROR, Rx_PERROR, data} + out;
         end
-        else 
-            {Rx_FERROR, Rx_PERROR, data} <= {Rx_FERROR, Rx_PERROR, data} + out;
     end
 
 
