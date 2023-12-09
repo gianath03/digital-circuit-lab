@@ -1,0 +1,6 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_4/synth/func/xsim/system_controller_tb_func_synth.v,1702140579,verilog,,C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_4/new/system_controller_tb.v,,FourDigitLEDdriver;baud_controller;baud_controller_0;digit_driver_module;glbl;receive_module;receiver_baud;sync_reset_module;system_controller;transmit_module;transmitter_WR_module;trasmitter_baud;uart_receiver;uart_system;uart_transceiver;uart_transmitter,,,,,,,,
+C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_4/new/system_controller_tb.v,1702139162,verilog,,,,system_controller_tb,,,,,,,,

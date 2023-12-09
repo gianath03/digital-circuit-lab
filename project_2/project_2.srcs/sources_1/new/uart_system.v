@@ -28,10 +28,10 @@ module uart_system(
     sync_reset_module sync_reset (.clk(clk), .reset(reset), .reset_clean(reset_clean));
 
     //Anti-bounce for the user button.
-    clean_button_module clean_button (.clk(clk), .button(bnt), .button_clean(bnt_clean));
+    //clean_button_module clean_button (.clk(clk), .button(bnt), .button_clean(bnt_clean));
 
     //Synthesizable "testbench" acting as the system.
-    system_controller system_controller_inst (reset_clean, clk, bnt_clean, Tx_DATA, Tx_EN, Tx_WR, Rx_EN);
+    system_controller system_controller_inst (reset_clean, clk, bnt, Tx_DATA, Tx_EN, Tx_WR, Rx_EN);
 
     //Driver for the four digit LED of the previous project.
     FourDigitLEDdriver FourDigitLEDdriver_inst (reset_clean, clk, an3, an2, an1, an0, a, b, c, d, e, f, g, dp, data);

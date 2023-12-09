@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat Dec  9 18:58:22 2023
+# Process ID: 19236
+# Current directory: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_4/impl/timing/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_4/impl/timing/xsim/xsim.dir/system_controller_tb_time_impl/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_4/impl/timing/xsim/webtalk.log
+# Journal file: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_4/impl/timing/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_4/impl/timing/xsim/xsim.dir/system_controller_tb_time_impl/webtalk/xsim_webtalk.tcl -notrace
