@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sat Dec  9 18:46:25 2023
-# Process ID: 19168
+# Start of session at: Sun Dec 10 21:57:32 2023
+# Process ID: 19116
 # Current directory: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1
 # Command line: vivado.exe -log uart_system.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_system.tcl
 # Log file: C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1/uart_system.vds
@@ -15,13 +15,15 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 19208 
+INFO: Helper process launched with PID 15988 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 389.039 ; gain = 98.625
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 387.871 ; gain = 99.320
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'uart_system' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_system.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sync_reset_module' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reset_module.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'sync_reset_module' (1#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reset_module.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clean_button_module' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/clean_button_module.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clean_button_module' (2#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/clean_button_module.v:1]
 INFO: [Synth 8-6157] synthesizing module 'system_controller' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/system_controller.v:1]
 	Parameter state_writeAA bound to: 4'b0000 
 	Parameter state_sentAA bound to: 4'b0001 
@@ -35,7 +37,7 @@ INFO: [Synth 8-6157] synthesizing module 'system_controller' [C:/Users/athanasi/
 	Parameter state_write89 bound to: 4'b1001 
 	Parameter state_sent89 bound to: 4'b1010 
 	Parameter state_wait89 bound to: 4'b1011 
-INFO: [Synth 8-6155] done synthesizing module 'system_controller' (2#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/system_controller.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'system_controller' (3#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/system_controller.v:1]
 INFO: [Synth 8-6157] synthesizing module 'FourDigitLEDdriver' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/FourDigitLEDdriver.v:3]
 INFO: [Synth 8-6157] synthesizing module 'MMCME2_BASE' [C:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26837]
 	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
@@ -67,22 +69,22 @@ INFO: [Synth 8-6157] synthesizing module 'MMCME2_BASE' [C:/Xilinx/Vivado/2018.3/
 	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
 	Parameter REF_JITTER1 bound to: 0.000000 - type: float 
 	Parameter STARTUP_WAIT bound to: FALSE - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'MMCME2_BASE' (3#1) [C:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26837]
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_BASE' (4#1) [C:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:26837]
 INFO: [Synth 8-226] default block is never used [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/FourDigitLEDdriver.v:81]
 INFO: [Synth 8-6157] synthesizing module 'LEDdecoder' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/LEDdecoder.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'LEDdecoder' (4#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/LEDdecoder.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'LEDdecoder' (5#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/LEDdecoder.v:3]
 INFO: [Synth 8-6157] synthesizing module 'digit_driver_module' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/digit_driver_module.v:3]
 INFO: [Synth 8-226] default block is never used [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/digit_driver_module.v:18]
-INFO: [Synth 8-6155] done synthesizing module 'digit_driver_module' (5#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/digit_driver_module.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'digit_driver_module' (6#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/digit_driver_module.v:3]
 WARNING: [Synth 8-3848] Net PWRDWN in module/entity FourDigitLEDdriver does not have driver. [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/FourDigitLEDdriver.v:73]
 WARNING: [Synth 8-3848] Net RST in module/entity FourDigitLEDdriver does not have driver. [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/FourDigitLEDdriver.v:74]
-INFO: [Synth 8-6155] done synthesizing module 'FourDigitLEDdriver' (6#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/FourDigitLEDdriver.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'FourDigitLEDdriver' (7#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/FourDigitLEDdriver.v:3]
 INFO: [Synth 8-6157] synthesizing module 'uart_transceiver' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transceiver.v:1]
 INFO: [Synth 8-6157] synthesizing module 'uart_transmitter' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v:1]
 INFO: [Synth 8-6157] synthesizing module 'transmitter_WR_module' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'transmitter_WR_module' (7#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'transmitter_WR_module' (8#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v:2]
 INFO: [Synth 8-6157] synthesizing module 'trasmitter_baud' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/trasmitter_baud.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'trasmitter_baud' (8#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/trasmitter_baud.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'trasmitter_baud' (9#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/trasmitter_baud.v:1]
 INFO: [Synth 8-6157] synthesizing module 'transmit_module' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v:1]
 	Parameter state_startBit bound to: 4'b0000 
 	Parameter state_data0 bound to: 4'b0001 
@@ -96,11 +98,11 @@ INFO: [Synth 8-6157] synthesizing module 'transmit_module' [C:/Users/athanasi/Do
 	Parameter state_parity bound to: 4'b1001 
 	Parameter state_stopBit bound to: 4'b1010 
 	Parameter state_waiting bound to: 4'b1011 
-INFO: [Synth 8-6155] done synthesizing module 'transmit_module' (9#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'transmit_module' (10#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v:1]
 INFO: [Synth 8-6157] synthesizing module 'baud_controller' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v:1]
 INFO: [Synth 8-226] default block is never used [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'baud_controller' (10#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'uart_transmitter' (11#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'baud_controller' (11#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'uart_transmitter' (12#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v:1]
 INFO: [Synth 8-6157] synthesizing module 'uart_receiver' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_receiver.v:1]
 INFO: [Synth 8-6157] synthesizing module 'receive_module' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v:1]
 	Parameter state_startBit bound to: 4'b0000 
@@ -116,13 +118,13 @@ INFO: [Synth 8-6157] synthesizing module 'receive_module' [C:/Users/athanasi/Doc
 	Parameter state_stopBit bound to: 4'b1010 
 	Parameter state_waiting bound to: 4'b1011 
 INFO: [Synth 8-6157] synthesizing module 'receiver_baud' [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receiver_baud.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'receiver_baud' (12#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receiver_baud.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'receive_module' (13#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'uart_receiver' (14#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_receiver.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'uart_transceiver' (15#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transceiver.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'uart_system' (16#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_system.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'receiver_baud' (13#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receiver_baud.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'receive_module' (14#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'uart_receiver' (15#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_receiver.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'uart_transceiver' (16#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transceiver.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'uart_system' (17#1) [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_system.v:1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 445.223 ; gain = 154.809
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 444.828 ; gain = 156.277
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -135,10 +137,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 445.223 ; gain = 154.809
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 444.828 ; gain = 156.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 445.223 ; gain = 154.809
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 444.828 ; gain = 156.277
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -152,31 +154,31 @@ Finished Parsing XDC File [C:/Users/athanasi/Documents/GitHub/digital-circuit-la
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/uart_system_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/uart_system_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 796.398 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 794.875 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 796.430 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 794.906 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 796.430 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 796.430 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 794.906 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 794.906 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 796.430 ; gain = 506.016
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 794.906 ; gain = 506.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 796.430 ; gain = 506.016
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 794.906 ; gain = 506.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 796.430 ; gain = 506.016
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:22 . Memory (MB): peak = 794.906 ; gain = 506.355
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'system_controller'
 INFO: [Synth 8-5544] ROM "Tx_WR" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -254,22 +256,22 @@ INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using e
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-           state_waiting |                     000000000001 |                             1011
-          state_startBit |                     000000000010 |                             0000
-             state_data0 |                     000000000100 |                             0001
-             state_data1 |                     000000001000 |                             0010
-             state_data2 |                     000000010000 |                             0011
-             state_data3 |                     000000100000 |                             0100
-             state_data4 |                     000001000000 |                             0101
-             state_data5 |                     000010000000 |                             0110
-             state_data6 |                     000100000000 |                             0111
-             state_data7 |                     001000000000 |                             1000
-            state_parity |                     010000000000 |                             1001
-           state_stopBit |                     100000000000 |                             1010
+          state_startBit |                     000000000001 |                             0000
+             state_data0 |                     000000000010 |                             0001
+             state_data1 |                     000000000100 |                             0010
+             state_data2 |                     000000001000 |                             0011
+             state_data3 |                     000000010000 |                             0100
+             state_data4 |                     000000100000 |                             0101
+             state_data5 |                     000001000000 |                             0110
+             state_data6 |                     000010000000 |                             0111
+             state_data7 |                     000100000000 |                             1000
+            state_parity |                     001000000000 |                             1001
+           state_stopBit |                     010000000000 |                             1010
+           state_waiting |                     100000000000 |                             1011
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'receive_module'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 796.430 ; gain = 506.016
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:23 . Memory (MB): peak = 794.906 ; gain = 506.355
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -286,16 +288,17 @@ Detailed RTL Component Info :
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 2     
 +---XORs : 
+	   2 Input      1 Bit         XORs := 1     
 	   8 Input      1 Bit         XORs := 2     
 +---Registers : 
 	                8 Bit    Registers := 2     
 	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 4     
+	                1 Bit    Registers := 6     
 +---Muxes : 
 	   8 Input     15 Bit        Muxes := 2     
 	  12 Input     12 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 34    
+	   2 Input     12 Bit        Muxes := 33    
 	  12 Input     10 Bit        Muxes := 1     
 	  12 Input      8 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 2     
@@ -321,6 +324,12 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit        Muxes := 1     
 Module sync_reset_module 
 Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module clean_button_module 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
 	                1 Bit    Registers := 2     
 Module system_controller 
@@ -385,7 +394,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	  12 Input     12 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 22    
+	   2 Input     12 Bit        Muxes := 21    
 	  12 Input     10 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 1     
 	  12 Input      8 Bit        Muxes := 1     
@@ -412,7 +421,7 @@ INFO: [Synth 8-3886] merging instance 'uart_transceiver_inst/uart_transmitter_in
 INFO: [Synth 8-3886] merging instance 'uart_transceiver_inst/uart_transmitter_inst/transmitter_WR/data_reg[6]' (FDPE) to 'uart_transceiver_inst/uart_transmitter_inst/transmitter_WR/data_reg[2]'
 INFO: [Synth 8-3886] merging instance 'uart_transceiver_inst/uart_transmitter_inst/transmitter_WR/data_reg[5]' (FDPE) to 'uart_transceiver_inst/uart_transmitter_inst/transmitter_WR/data_reg[1]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 796.430 ; gain = 506.016
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 794.906 ; gain = 506.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -439,13 +448,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 796.430 ; gain = 506.016
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:41 . Memory (MB): peak = 794.906 ; gain = 506.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:43 . Memory (MB): peak = 810.223 ; gain = 519.809
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:42 . Memory (MB): peak = 809.316 ; gain = 520.766
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -457,7 +466,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:43 . Memory (MB): peak = 817.281 ; gain = 526.867
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:42 . Memory (MB): peak = 816.918 ; gain = 528.367
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -481,7 +490,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 817.281 ; gain = 526.867
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 816.918 ; gain = 528.367
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -494,7 +503,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 817.281 ; gain = 526.867
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 816.918 ; gain = 528.367
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -506,25 +515,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 817.281 ; gain = 526.867
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 816.918 ; gain = 528.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 817.281 ; gain = 526.867
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 816.918 ; gain = 528.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 817.281 ; gain = 526.867
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 816.918 ; gain = 528.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 817.281 ; gain = 526.867
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 816.918 ; gain = 528.367
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -541,18 +550,18 @@ Report Cell Usage:
 |      |Cell        |Count |
 +------+------------+------+
 |1     |BUFG        |     1|
-|2     |CARRY4      |    16|
-|3     |LUT1        |     2|
+|2     |CARRY4      |    22|
+|3     |LUT1        |    25|
 |4     |LUT2        |    49|
-|5     |LUT3        |     9|
-|6     |LUT4        |    42|
+|5     |LUT3        |    12|
+|6     |LUT4        |    53|
 |7     |LUT5        |    72|
-|8     |LUT6        |    34|
+|8     |LUT6        |    26|
 |9     |MMCME2_BASE |     1|
 |10    |FDCE        |    69|
 |11    |FDPE        |    32|
-|12    |FDRE        |     5|
-|13    |FDSE        |     3|
+|12    |FDRE        |     9|
+|13    |FDSE        |    23|
 |14    |IBUF        |     6|
 |15    |OBUF        |    12|
 +------+------------+------+
@@ -561,45 +570,46 @@ Report Instance Areas:
 +------+------------------------------+----------------------+------+
 |      |Instance                      |Module                |Cells |
 +------+------------------------------+----------------------+------+
-|1     |top                           |                      |   353|
-|2     |  FourDigitLEDdriver_inst     |FourDigitLEDdriver    |    15|
-|3     |    digit_driver_module_inst  |digit_driver_module   |    14|
-|4     |  sync_reset                  |sync_reset_module     |     3|
-|5     |  system_controller_inst      |system_controller     |    94|
-|6     |  uart_transceiver_inst       |uart_transceiver      |   222|
-|7     |    uart_receiver             |uart_receiver         |   145|
-|8     |      baud_controller_rx_inst |baud_controller_0     |    50|
-|9     |      receive_module_inst     |receive_module        |    95|
-|10    |        receiver_baud_inst    |receiver_baud         |    29|
-|11    |    uart_transmitter_inst     |uart_transmitter      |    77|
-|12    |      baud_controller_tx_inst |baud_controller       |    50|
-|13    |      transmit_module_inst    |transmit_module       |     9|
-|14    |      transmitter_WR          |transmitter_WR_module |     9|
-|15    |      trasmitter_baud_inst    |trasmitter_baud       |     9|
+|1     |top                           |                      |   412|
+|2     |  FourDigitLEDdriver_inst     |FourDigitLEDdriver    |    16|
+|3     |    digit_driver_module_inst  |digit_driver_module   |    15|
+|4     |  clean_button                |clean_button_module   |    58|
+|5     |  sync_reset                  |sync_reset_module     |     3|
+|6     |  system_controller_inst      |system_controller     |    94|
+|7     |  uart_transceiver_inst       |uart_transceiver      |   222|
+|8     |    uart_receiver             |uart_receiver         |   144|
+|9     |      baud_controller_rx_inst |baud_controller_0     |    50|
+|10    |      receive_module_inst     |receive_module        |    94|
+|11    |        receiver_baud_inst    |receiver_baud         |    29|
+|12    |    uart_transmitter_inst     |uart_transmitter      |    78|
+|13    |      baud_controller_tx_inst |baud_controller       |    50|
+|14    |      transmit_module_inst    |transmit_module       |    13|
+|15    |      transmitter_WR          |transmitter_WR_module |     6|
+|16    |      trasmitter_baud_inst    |trasmitter_baud       |     9|
 +------+------------------------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 817.281 ; gain = 526.867
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 816.918 ; gain = 528.367
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:34 . Memory (MB): peak = 817.281 ; gain = 175.660
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:45 . Memory (MB): peak = 817.281 ; gain = 526.867
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 816.918 ; gain = 178.289
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:45 . Memory (MB): peak = 816.918 ; gain = 528.367
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 23 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 817.281 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 816.918 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   MMCME2_BASE => MMCME2_ADV: 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-95 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+97 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:49 . Memory (MB): peak = 817.281 ; gain = 539.406
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 817.281 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:48 . Memory (MB): peak = 816.918 ; gain = 539.902
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 816.918 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.runs/synth_1/uart_system.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file uart_system_utilization_synth.rpt -pb uart_system_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Dec  9 18:47:20 2023...
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 10 21:58:26 2023...

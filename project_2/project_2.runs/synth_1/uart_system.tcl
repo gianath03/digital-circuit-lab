@@ -33,6 +33,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/FourDigitLEDdriver.v
   C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/LEDdecoder.v
   C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v
+  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/clean_button_module.v
   C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/digit_driver_module.v
   C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v
   C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receiver_baud.v

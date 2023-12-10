@@ -28,7 +28,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            current_state <= state_waiting;
+            current_state <= state_startBit;
         end
         else if (Rx_sample_ENABLE)
             current_state <= next_state;
@@ -46,7 +46,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                     if (baud_tick) next_state = state_data0;
                     else next_state = current_state;
                 end
-                else next_state = state_waiting;
+                else next_state = current_state;
 
                 out = 10'hFF;
                 baud_enable = 1'b1;
@@ -166,6 +166,8 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
         endcase
     end
 
+    //Flip-flops to save flags (valid and error)
+    // and the received data.
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             {Rx_FERROR, Rx_PERROR, data} <= 10'h0;
@@ -178,6 +180,4 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                 {Rx_FERROR, Rx_PERROR, data} <= {Rx_FERROR, Rx_PERROR, data} + out;
         end
     end
-
-
-    endmodule
+endmodule
