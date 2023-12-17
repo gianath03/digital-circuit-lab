@@ -1,6 +1,0 @@
-0.6
-2018.3
-Dec  6 2018
-23:39:36
-/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.sim/sim_4/impl/timing/xsim/system_controller_tb_time_impl.v,1702398869,verilog,,/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_4/new/system_controller_tb.v,,FourDigitLEDdriver;baud_controller;baud_controller_0;clean_button_module;digit_driver_module;glbl;receive_module;receiver_baud;sync_reset_module;system_controller;transmit_module;transmitter_WR_module;trasmitter_baud;uart_receiver;uart_system;uart_transceiver;uart_transmitter,,,,,,,,
-/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_4/new/system_controller_tb.v,1702395812,verilog,,,,system_controller_tb,,,,,,,,

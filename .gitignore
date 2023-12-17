@@ -1,4 +1,4 @@
-*.sim/
+project_2/*.sim/
 *.cache/
 *.hw/
 *.sim/
