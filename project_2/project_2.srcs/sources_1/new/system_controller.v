@@ -9,7 +9,7 @@ module system_controller(
 
     reg  [3:0] current_state;
     reg  [3:0] next_state;
-    reg [19:0] counter;
+    reg [24:0] counter;
     parameter state_writeAA = 4'h0,
               state_sentAA  = 4'h1,
               state_waitAA  = 4'h2,
@@ -35,10 +35,10 @@ module system_controller(
 
     always @(posedge clk or posedge reset) begin
         if (reset)
-            counter <= 19'hFFFFF; //19'h2927;
+            counter <= 25'hFFFFFFF; //19'h2927;
         else begin
             if (!counter)
-                counter <= 19'hFFFFF;
+                counter <= 25'hFFFFFFF;
             else 
                 counter <= counter - 1'b1;
         end
@@ -61,7 +61,7 @@ module system_controller(
                 Tx_DATA = 8'hAA;
             end
             state_sentAA: begin
-                if (!counter) next_state = state_waitAA;
+                if (!counter && !bnt) next_state = state_waitAA;
                 else next_state = current_state;
 
                 Tx_EN   = 1'b1;
@@ -88,7 +88,7 @@ module system_controller(
                 Tx_DATA = 8'h55;
             end
             state_sent55: begin
-                if (!counter) next_state = state_wait55;
+                if (!counter && !bnt) next_state = state_wait55;
                 else next_state = current_state;
 
                 Tx_EN   = 1'b1;
@@ -115,7 +115,7 @@ module system_controller(
                 Tx_DATA = 8'hCC;
             end
             state_sentCC: begin
-                if (!counter) next_state = state_waitCC;
+                if (!counter && !bnt) next_state = state_waitCC;
                 else next_state = current_state;
 
                 Tx_EN   = 1'b1;
@@ -142,7 +142,7 @@ module system_controller(
                 Tx_DATA = 8'h89;
             end
             state_sent89: begin
-                if (!counter) next_state = state_wait89;
+                if (!counter && !bnt) next_state = state_wait89;
                 else next_state = current_state;
 
                 Tx_EN   = 1'b1;

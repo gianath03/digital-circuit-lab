@@ -26,3 +26,8 @@ set_property -dict { PACKAGE_PIN M17 IOSTANDARD LVCMOS33 } [get_ports { bnt }];
 set_property -dict { PACKAGE_PIN J15 IOSTANDARD LVCMOS33 } [get_ports { sw0 }];
 set_property -dict { PACKAGE_PIN L16 IOSTANDARD LVCMOS33 } [get_ports { sw1 }];
 set_property -dict { PACKAGE_PIN M13 IOSTANDARD LVCMOS33 } [get_ports { sw2 }];
+
+### LED for switches
+set_property -dict { PACKAGE_PIN H17 IOSTANDARD LVCMOS33 } [get_ports { led1 }];
+set_property -dict { PACKAGE_PIN K15 IOSTANDARD LVCMOS33 } [get_ports { led2 }];
+set_property -dict { PACKAGE_PIN J13 IOSTANDARD LVCMOS33 } [get_ports { led3 }];

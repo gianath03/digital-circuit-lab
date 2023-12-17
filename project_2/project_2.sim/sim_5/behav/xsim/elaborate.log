@@ -1,7 +1,31 @@
 Vivado Simulator 2018.3
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto d5894e8e3316436a9d12ab5bf4f946c0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_transceiver_tb_behav xil_defaultlib.uart_transceiver_tb xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto d5894e8e3316436a9d12ab5bf4f946c0 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_transceiver_tb_behav xil_defaultlib.uart_transceiver_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transceiver.v" Line 1. Module uart_transceiver doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v" Line 1. Module uart_transmitter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v" Line 2. Module transmitter_WR_module doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/trasmitter_baud.v" Line 1. Module trasmitter_baud doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v" Line 1. Module transmit_module doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v" Line 1. Module baud_controller doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_receiver.v" Line 1. Module uart_receiver doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v" Line 1. Module receive_module doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receiver_baud.v" Line 1. Module receiver_baud doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v" Line 1. Module baud_controller doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.transmitter_WR_module
+Compiling module xil_defaultlib.trasmitter_baud
+Compiling module xil_defaultlib.transmit_module
+Compiling module xil_defaultlib.baud_controller
+Compiling module xil_defaultlib.uart_transmitter
+Compiling module xil_defaultlib.receiver_baud
+Compiling module xil_defaultlib.receive_module
+Compiling module xil_defaultlib.uart_receiver
+Compiling module xil_defaultlib.uart_transceiver
+Compiling module xil_defaultlib.uart_transceiver_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_transceiver_tb_behav

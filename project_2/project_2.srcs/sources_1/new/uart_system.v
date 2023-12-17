@@ -5,6 +5,9 @@ module uart_system(
     input sw0,
     input sw1,
     input sw2,
+    output led1,
+    output led2,
+    output led3,
     output a,
     output b,
     output c,
@@ -21,8 +24,12 @@ module uart_system(
     wire [7:0] Tx_DATA;
     wire [7:0] Rx_DATA;
 
+    assign led1 = sw0;
+    assign led2 = sw1;
+    assign led3 = sw2;
+
     //When Rx_VALID flag is raised
-    assign data = Rx_VALID ? Rx_DATA : 8'h0;
+    assign data = Rx_VALID ? Rx_DATA : 8'h88;
 
     //Sync reset to clk.
     sync_reset_module sync_reset (.clk(clk), .reset(reset), .reset_clean(reset_clean));
@@ -40,7 +47,7 @@ module uart_system(
     uart_transceiver uart_transceiver_inst(
         reset_clean,
         clk, 
-        {sw0,sw1,sw2}, 
+        {sw2,sw1,sw0}, 
         Rx_EN, 
         Tx_DATA,
         Tx_WR,

@@ -23,7 +23,7 @@ module LEDdecoder(char, LED);
             4'hd: LED = 7'b1000010;
             4'he: LED = 7'b0110000;
             4'hf: LED = 7'b0111000;
-            default: LED = 7'b1111111; //Signal to show out-of-region characters.
+            default: LED = 7'b1111110; //Signal to show out-of-region characters.
         endcase
     end
 

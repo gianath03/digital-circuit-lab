@@ -17,35 +17,36 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.cache/wt [current_project]
-set_property parent.project_path C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.xpr [current_project]
+set_property webtalk.parent_dir /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.cache/wt [current_project]
+set_property parent.project_path /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
-set_property ip_output_repo c:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.cache/ip [current_project]
+set_property ip_output_repo /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/FourDigitLEDdriver.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/LEDdecoder.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/clean_button_module.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/digit_driver_module.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receiver_baud.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reset_module.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/system_controller.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/trasmitter_baud.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_receiver.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transceiver.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v
-  C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_system.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/FourDigitLEDdriver.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/LEDdecoder.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/baud_controller.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/clean_button_module.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/LEDdriver/digit_driver_module.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receive_module.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/receiver_baud.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/sync_reset_module.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/system_controller.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmit_module.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/transmitter_WR_module.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/trasmitter_baud.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_receiver.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transceiver.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_transmitter.v
+  /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sources_1/new/uart_system.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -55,8 +56,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/constrs_1/new/constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/constrs_1/new/constraints.xdc]
+read_xdc /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files /home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/constrs_1/new/constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

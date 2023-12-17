@@ -1,2 +1,3 @@
 Vivado Simulator 2018.3
 Time resolution is 1 ps
+$finish called at time : 2013300 ns : File "/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/sim_4/new/uart_transceiver_tb.v" Line 26

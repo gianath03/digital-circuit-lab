@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="uart_transceiver_tb_time_impl.wdb" id="1">
+      <db_ref path="uart_transceiver_tb_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
             <top_module name="uart_transceiver_tb" />
@@ -12,64 +12,72 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="701000000000fs"></ZoomEndTime>
-      <Cursor1Time time="164651195000fs"></Cursor1Time>
+      <ZoomEndTime time="678000000001fs"></ZoomEndTime>
+      <Cursor1Time time="65000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="102"></ValueColumnWidth>
+      <ValueColumnWidth column_width="94"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
-   <wvobject fp_name="/uart_transceiver_tb/reset" type="logic">
+   <WVObjectSize size="15" />
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/reset">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/clk" type="logic">
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/baud_select" type="array">
+   <wvobject type="array" fp_name="/uart_transceiver_tb/baud_select">
       <obj_property name="ElementShortName">baud_select[2:0]</obj_property>
       <obj_property name="ObjectShortName">baud_select[2:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/Rx_EN" type="logic">
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/Rx_EN">
       <obj_property name="ElementShortName">Rx_EN</obj_property>
       <obj_property name="ObjectShortName">Rx_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/uart_transceiver_inst/TxD" type="logic">
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/uart_transceiver_inst/TxD">
       <obj_property name="ElementShortName">TxD</obj_property>
       <obj_property name="ObjectShortName">TxD</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/Tx_DATA" type="array">
+   <wvobject type="array" fp_name="/uart_transceiver_tb/Tx_DATA">
       <obj_property name="ElementShortName">Tx_DATA[7:0]</obj_property>
       <obj_property name="ObjectShortName">Tx_DATA[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/Tx_WR" type="logic">
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/Tx_WR">
       <obj_property name="ElementShortName">Tx_WR</obj_property>
       <obj_property name="ObjectShortName">Tx_WR</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/Tx_EN" type="logic">
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/Tx_EN">
       <obj_property name="ElementShortName">Tx_EN</obj_property>
       <obj_property name="ObjectShortName">Tx_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/Rx_DATA" type="array">
+   <wvobject type="array" fp_name="/uart_transceiver_tb/Rx_DATA">
       <obj_property name="ElementShortName">Rx_DATA[7:0]</obj_property>
       <obj_property name="ObjectShortName">Rx_DATA[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/Tx_BUSY" type="logic">
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/Tx_BUSY">
       <obj_property name="ElementShortName">Tx_BUSY</obj_property>
       <obj_property name="ObjectShortName">Tx_BUSY</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/Rx_FERROR" type="logic">
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/Rx_FERROR">
       <obj_property name="ElementShortName">Rx_FERROR</obj_property>
       <obj_property name="ObjectShortName">Rx_FERROR</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/Rx_PERROR" type="logic">
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/Rx_PERROR">
       <obj_property name="ElementShortName">Rx_PERROR</obj_property>
       <obj_property name="ObjectShortName">Rx_PERROR</obj_property>
    </wvobject>
-   <wvobject fp_name="/uart_transceiver_tb/Rx_VALID" type="logic">
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/Rx_VALID">
       <obj_property name="ElementShortName">Rx_VALID</obj_property>
       <obj_property name="ObjectShortName">Rx_VALID</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/uart_transceiver_tb/uart_transceiver_inst/uart_transmitter_inst/transmit_module_inst/current_state">
+      <obj_property name="ElementShortName">current_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/uart_transceiver_tb/uart_transceiver_inst/uart_transmitter_inst/transmit_module_inst/baud_tick">
+      <obj_property name="ElementShortName">baud_tick</obj_property>
+      <obj_property name="ObjectShortName">baud_tick</obj_property>
    </wvobject>
 </wave_config>

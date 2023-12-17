@@ -42,7 +42,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
         Rx_DATA = 8'h0; 
         case (current_state)
             state_startBit: begin
-                if (Rx_EN) begin
+                if (Rx_EN && (RxD == 1'b0)) begin
                     if (baud_tick) next_state = state_data0;
                     else next_state = current_state;
                 end
@@ -143,7 +143,7 @@ module receive_module (input reset, input clk, input Rx_EN, input Rx_sample_ENAB
                 baud_enable = 1'b1;
             end
             state_waiting: begin
-                if (Rx_EN && RxD == 1'b0) next_state = state_startBit;
+                if (Rx_EN && (RxD == 1'b0) ) next_state = state_startBit;
                 
                 if (!Rx_PERROR && !Rx_FERROR) begin
                    Rx_VALID = 1'b1;

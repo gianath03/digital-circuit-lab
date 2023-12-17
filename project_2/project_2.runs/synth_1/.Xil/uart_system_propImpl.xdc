@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/constrs_1/new/constraints.xdc rfile:../../../project_2.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/athanasi/Documents/GitHub/digital-circuit-lab/project_2/project_2.srcs/constrs_1/new/constraints.xdc rfile:../../../project_2.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN E3 IOSTANDARD LVCMOS33 } [get_ports { clk }];
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
@@ -35,3 +35,9 @@ set_property src_info {type:XDC file:1 line:27 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN L16 IOSTANDARD LVCMOS33 } [get_ports { sw1 }];
 set_property src_info {type:XDC file:1 line:28 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN M13 IOSTANDARD LVCMOS33 } [get_ports { sw2 }];
+set_property src_info {type:XDC file:1 line:31 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H17 IOSTANDARD LVCMOS33 } [get_ports { led1 }];
+set_property src_info {type:XDC file:1 line:32 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN K15 IOSTANDARD LVCMOS33 } [get_ports { led2 }];
+set_property src_info {type:XDC file:1 line:33 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN J13 IOSTANDARD LVCMOS33 } [get_ports { led3 }];

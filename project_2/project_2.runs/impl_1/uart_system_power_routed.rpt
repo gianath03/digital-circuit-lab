@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Sun Dec 10 22:00:41 2023
-| Host             : athanasi-DESKTOP running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date             : Wed Dec 13 15:09:39 2023
+| Host             : athanasi-laptop running 64-bit Debian GNU/Linux 12 (bookworm)
 | Command          : report_power -file uart_system_power_routed.rpt -pb uart_system_power_summary_routed.pb -rpx uart_system_power_routed.rpx
 | Design           : uart_system
 | Device           : xc7a100tcsg324-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.186        |
+| Total On-Chip Power (W)  | 0.188        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.088        |
+| Dynamic (W)              | 0.091        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 84.2         |
-| Junction Temperature (C) | 25.8         |
+| Max Ambient (C)          | 84.1         |
+| Junction Temperature (C) | 25.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      409 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      168 |     63400 |            0.26 |
-|   CARRY4       |    <0.001 |       22 |     15850 |            0.14 |
-|   Register     |    <0.001 |      133 |    126800 |            0.10 |
+| Slice Logic    |     0.001 |      434 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      180 |     63400 |            0.28 |
+|   CARRY4       |    <0.001 |       24 |     15850 |            0.15 |
+|   Register     |    <0.001 |      138 |    126800 |            0.11 |
 |   Others       |     0.000 |       17 |       --- |             --- |
-| Signals        |    <0.001 |      228 |       --- |             --- |
+| Signals        |    <0.001 |      241 |       --- |             --- |
 | MMCM           |     0.084 |        1 |         6 |           16.67 |
-| I/O            |    <0.001 |       18 |       210 |            8.57 |
+| I/O            |     0.003 |       21 |       210 |           10.00 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.186 |          |           |                 |
+| Total          |     0.188 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.018 |       0.003 |      0.015 |
+| Vccint    |       1.000 |     0.019 |       0.003 |      0.015 |
 | Vccaux    |       1.800 |     0.065 |       0.047 |      0.018 |
-| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |
+| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -143,7 +143,7 @@ Table of Contents
 +---------------------------+-----------+
 | Name                      | Power (W) |
 +---------------------------+-----------+
-| uart_system               |     0.088 |
+| uart_system               |     0.091 |
 |   FourDigitLEDdriver_inst |     0.085 |
 |   uart_transceiver_inst   |     0.002 |
 +---------------------------+-----------+

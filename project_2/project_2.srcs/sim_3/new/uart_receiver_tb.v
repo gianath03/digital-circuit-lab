@@ -69,6 +69,20 @@ module uart_receiver_tb ();
         #8680 RxD = 1'b1;
         #8680 RxD = 1'b1;
         #8680 Rx_EN = 1'b0;
+//10001001 *wrong parity bit*
+        #50000 Rx_EN = 1'b1;
+        #1000 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 RxD = 1'b0;
+        #8680 RxD = 1'b1;
+        #8680 Rx_EN = 1'b0;
     end
 
     always begin
