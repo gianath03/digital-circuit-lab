@@ -10,8 +10,9 @@ module vram_module_tb();
     always #5 clk = ~clk;
 
     initial begin
-        clk = 1'b0; reset = 1'b0; adr = 16'b1;
-        #1000 adr = 16'b1;
+        clk = 1'b0; reset = 1'b0; adr = 16'b0;
+        #1000 adr = 16'h1;
+        #1000 adr = 16'h0;
         #2000 $finish;
     end
 

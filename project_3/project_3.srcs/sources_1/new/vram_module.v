@@ -42,7 +42,7 @@ RAMB36E1 #(
       .INITP_0E(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF),
       .INITP_0F(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF),
       // INIT_00 to INIT_7F: Initial contents of the data memory array
-      .INIT_00(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF),
+      .INIT_00(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE),
       .INIT_01(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF),
       .INIT_02(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF),
       .INIT_03(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF),
@@ -189,13 +189,13 @@ RAMB36E1 #(
       .RSTREG_PRIORITY_A("RSTREG"),
       .RSTREG_PRIORITY_B("RSTREG"),
       // SRVAL_A, SRVAL_B: Set/reset value for output
-      .SRVAL_A(36'h00000000F),
+      .SRVAL_A(36'h00000ABCD),
       .SRVAL_B(36'h000000000),
       // Simulation Device: Must be set to "7SERIES" for simulation behavior
       .SIM_DEVICE("7SERIES"),
       // WriteMode: Value on output upon a write ("WRITE_FIRST", "READ_FIRST", or "NO_CHANGE")
-      .WRITE_MODE_A("WRITE_FIRST"),
-      .WRITE_MODE_B("WRITE_FIRST")
+      .WRITE_MODE_A("READ_FIRST"),
+      .WRITE_MODE_B("READ_FIRST")
    )
    RAMB36E1_red (
       // Cascade Signals: 1-bit (each) output: BRAM cascade ports (to create 64kx1)
@@ -220,11 +220,11 @@ RAMB36E1 #(
       .INJECTSBITERR(INJECTSBITERR), // 1-bit input: Inject a single bit error
       // Port A Address/Control Signals: 16-bit (each) input: Port A address and control signals (read port
       // when RAM_MODE="SDP")
-      .ADDRARDADDR(adr),     // 16-bit input: A port address/Read address
+      .ADDRARDADDR(adr),             // 16-bit input: A port address/Read address
       .CLKARDCLK(clk),               // 1-bit input: A port clock/Read clock
       .ENARDEN(1'b1),                // 1-bit input: A port enable/Read enable
       .REGCEAREGCE(REGCEAREGCE),     // 1-bit input: A port register enable/Register enable
-      .RSTRAMARSTRAM(RSTRAMARSTRAM), // 1-bit input: A port set/reset
+      .RSTRAMARSTRAM(clk),           // 1-bit input: A port set/reset
       .RSTREGARSTREG(RSTREGARSTREG), // 1-bit input: A port register set/reset
       .WEA(WEA),                     // 4-bit input: A port write enable
       // Port A Data: 32-bit (each) input: Port A data
