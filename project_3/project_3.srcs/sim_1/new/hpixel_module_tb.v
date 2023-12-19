@@ -3,9 +3,8 @@
 module hpixel_module_tb();
     reg  clk;
     reg  reset;
-    wire       hsync,
-         [9:0] hpixel,
-               hpixel_valid;
+    wire       hsync;
+    wire [9:0] hpixel;
 
     always #5 clk = ~clk;
 
@@ -14,5 +13,5 @@ module hpixel_module_tb();
         #100 reset = 1'b0;
     end
 
-    hpixel_module hpixel_module_inst (.clk(clk), .rese(reset), .hsync(hsync), .hpixel(hpixel), .hpixel_valid(hpixel_valid));
+    hpixel_module hpixel_module_inst (.clk(clk), .reset(reset), .hsync(hsync), .hpixel(hpixel));
 endmodule
