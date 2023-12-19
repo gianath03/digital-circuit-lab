@@ -58,6 +58,9 @@ module hcounter_module(
                 if (counter == 10'd1023 && pixel_clk)  next_stage = stage_display;
                 else                      next_stage = current_stage; 
             end 
+            default: begin
+                next_stage = stage_backporch;
+            end
         endcase
     end
 endmodule
