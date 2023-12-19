@@ -12,17 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="141000000001fs"></ZoomEndTime>
-      <Cursor1Time time="96095000000fs"></Cursor1Time>
+      <ZoomEndTime time="71000000001fs"></ZoomEndTime>
+      <Cursor1Time time="18590529000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="78"></ValueColumnWidth>
+      <ValueColumnWidth column_width="74"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="5" />
-   <wave_markers>
-      <marker label="" time="95495000000" />
-   </wave_markers>
    <wvobject type="logic" fp_name="/hpixel_module_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -31,15 +28,15 @@
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/hpixel_module_tb/hpixel_module_inst/hpixel_valid">
-      <obj_property name="ElementShortName">hpixel_valid</obj_property>
-      <obj_property name="ObjectShortName">hpixel_valid</obj_property>
+   <wvobject type="logic" fp_name="/hpixel_module_tb/hpixel_module_inst/hsync_module_inst/pixel_enable">
+      <obj_property name="ElementShortName">pixel_enable</obj_property>
+      <obj_property name="ObjectShortName">pixel_enable</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/hpixel_module_tb/hsync">
       <obj_property name="ElementShortName">hsync</obj_property>
       <obj_property name="ObjectShortName">hsync</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/hpixel_module_tb/hpixel_module_inst/hpixel">
+   <wvobject type="array" fp_name="/hpixel_module_tb/hpixel_module_inst/hsync_module_inst/hpixel">
       <obj_property name="ElementShortName">hpixel[9:0]</obj_property>
       <obj_property name="ObjectShortName">hpixel[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
