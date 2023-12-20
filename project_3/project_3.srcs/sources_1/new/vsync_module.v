@@ -13,14 +13,16 @@ module vsync_module(
     reg       first;
     reg [1:0] next_stage;
     reg [1:0] current_stage;
-    parameter stage_pulse      = 2'h0,
-              stage_backPorch  = 2'h1,
-              stage_display    = 2'h2,
-              stage_frontPorch = 2'h3;
+    parameter stage_pulse_vsync      = 2'h0,
+              stage_backPorch_vsync  = 2'h1,
+              stage_display_vsync    = 2'h2,
+              stage_frontPorch_vsync = 2'h3;
 
     always @(posedge clk or posedge reset) begin
-        if (reset) 
+        if (reset) begin
             counter <= 10'd30;
+            first <= 1'b1;
+        end
         else if (!hsync & first) begin
             first <= 1'b0;
             if (counter == 10'd520)
@@ -35,7 +37,7 @@ module vsync_module(
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            current_stage <= stage_display;
+            current_stage <= stage_display_vsync;
         end
         else begin
             current_stage <= next_stage;
@@ -47,36 +49,36 @@ module vsync_module(
         vsync       = 1'b1;
         pixel_enable = 4'b0;
         case (current_stage)
-            stage_pulse: begin
-                if (!hsync && counter == 10'd1 ) next_stage = stage_backPorch;
+            stage_pulse_vsync: begin
+                if (!hsync && counter == 10'd1 ) next_stage = stage_backPorch_vsync;
                 else next_stage = current_stage;
 
                 vsync       = 1'b0;
                 pixel_enable = 1'b0;
             end
-            stage_backPorch: begin
-                if (!hsync && counter == 10'd30 ) next_stage = stage_display;
+            stage_backPorch_vsync: begin
+                if (!hsync && counter == 10'd30 ) next_stage = stage_display_vsync;
                 else next_stage = current_stage;
 
                 vsync       = 1'b1;
                 pixel_enable = 1'b0;
             end
-            stage_display: begin
-                if (!hsync && counter == 10'd510 ) next_stage = stage_frontPorch;
+            stage_display_vsync: begin
+                if (!hsync && counter == 10'd510 ) next_stage = stage_frontPorch_vsync;
                 else next_stage = current_stage;
                 
                 vsync       = 1'b1;
                 pixel_enable = 1'b1;
             end
-            stage_frontPorch: begin
-                if (!hsync && counter == 10'd520 ) next_stage = stage_pulse;
+            stage_frontPorch_vsync: begin
+                if (!hsync && counter == 10'd520 ) next_stage = stage_pulse_vsync;
                 else next_stage = current_stage;
                 
                 vsync       = 1'b1;
                 pixel_enable = 1'b0;
             end
             default: begin
-                current_stage <= stage_backPorch;
+                current_stage <= stage_backPorch_vsync;
                 
                 vsync       = 1'b1;
                 pixel_enable = 1'b0;
@@ -84,8 +86,12 @@ module vsync_module(
         endcase
     end
 
-    always @(posedge clk) begin
-        if (pixel_enable) begin
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            vpixel <= 7'h0;
+            pixel_counter <= 3'h0;
+        end
+        else if (pixel_enable) begin
             if (!hsync & first) begin
                 if (pixel_counter == 3'h4) begin
                     pixel_counter <= 3'h0;

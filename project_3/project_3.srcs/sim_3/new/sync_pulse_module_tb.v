@@ -5,7 +5,7 @@ module sync_pulse_module_tb();
     reg         reset;
     wire        hsync,
                 vsync;
-    wire [16:0] adr;
+    wire [13:0] adr;
 
     always #5 clk = ~clk;
 

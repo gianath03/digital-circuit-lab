@@ -5,21 +5,21 @@ module hsync_module(
     input            pixel_clk,
     input            reset,
     output reg       hsync,
-    output reg [9:0] hpixel);
+    output reg [6:0] hpixel);
 
     reg [9:0] counter;
     reg [2:0] pixel_counter;
     reg [1:0] current_stage;
     reg [1:0] next_stage;
     reg       pixel_enable;
-    parameter stage_pulse      = 2'h0,
-              stage_backPorch  = 2'h1,
-              stage_display    = 2'h2,
-              stage_frontPorch = 2'h3;
+    parameter stage_pulse_hsync      = 2'h0,
+              stage_backPorch_hsync  = 2'h1,
+              stage_display_hsync    = 2'h2,
+              stage_frontPorch_hsync = 2'h3;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            current_stage <= stage_backPorch;
+            current_stage <= stage_backPorch_hsync;
         end
         else begin
             current_stage <= next_stage;
@@ -31,36 +31,36 @@ module hsync_module(
         hsync       = 1'b1;
         pixel_enable = 4'b0;
         case (current_stage)
-            stage_pulse: begin
-                if (pixel_clk && counter == 10'd751 ) next_stage = stage_backPorch;
+            stage_pulse_hsync: begin
+                if (pixel_clk && counter == 10'd751 ) next_stage = stage_backPorch_hsync;
                 else next_stage = current_stage;
 
                 hsync       = 1'b0;
                 pixel_enable = 1'b0;
             end
-            stage_backPorch: begin
-                if (pixel_clk && counter == 10'd799 ) next_stage = stage_display;
+            stage_backPorch_hsync: begin
+                if (pixel_clk && counter == 10'd799 ) next_stage = stage_display_hsync;
                 else next_stage = current_stage;
 
                 hsync       = 1'b1;
                 pixel_enable = 1'b0;
             end
-            stage_display: begin
-                if (pixel_clk && counter == 10'd639 ) next_stage = stage_frontPorch;
+            stage_display_hsync: begin
+                if (pixel_clk && counter == 10'd639 ) next_stage = stage_frontPorch_hsync;
                 else next_stage = current_stage;
                 
                 hsync       = 1'b1;
                 pixel_enable = 1'b1;
             end
-            stage_frontPorch: begin
-                if (pixel_clk && counter == 10'd655) next_stage = stage_pulse;
+            stage_frontPorch_hsync: begin
+                if (pixel_clk && counter == 10'd655) next_stage = stage_pulse_hsync;
                 else next_stage = current_stage;
                 
                 hsync       = 1'b1;
                 pixel_enable = 1'b0;
             end
             default: begin
-                current_stage <= stage_backPorch;
+                current_stage <= stage_backPorch_hsync;
                 
                 hsync       = 1'b1;
                 pixel_enable = 1'b0;
@@ -80,7 +80,7 @@ module hsync_module(
             end
         end
         else begin
-            hpixel <= 10'h0;
+            hpixel <= 7'h0;
             pixel_counter <= 3'h0;
         end
     end

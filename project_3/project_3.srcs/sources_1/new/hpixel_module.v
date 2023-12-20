@@ -4,7 +4,7 @@ module hpixel_module(
     input clk,
     input reset,
     output hsync,
-    output [9:0] hpixel);
+    output [6:0] hpixel);
 
     wire pixel_clk;
 

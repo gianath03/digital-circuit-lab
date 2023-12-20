@@ -3,11 +3,11 @@
 module sync_pulse_module(
     input clk,
     input reset,
-    output [16:0] adr,
+    output [13:0] adr,
     output hsync,
     output vsync);
 
-    wire [9:0] hpixel;
+    wire [6:0] hpixel;
     wire [6:0] vpixel;
 
     assign adr = {vpixel, hpixel};
