@@ -55,7 +55,7 @@ module vram_module(
       .READ_WIDTH(1),  // Valid values are 1-72 (37-72 only valid when BRAM_SIZE="36Kb")
       .SRVAL(36'h000000000), // Set/Reset value for port output
       .WRITE_MODE("READ_FIRST"), // "WRITE_FIRST", "READ_FIRST", or "NO_CHANGE" 
-      .INIT_00(256'hFFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF__FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFE),
+      .INIT_00(256'hFFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF__FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFFF_FFF5),
       .INIT_01(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF),
       .INIT_02(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF),
       .INIT_03(256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF),
@@ -213,7 +213,7 @@ module vram_module(
       .EN(1'b1),       // 1-bit input RAM enable
       .REGCE(REGCE), // 1-bit input output register enable
       .RST(reset),     // 1-bit input reset
-      .WE(1'b1)        // Input write enable, width defined by write port depth
+      .WE(1'b0)        // Input write enable, width defined by write port depth
    );
 
    BRAM_SINGLE_MACRO #(
@@ -384,7 +384,7 @@ module vram_module(
       .EN(1'b1),       // 1-bit input RAM enable
       .REGCE(REGCE), // 1-bit input output register enable
       .RST(reset),     // 1-bit input reset
-      .WE(1'b1)        // Input write enable, width defined by write port depth
+      .WE(1'b0)        // Input write enable, width defined by write port depth
    );
 
    BRAM_SINGLE_MACRO #(
@@ -555,7 +555,7 @@ module vram_module(
       .EN(1'b1),       // 1-bit input RAM enable
       .REGCE(REGCE), // 1-bit input output register enable
       .RST(reset),     // 1-bit input reset
-      .WE(1'b1)        // Input write enable, width defined by write port depth
+      .WE(1'b0)        // Input write enable, width defined by write port depth
    );
 
    // End of BRAM_SINGLE_MACRO_inst instantiation
