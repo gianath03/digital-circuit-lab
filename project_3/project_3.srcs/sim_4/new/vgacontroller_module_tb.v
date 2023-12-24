@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module vgacontroller_module_tb();
-    reg         clk;
+    reg           clk;
     reg         reset;
     wire      vga_red,
             vga_green,

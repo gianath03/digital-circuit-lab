@@ -1,18 +1,19 @@
 `timescale 1ns / 1ps
 
 module vsync_module(
-    input            clk,
-    input            reset,
-    input            hsync,
-    output reg       vsync,
+    input               clk,
+    input             reset,
+    input             hsync,
+    output reg        vsync,
     output reg [6:0] vpixel);
 
-    reg [9:0] counter;
+    reg [9:0]       counter;
     reg [2:0] pixel_counter;
-    reg       pixel_enable;
-    reg       first;
-    reg [1:0] next_stage;
+    reg        pixel_enable;
+    reg               first;
+    reg [1:0]    next_stage;
     reg [1:0] current_stage;
+    
     parameter stage_pulse_vsync      = 2'h0,
               stage_backPorch_vsync  = 2'h1,
               stage_display_vsync    = 2'h2,

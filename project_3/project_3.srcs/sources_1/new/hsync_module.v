@@ -1,17 +1,18 @@
 `timescale 1ns / 1ps
 
 module hsync_module(
-    input            clk,
-    input            pixel_clk,
-    input            reset,
-    output reg       hsync,
-    output reg [6:0] hpixel);
+    input                     clk,
+    input               pixel_clk,
+    input                   reset,
+    output reg              hsync,
+    output reg [6:0]       hpixel,
+    output reg       display_time);
 
-    reg [9:0] counter;
+    reg [9:0]       counter;
     reg [2:0] pixel_counter;
     reg [1:0] current_stage;
-    reg [1:0] next_stage;
-    reg       pixel_enable;
+    reg [1:0]    next_stage;
+
     parameter stage_pulse_hsync      = 2'h0,
               stage_backPorch_hsync  = 2'h1,
               stage_display_hsync    = 2'h2,
@@ -29,47 +30,47 @@ module hsync_module(
     always @(current_stage or counter or pixel_clk) begin
         next_stage  = current_stage;
         hsync       = 1'b1;
-        pixel_enable = 4'b0;
+        display_time = 4'b0;
         case (current_stage)
             stage_pulse_hsync: begin
                 if (pixel_clk && counter == 10'd751 ) next_stage = stage_backPorch_hsync;
                 else next_stage = current_stage;
 
                 hsync       = 1'b0;
-                pixel_enable = 1'b0;
+                display_time = 1'b0;
             end
             stage_backPorch_hsync: begin
                 if (pixel_clk && counter == 10'd799 ) next_stage = stage_display_hsync;
                 else next_stage = current_stage;
 
                 hsync       = 1'b1;
-                pixel_enable = 1'b0;
+                display_time = 1'b0;
             end
             stage_display_hsync: begin
                 if (pixel_clk && counter == 10'd639 ) next_stage = stage_frontPorch_hsync;
                 else next_stage = current_stage;
                 
                 hsync       = 1'b1;
-                pixel_enable = 1'b1;
+                display_time = 1'b1;
             end
             stage_frontPorch_hsync: begin
                 if (pixel_clk && counter == 10'd655) next_stage = stage_pulse_hsync;
                 else next_stage = current_stage;
                 
                 hsync       = 1'b1;
-                pixel_enable = 1'b0;
+                display_time = 1'b0;
             end
             default: begin
                 current_stage <= stage_backPorch_hsync;
                 
                 hsync       = 1'b1;
-                pixel_enable = 1'b0;
+                display_time = 1'b0;
             end
         endcase
     end
 
     always @(posedge clk) begin
-        if (pixel_enable) begin
+        if (display_time) begin
             if (pixel_clk) begin
                 if (pixel_counter == 3'h4) begin
                     pixel_counter <= 3'h0;

@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 
 module vram_module(
-    input clk,
-    input reset,
+    input         clk,
+    input       reset,
     input  [13:0] adr,
-    output [2:0] out);
+    output  [2:0] out);
 
    wire        red,
               blue,
