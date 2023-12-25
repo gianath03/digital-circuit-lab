@@ -28,42 +28,42 @@ module hsync_module(
     end
 
     always @(current_stage or counter or pixel_clk) begin
-        next_stage  = current_stage;
-        hsync       = 1'b1;
-        display_time = 4'b0;
+        next_stage   = current_stage;
+        hsync        = 1'b1;
+        display_time = 1'b0;
         case (current_stage)
             stage_pulse_hsync: begin
-                if (pixel_clk && counter == 10'd751 ) next_stage = stage_backPorch_hsync;
+                if (counter == 10'd751 ) next_stage = pixel_clk ? stage_backPorch_hsync : current_stage;
                 else next_stage = current_stage;
 
-                hsync       = 1'b0;
+                hsync        = 1'b0;
                 display_time = 1'b0;
             end
             stage_backPorch_hsync: begin
-                if (pixel_clk && counter == 10'd799 ) next_stage = stage_display_hsync;
+                if (counter == 10'd799 ) next_stage = pixel_clk ? stage_display_hsync : current_stage;
                 else next_stage = current_stage;
 
-                hsync       = 1'b1;
+                hsync        = 1'b1;
                 display_time = 1'b0;
             end
             stage_display_hsync: begin
-                if (pixel_clk && counter == 10'd639 ) next_stage = stage_frontPorch_hsync;
+                if (counter == 10'd639 ) next_stage = pixel_clk ? stage_frontPorch_hsync : current_stage;
                 else next_stage = current_stage;
                 
-                hsync       = 1'b1;
+                hsync        = 1'b1;
                 display_time = 1'b1;
             end
             stage_frontPorch_hsync: begin
-                if (pixel_clk && counter == 10'd655) next_stage = stage_pulse_hsync;
+                if (counter == 10'd655) next_stage = pixel_clk ? stage_pulse_hsync: current_stage;
                 else next_stage = current_stage;
                 
-                hsync       = 1'b1;
+                hsync        = 1'b1;
                 display_time = 1'b0;
             end
             default: begin
-                current_stage <= stage_backPorch_hsync;
+                current_stage = stage_backPorch_hsync;
                 
-                hsync       = 1'b1;
+                hsync        = 1'b1;
                 display_time = 1'b0;
             end
         endcase
