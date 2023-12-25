@@ -17,14 +17,31 @@ module vgacontroller(
 
   //Assignment to make vga to analog black
   // when outside of displaying time.
-  assign vga_red   = display_time ? out_red   : 1'b0;
-  assign vga_green = display_time ? out_green : 1'b0;
-  assign vga_blue  = display_time ? out_blue  : 1'b0;
+  assign vga_red   = (display_vtime && display_htime) ? out_red   : 1'b0;
+  assign vga_green = (display_vtime && display_htime) ? out_green : 1'b0;
+  assign vga_blue  = (display_vtime && display_htime) ? out_blue  : 1'b0;
 
   //Synchronise reset to clk.
-  sync_reset_module sync_reset (.reset(reset), .clk(clk), .reset_clean(reset_clean));
+  sync_reset_module sync_reset (
+    .reset(reset), 
+    .clk(clk), 
+    .reset_clean(reset_clean)
+  );
 
   //Instantiate modules.
-  vram_module vram_module_inst (.clk(clk), .reset(reset_clean), .adr(adr), .out({out_red, out_green, out_blue}));
-  sync_pulse_module sync_pulse_module_inst (.clk(clk), .reset(reset_clean), .hsync(vga_hsync), .vsync(vga_vsync), .adr(adr), .display_time(display_time));
+  vram_module vram_module_inst (
+    .clk(clk), 
+    .reset(reset_clean), 
+    .adr(adr), 
+    .out({out_red, out_green, out_blue})
+  );
+  sync_pulse_module sync_pulse_module_inst (
+    .clk(clk),
+    .reset(reset_clean),
+    .hsync(vga_hsync), 
+    .vsync(vga_vsync), 
+    .adr(adr), 
+    .display_vtime(display_vtime), 
+    .display_htime(display_htime)
+  );
 endmodule
