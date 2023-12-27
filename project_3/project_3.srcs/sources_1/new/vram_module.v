@@ -559,7 +559,5 @@ module vram_module(
    );
 
    // End of BRAM_SINGLE_MACRO_inst instantiation
-				
-								
-					
+			
 endmodule
