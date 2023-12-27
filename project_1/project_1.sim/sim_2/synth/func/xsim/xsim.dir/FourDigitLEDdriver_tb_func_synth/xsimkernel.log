@@ -1,7 +1,0 @@
-Running: xsim.dir/FourDigitLEDdriver_tb_func_synth/xsimk.exe -simmode gui -wdb FourDigitLEDdriver_tb_func_synth.wdb -simrunnum 0 -socket 51069
-Design successfully loaded
-Design Loading Memory Usage: 7616 KB (Peak: 7616 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 8836 KB (Peak: 8836 KB)
-Simulation CPU Usage: 15 ms

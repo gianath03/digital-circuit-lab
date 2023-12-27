@@ -1,7 +1,0 @@
-Running: xsim.dir/FourDigitLEDdriverTextButton_tb_behav/xsimk -simmode gui -wdb FourDigitLEDdriverTextButton_tb_behav.wdb -simrunnum 0 -socket 47051
-Design successfully loaded
-Design Loading Memory Usage: 33212 KB (Peak: 33444 KB)
-Design Loading CPU Usage: 30 ms
-Simulation completed
-Simulation Memory Usage: 119568 KB (Peak: 180484 KB)
-Simulation CPU Usage: 140 ms

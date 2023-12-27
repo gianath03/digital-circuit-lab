@@ -1,7 +1,0 @@
-Running: xsim.dir/FourDigitLEDdriverTextTimer_tb_func_synth/xsimk -simmode gui -wdb FourDigitLEDdriverTextTimer_tb_func_synth.wdb -simrunnum 0 -socket 52657
-Design successfully loaded
-Design Loading Memory Usage: 33476 KB (Peak: 33524 KB)
-Design Loading CPU Usage: 20 ms
-Simulation completed
-Simulation Memory Usage: 119832 KB (Peak: 180748 KB)
-Simulation CPU Usage: 50 ms
