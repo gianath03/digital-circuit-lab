@@ -4,5 +4,5 @@
 *.sim/
 *.runs/
 *.ip_user_files
-*/vivado.jou
-*/vivado.log
+vivado.jou
+vivado.log
