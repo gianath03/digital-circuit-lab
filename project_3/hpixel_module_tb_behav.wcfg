@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="hpixel_module_tb_behav.wdb" id="1">
+      <db_ref path="hpixel_module_tb_func_impl.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
             <top_module name="hpixel_module_tb" />
@@ -11,12 +11,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="15202791666667fs"></ZoomStartTime>
-      <ZoomEndTime time="15239891666668fs"></ZoomEndTime>
-      <Cursor1Time time="15209891667000fs"></Cursor1Time>
+      <ZoomStartTime time="15966251666667fs"></ZoomStartTime>
+      <ZoomEndTime time="15979901666668fs"></ZoomEndTime>
+      <Cursor1Time time="15967495000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="165"></NameColumnWidth>
+      <NameColumnWidth column_width="161"></NameColumnWidth>
       <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="5" />
@@ -28,10 +28,6 @@
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/hpixel_module_tb/hpixel_module_inst/hsync_module_inst/pixel_enable">
-      <obj_property name="ElementShortName">pixel_enable</obj_property>
-      <obj_property name="ObjectShortName">pixel_enable</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/hpixel_module_tb/hsync">
       <obj_property name="ElementShortName">hsync</obj_property>
       <obj_property name="ObjectShortName">hsync</obj_property>
@@ -40,5 +36,9 @@
       <obj_property name="ElementShortName">hpixel[6:0]</obj_property>
       <obj_property name="ObjectShortName">hpixel[6:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/hpixel_module_tb/hpixel_module_inst/display_time">
+      <obj_property name="ElementShortName">display_time</obj_property>
+      <obj_property name="ObjectShortName">display_time</obj_property>
    </wvobject>
 </wave_config>
