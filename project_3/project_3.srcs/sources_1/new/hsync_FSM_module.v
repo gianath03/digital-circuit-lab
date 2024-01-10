@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module hsync_module(
+module hsync_FSM_module(
     input                     clk,
     input               pixel_clk,
     input                   reset,

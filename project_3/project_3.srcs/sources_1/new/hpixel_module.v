@@ -10,5 +10,5 @@ module hpixel_module(
     wire pixel_clk;
 
     pixel_timer_module pixel_timer_module_inst (.clk(clk), .reset(reset), .pixel_clk(pixel_clk));
-    hsync_module hsync_module_inst (.clk(clk), .reset(reset), .pixel_clk(pixel_clk), .hsync(hsync), .hpixel(hpixel), .display_time(display_time));
+    hsync_FSM_module hsync_FSM_module_inst (.clk(clk), .reset(reset), .pixel_clk(pixel_clk), .hsync(hsync), .hpixel(hpixel), .display_time(display_time));
 endmodule
